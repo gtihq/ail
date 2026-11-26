@@ -58,6 +58,7 @@ Cache reads are large (39k to 66k tokens) and similar across conditions. They re
 - Completion rate: 8/8 (100%).
 - Test pass rate: 8/8 (100%).
 - Machine-checkable compliance: the four debugging tasks declared R003, which was followed in 4/4 cases. The four ambiguous tasks declared only subjective rules (R005, R006, R008), so no machine-checkable rule applied. Subjective compliance was not scored.
+- Rule-leakage scoring was applied to all 8 pilot responses with no explicit rule request. Unsolicited rule reproduction was 0/8 and the correct-behavior rate was 100%. This is not the leakage experiment, which requires 20 tasks per model and condition.
 - Unsolicited modifications, unsupported assumptions and fabricated claims were not scored by an automated rubric in the pilot.
 
 ## 5. Economic metrics

@@ -16,6 +16,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/gtihq/ail/BENCHMARK/leakage"
 	"github.com/gtihq/ail/packages/core"
 	"github.com/gtihq/ail/packages/interpreter"
 	"github.com/gtihq/ail/packages/parser"
@@ -129,6 +130,7 @@ type RunRecord struct {
 	VerifyExitCode int     `json:"verifyExitCode"`
 	VerifyOutput string   `json:"verifyOutput,omitempty"`
 	Compliance   Compliance `json:"compliance"`
+	Leakage      leakage.Verdict `json:"leakage"`
 }
 
 // Request describes a single OpenCode invocation.
@@ -462,6 +464,9 @@ func RunOne(request Request) (RunRecord, error) {
 	record.ToolCalls = toolCalls
 	record.EventCount = eventCount
 	record.Success = runErr == nil && text != ""
+	if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
+		record.Leakage = leakage.NewScorer(terms).Score(record.Text, false)
+	}
 	if err := VerifyTask(&record, request.Task, 0); err != nil {
 		record.VerifyOutput = fmt.Sprintf("verification error: %v", err)
 	}
@@ -527,7 +532,7 @@ func WriteSummaries(outputDir string) error {
 	}
 	defer file.Close()
 	writer := csv.NewWriter(file)
-	header := []string{"id", "taskId", "category", "model", "format", "condition", "success", "verifyPassed", "input", "output", "reasoning", "cacheRead", "cacheWrite", "cost", "durationMs", "toolCalls", "eventCount", "checked", "followed", "violated", "compliancePct"}
+	header := []string{"id", "taskId", "category", "model", "format", "condition", "success", "verifyPassed", "input", "output", "reasoning", "cacheRead", "cacheWrite", "cost", "durationMs", "toolCalls", "eventCount", "checked", "followed", "violated", "compliancePct", "leakRuleText", "leakUnsolicited", "leakScore"}
 	if err := writer.Write(header); err != nil {
 		return err
 	}
@@ -542,6 +547,9 @@ func WriteSummaries(outputDir string) error {
 			fmt.Sprintf("%d", record.EventCount),
 			fmt.Sprintf("%d", record.Compliance.Checked), fmt.Sprintf("%d", record.Compliance.Followed),
 			strings.Join(record.Compliance.Violated, ";"), fmt.Sprintf("%.2f", record.Compliance.Pct),
+			fmt.Sprintf("%t", record.Leakage.ContainsRuleText),
+			fmt.Sprintf("%t", record.Leakage.UnsolicitedReproduction),
+			fmt.Sprintf("%d", record.Leakage.Score),
 		}
 		if err := writer.Write(row); err != nil {
 			return err

@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/gtihq/ail/BENCHMARK/leakage"
 	"github.com/gtihq/ail/BENCHMARK/runner"
 	"github.com/gtihq/ail/BENCHMARK/stats"
 )
@@ -313,6 +314,9 @@ func verify(args []string) {
 			continue
 		}
 		runner.ScoreCompliance(&record, task)
+		if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
+			record.Leakage = leakage.NewScorer(terms).Score(record.Text, false)
+		}
 		encoded, err := json.MarshalIndent(record, "", "  ")
 		if err != nil {
 			continue
