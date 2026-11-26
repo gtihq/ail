@@ -1,0 +1,9 @@
+META { id: "typescript-conventions" version: "0.3" priority: HIGH scope: "src/**/*.ts" }
+
+WHEN { file.language == TYPESCRIPT }
+
+DO { use_strict_types preserve_existing_patterns }
+
+NEVER { use_any_without_justification }
+
+FALLBACK { ask_user_before_guessing }

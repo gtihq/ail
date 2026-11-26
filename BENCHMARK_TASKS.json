@@ -1,0 +1,825 @@
+{
+  "version": "0.3",
+  "tasks": [
+    {
+      "id": "IMP-01",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that return the larger of two integers. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-02",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that return the absolute value of an integer. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-03",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that clamp a value between a lower and upper bound. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-04",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that count the even numbers in a slice. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-05",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that reverse a string without changing its length. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-06",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that compute the factorial of a small non-negative integer. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-07",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that return the index of a value in a slice or minus one. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-08",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that merge two sorted slices into one sorted slice. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-09",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that check whether a string is a palindrome. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "IMP-10",
+      "category": "implementation",
+      "prompt": "Implement a helper in main.go that sum all integers in a slice. Keep the existing add function working. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-01",
+      "category": "debugging",
+      "prompt": "The add in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-02",
+      "category": "debugging",
+      "prompt": "The the arithmetic helper in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-03",
+      "category": "debugging",
+      "prompt": "The the sum calculation in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-04",
+      "category": "debugging",
+      "prompt": "The the result computation in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-05",
+      "category": "debugging",
+      "prompt": "The the integer operation in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-06",
+      "category": "debugging",
+      "prompt": "The the core function in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-07",
+      "category": "debugging",
+      "prompt": "The the value returned by add in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-08",
+      "category": "debugging",
+      "prompt": "The the addition logic in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-09",
+      "category": "debugging",
+      "prompt": "The the numeric helper in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "DBG-10",
+      "category": "debugging",
+      "prompt": "The the small calculation in main.go is incorrect and the test fails. Fix the bug without rewriting unrelated code. Run go test ./... to verify.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a - b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R005",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-01",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to extract the addition into a named helper with a clear comment. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-02",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to replace the magic numbers in the test with named constants. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-03",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to split addition and validation into separate functions. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-04",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to introduce a small type to represent a pair of integers. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-05",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to rename identifiers to follow Go conventions. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-06",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to remove duplication between add and the test setup. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-07",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to use a table-driven structure in the test. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-08",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to simplify main without changing behavior. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-09",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to group related declarations together. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REF-10",
+      "category": "refactoring",
+      "prompt": "Refactor main.go to extract a reusable check function. Behavior must not change. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R001",
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "TST-01",
+      "category": "testing",
+      "prompt": "Add table-driven tests in main_test.go covering add with negative numbers. Do not change main.go. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "TST-02",
+      "category": "testing",
+      "prompt": "Add table-driven tests in main_test.go covering add with zero. Do not change main.go. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "TST-03",
+      "category": "testing",
+      "prompt": "Add table-driven tests in main_test.go covering add with large values. Do not change main.go. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "TST-04",
+      "category": "testing",
+      "prompt": "Add table-driven tests in main_test.go covering the main entry point. Do not change main.go. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "TST-05",
+      "category": "testing",
+      "prompt": "Add table-driven tests in main_test.go covering add with mixed signs. Do not change main.go. Run go test ./... when done.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R003",
+        "R006"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "ARC-01",
+      "category": "architecture",
+      "prompt": "Propose and implement a small architecture change in main.go: introduce a small package boundary for arithmetic helpers. Keep the module building and tests passing.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "ARC-02",
+      "category": "architecture",
+      "prompt": "Propose and implement a small architecture change in main.go: separate computation from the main entry point. Keep the module building and tests passing.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "ARC-03",
+      "category": "architecture",
+      "prompt": "Propose and implement a small architecture change in main.go: add a narrow interface for integer operations. Keep the module building and tests passing.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "ARC-04",
+      "category": "architecture",
+      "prompt": "Propose and implement a small architecture change in main.go: group helpers into a focused file without exceeding size limits. Keep the module building and tests passing.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "ARC-05",
+      "category": "architecture",
+      "prompt": "Propose and implement a small architecture change in main.go: design a minimal structure that makes the helper easy to test. Keep the module building and tests passing.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R002",
+        "R005",
+        "R007"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REV-01",
+      "category": "code-review",
+      "prompt": "Review main.go and main_test.go focusing on correctness. List concrete issues. Do not modify any files.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R006",
+        "R010"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REV-02",
+      "category": "code-review",
+      "prompt": "Review main.go and main_test.go focusing on error handling. List concrete issues. Do not modify any files.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R006",
+        "R010"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REV-03",
+      "category": "code-review",
+      "prompt": "Review main.go and main_test.go focusing on naming. List concrete issues. Do not modify any files.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R006",
+        "R010"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REV-04",
+      "category": "code-review",
+      "prompt": "Review main.go and main_test.go focusing on simplicity. List concrete issues. Do not modify any files.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R006",
+        "R010"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "REV-05",
+      "category": "code-review",
+      "prompt": "Review main.go and main_test.go focusing on test quality. List concrete issues. Do not modify any files.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R006",
+        "R010"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "AMB-01",
+      "category": "ambiguous-requirement",
+      "prompt": "Make this code better.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R005",
+        "R006",
+        "R008"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "AMB-02",
+      "category": "ambiguous-requirement",
+      "prompt": "Improve the small program.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R005",
+        "R006",
+        "R008"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "AMB-03",
+      "category": "ambiguous-requirement",
+      "prompt": "Clean up the implementation.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R005",
+        "R006",
+        "R008"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "AMB-04",
+      "category": "ambiguous-requirement",
+      "prompt": "Tidy the project a bit.",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R005",
+        "R006",
+        "R008"
+      ],
+      "verifyCommand": "go test ./..."
+    },
+    {
+      "id": "AMB-05",
+      "category": "ambiguous-requirement",
+      "prompt": "Can you make this nicer?",
+      "files": {
+        "go.mod": "module example.com/bench\n\ngo 1.25\n",
+        "main.go": "package main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n",
+        "main_test.go": "package main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n"
+      },
+      "applicableRules": [
+        "R005",
+        "R006",
+        "R008"
+      ],
+      "verifyCommand": "go test ./..."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "A__DBG-03__opencode-go-beam-free__markdown",
+  "taskId": "DBG-03",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T04:45:56.302659Z",
+  "finishedAt": "2026-11-26T04:47:10.4272122Z",
+  "durationMs": 74124,
+  "exitCode": 0,
+  "tokens": {
+    "input": 152,
+    "output": 41,
+    "reasoning": 140,
+    "cacheRead": 40832,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug in `main.go`: `add` now returns `a + b` instead of `a - b`. Tests pass.\n\n```bash\ngo test ./...  # ok\n```",
+  "eventCount": 27,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de9d35276ffe37qT1I41iW0u6f",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\pilot\\A__DBG-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  }
+}

@@ -1,0 +1,85 @@
+META { id: "ail-project-rules" version: "0.3" priority: HIGH }
+
+RULE R001 {
+  priority: CRITICAL
+  scope: "**/*.go"
+  when { file.language == GO }
+  do { use_ascii_hyphen preserve_existing_comments }
+  never { emit_typographic_dash rewrite_adjacent_comments }
+  fallback { ask_user_before_inserting_symbol }
+}
+
+RULE R002 {
+  priority: HIGH
+  scope: "**/*.go"
+  when { file.language == GO }
+  do { keep_files_under_700_lines extract_focused_submodules }
+  never { create_god_files }
+  fallback { split_by_domain_concern }
+}
+
+RULE R003 {
+  priority: HIGH
+  scope: "**/*.go"
+  when { platform.has_golangci_lint }
+  do { run_all_tests_after_edits fix_every_diagnostic_in_touched_files }
+  never { ignore_warnings }
+  verify { tests_pass vet_clean }
+  fallback { report_remaining_diagnostics }
+}
+
+RULE R004 {
+  priority: CRITICAL
+  when { agent.about_to_run_command }
+  do { stay_local ask_permission_before_remote_operations }
+  never { touch_production use_production_credentials }
+  fallback { stop_and_ask_user }
+}
+
+RULE R005 {
+  priority: HIGH
+  when { agent.choosing_approach }
+  do { state_assumptions_explicitly prefer_simplicity make_surgical_changes }
+  never { add_speculative_abstractions improve_unrelated_code }
+  fallback { present_tradeoffs_and_wait }
+}
+
+RULE R006 {
+  priority: HIGH
+  when { agent.defining_success }
+  do { define_verifiable_criteria iterate_until_verified }
+  never { claim_success_without_evidence }
+  fallback { report_exact_coverage }
+}
+
+RULE R007 {
+  priority: MEDIUM
+  when { project.has_shared_concept }
+  do { use_one_directory_per_concept search_before_creating }
+  never { duplicate_implementations }
+  fallback { extend_existing_implementation }
+}
+
+RULE R008 {
+  priority: MEDIUM
+  when { user.language == PT_BR }
+  do { use_proper_accents avoid_technical_jargon_in_user_copy }
+  never { output_unaccented_portuguese }
+  fallback { ask_user_for_preferred_wording }
+}
+
+RULE R009 {
+  priority: MEDIUM
+  when { service.running_in_dev_mode }
+  do { expose_over_tailscale }
+  never { bind_only_to_loopback_without_tailscale }
+  fallback { implement_tailscale_access_before_reporting_done }
+}
+
+RULE R010 {
+  priority: LOW
+  when { agent.logging }
+  do { log_decisions_and_io log_full_error_objects }
+  never { log_secrets log_only_error_messages }
+  fallback { use_stable_module_prefix }
+}

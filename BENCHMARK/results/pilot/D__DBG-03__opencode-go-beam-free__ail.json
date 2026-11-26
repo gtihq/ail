@@ -1,0 +1,37 @@
+{
+  "id": "D__DBG-03__opencode-go-beam-free__ail",
+  "taskId": "DBG-03",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T04:48:30.5076842Z",
+  "finishedAt": "2026-11-26T04:49:28.6375979Z",
+  "durationMs": 58129,
+  "exitCode": 0,
+  "tokens": {
+    "input": 116,
+    "output": 28,
+    "reasoning": 8,
+    "cacheRead": 39488,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed `add` to return `a + b` instead of `a - b`; tests pass.",
+  "eventCount": 21,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de9d0f7d0ffe53fwMN9ClPixAT",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\pilot\\D__DBG-03__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  }
+}

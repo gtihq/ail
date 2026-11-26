@@ -1,0 +1,37 @@
+{
+  "id": "D__DBG-03__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-03",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T04:44:35.9145707Z",
+  "finishedAt": "2026-11-26T04:45:31.0671286Z",
+  "durationMs": 55152,
+  "exitCode": 0,
+  "tokens": {
+    "input": 206,
+    "output": 39,
+    "reasoning": 0,
+    "cacheRead": 40704,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The test is failing because `add` performs subtraction. This is a clear, isolated bug. I'll fix it.Fixed. The `add` function in `main.go` was returning `a - b`; I changed it to `a + b`. `go test ./...` now passes.",
+  "eventCount": 25,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de9d48c10ffe2quyJgDle0jPpx",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\pilot\\D__DBG-03__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  }
+}
