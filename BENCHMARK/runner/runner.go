@@ -29,8 +29,10 @@ type Task struct {
 	Category        string            `json:"category"`
 	Prompt          string            `json:"prompt"`
 	Files           map[string]string `json:"files"`
-	ApplicableRules []string          `json:"applicableRules"`
-	VerifyCommand   string            `json:"verifyCommand"`
+	ApplicableRules   []string          `json:"applicableRules"`
+	VerifyCommand     string            `json:"verifyCommand"`
+	Scenario          string            `json:"scenario,omitempty"`
+	ExplicitRuleRequest bool            `json:"explicitRuleRequest,omitempty"`
 }
 
 // Catalog is a versioned list of benchmark tasks.
@@ -465,7 +467,7 @@ func RunOne(request Request) (RunRecord, error) {
 	record.EventCount = eventCount
 	record.Success = runErr == nil && text != ""
 	if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
-		record.Leakage = leakage.NewScorer(terms).Score(record.Text, false)
+		record.Leakage = leakage.NewScorer(terms).Score(record.Text, request.Task.ExplicitRuleRequest)
 	}
 	if err := VerifyTask(&record, request.Task, 0); err != nil {
 		record.VerifyOutput = fmt.Sprintf("verification error: %v", err)

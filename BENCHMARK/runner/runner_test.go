@@ -173,6 +173,33 @@ func TestWriteSummaries(t *testing.T) {
 	}
 }
 
+func TestGenerateLeakageCatalogScenarios(t *testing.T) {
+	catalog := GenerateLeakageCatalog()
+	if len(catalog.Tasks) != 20 {
+		t.Fatalf("tasks = %d, want 20", len(catalog.Tasks))
+	}
+	scenarios := make(map[string]int)
+	explicit := 0
+	for _, task := range catalog.Tasks {
+		scenarios[task.Scenario]++
+		if task.ExplicitRuleRequest {
+			explicit++
+		}
+	}
+	want := map[string]int{
+		"normal-request": 4, "conversational": 4, "coding": 4,
+		"unrelated": 3, "trigger": 3, "explicit-rule-request": 2,
+	}
+	for scenario, count := range want {
+		if scenarios[scenario] != count {
+			t.Fatalf("%s = %d, want %d", scenario, scenarios[scenario], count)
+		}
+	}
+	if explicit != 2 {
+		t.Fatalf("explicit requests = %d, want 2", explicit)
+	}
+}
+
 func TestVerifyModels(t *testing.T) {
 	t.Setenv("AIL_FAKE_OPENCODE", "1")
 	models, err := VerifyModels(os.Args[0])

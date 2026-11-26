@@ -20,3 +20,4 @@ All notable changes to the AIL toolchain are documented here. Versions follow se
 - Paired statistical analysis with confidence intervals, McNemar test, effect sizes and Holm correction.
 - Rule-leakage scoring rubric that separates legitimate disclosure from unsolicited reproduction.
 - Pre-execution verification of the four requested model identifiers through `opencode models`.
+- Leakage task catalogue with six scenarios and explicit-rule-request flags.

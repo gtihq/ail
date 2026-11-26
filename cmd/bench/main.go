@@ -36,7 +36,7 @@ func main() {
 	}
 	switch os.Args[1] {
 	case "gentasks":
-		generateTasks()
+		generateTasks(os.Args[2:])
 	case "run":
 		run(os.Args[2:])
 	case "verify":
@@ -58,8 +58,8 @@ func usage() {
 	fmt.Fprint(os.Stderr, `bench - AIL benchmark runner
 
 Usage:
-  bench gentasks
-  bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode]
+  bench gentasks [-leakage]
+  bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode] [-tasks=FILE]
   bench verify [-output=DIR]
   bench stats [-output=DIR]
   bench models [-binary=opencode]
@@ -71,13 +71,23 @@ Modes:
 `)
 }
 
-func generateTasks() {
+func generateTasks(args []string) {
+	flags := flag.NewFlagSet("gentasks", flag.ExitOnError)
+	leakageMode := flags.Bool("leakage", false, "generate the leakage task catalogue")
+	if err := flags.Parse(args); err != nil {
+		os.Exit(2)
+	}
+	path := "BENCHMARK_TASKS.json"
 	catalog := runner.GenerateCatalog()
-	if err := runner.WriteCatalog("BENCHMARK_TASKS.json", catalog); err != nil {
+	if *leakageMode {
+		path = "BENCHMARK_LEAKAGE_TASKS.json"
+		catalog = runner.GenerateLeakageCatalog()
+	}
+	if err := runner.WriteCatalog(path, catalog); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	fmt.Printf("wrote BENCHMARK_TASKS.json with %d tasks\n", len(catalog.Tasks))
+	fmt.Printf("wrote %s with %d tasks\n", path, len(catalog.Tasks))
 }
 
 func run(args []string) {
@@ -86,11 +96,12 @@ func run(args []string) {
 	limit := flags.Int("limit", 0, "optional per-model task limit")
 	output := flags.String("output", "", "results directory")
 	binary := flags.String("binary", "opencode", "OpenCode executable")
+	tasksPath := flags.String("tasks", "BENCHMARK_TASKS.json", "task catalogue")
 	if err := flags.Parse(args); err != nil {
 		os.Exit(2)
 	}
 
-	catalog, err := runner.LoadCatalog("BENCHMARK_TASKS.json")
+	catalog, err := runner.LoadCatalog(*tasksPath)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
@@ -315,7 +326,7 @@ func verify(args []string) {
 		}
 		runner.ScoreCompliance(&record, task)
 		if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
-			record.Leakage = leakage.NewScorer(terms).Score(record.Text, false)
+			record.Leakage = leakage.NewScorer(terms).Score(record.Text, task.ExplicitRuleRequest)
 		}
 		encoded, err := json.MarshalIndent(record, "", "  ")
 		if err != nil {
