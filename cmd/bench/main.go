@@ -45,6 +45,8 @@ func main() {
 		statsCommand(os.Args[2:])
 	case "models":
 		modelsCommand(os.Args[2:])
+	case "report":
+		reportCommand(os.Args[2:])
 	case "help":
 		usage()
 	default:
@@ -63,6 +65,7 @@ Usage:
   bench verify [-output=DIR]
   bench stats [-output=DIR]
   bench models [-binary=opencode]
+  bench report [-output=DIR] [-destination=FILE]
 
 Modes:
   pilot    2 models x 2 conditions x 2 tasks

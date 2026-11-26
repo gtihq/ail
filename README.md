@@ -49,6 +49,7 @@ go run ./cmd/ail render AIL_RULES/project-rules.ail --host=opencode --mode=VERBO
 go run ./cmd/bench models
 go run ./cmd/bench gentasks -leakage
 go run ./cmd/bench stats -output=BENCHMARK/results/pilot
+go run ./cmd/bench report -output BENCHMARK/results/pilot -destination "BENCHMARK/results/pilot/REPORT.md"
 ```
 
 Commands: `parse`, `interpret`, `lint`, `validate`, `render`, `check`.
