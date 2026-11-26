@@ -1,0 +1,37 @@
+{
+  "id": "A__DBG-01__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:14:00.9877354Z",
+  "finishedAt": "2026-11-26T19:15:15.3566667Z",
+  "durationMs": 74368,
+  "exitCode": 0,
+  "tokens": {
+    "input": 567,
+    "output": 61,
+    "reasoning": 0,
+    "cacheRead": 45056,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed `main.go`: `add` now returns `a + b` instead of `a - b`. No other files were changed.\n\nVerification:\n- `go test ./...`: passed (`ok example.com/bench 0.013s`)\n- `go vet ./...`: clean",
+  "eventCount": 54,
+  "toolCalls": 19,
+  "success": true,
+  "sessionId": "ses_de6b89269ffeKuMxCxEaMIRVps",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-01__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  }
+}

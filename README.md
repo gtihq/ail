@@ -46,6 +46,8 @@ go vet ./...
 ```powershell
 go run ./cmd/ail check AIL_RULES/project-rules.ail
 go run ./cmd/ail render AIL_RULES/project-rules.ail --host=opencode --mode=VERBOSE
+go run ./cmd/bench models
+go run ./cmd/bench stats -output=BENCHMARK/results/pilot
 ```
 
 Commands: `parse`, `interpret`, `lint`, `validate`, `render`, `check`.

@@ -54,6 +54,37 @@ func DefaultModels() []ModelSpec {
 	}
 }
 
+// ModelAvailability records whether a requested model is present in OpenCode.
+type ModelAvailability struct {
+	ID        string `json:"id"`
+	Label     string `json:"label"`
+	Available bool   `json:"available"`
+}
+
+// VerifyModels checks the four requested model identifiers against `opencode models`.
+func VerifyModels(binary string) ([]ModelAvailability, error) {
+	if binary == "" {
+		binary = "opencode"
+	}
+	output, err := exec.Command(binary, "models").Output()
+	if err != nil {
+		return nil, err
+	}
+	available := make(map[string]bool)
+	for _, line := range strings.Split(string(output), "\n") {
+		available[strings.TrimSpace(line)] = true
+	}
+	result := make([]ModelAvailability, 0, 4)
+	for _, model := range DefaultModels() {
+		result = append(result, ModelAvailability{
+			ID:        model.ID,
+			Label:     model.Label,
+			Available: available[model.ID],
+		})
+	}
+	return result, nil
+}
+
 // Tokens aggregates provider-reported token usage for one execution.
 type Tokens struct {
 	Input     int `json:"input"`

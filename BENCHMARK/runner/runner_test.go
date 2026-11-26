@@ -11,12 +11,20 @@ import (
 
 // TestMain lets the compiled test binary act as a fake OpenCode executable.
 func TestMain(m *testing.M) {
-	if os.Getenv("AIL_FAKE_OPENCODE") == "1" && len(os.Args) > 1 && os.Args[1] == "run" {
-		fmt.Println(`{"type":"step_start","timestamp":1,"sessionID":"ses_fake","part":{"type":"step-start"}}`)
-		fmt.Println(`{"type":"text","timestamp":2,"sessionID":"ses_fake","part":{"type":"text","text":"fake answer"}}`)
-		fmt.Println(`{"type":"tool_use","timestamp":3,"sessionID":"ses_fake","part":{"type":"tool-use"}}`)
-		fmt.Println(`{"type":"step_finish","timestamp":4,"sessionID":"ses_fake","part":{"type":"step-finish","cost":0.0123,"tokens":{"input":100,"output":20,"reasoning":5,"cache":{"read":7,"write":3}}}}`)
-		os.Exit(0)
+	if os.Getenv("AIL_FAKE_OPENCODE") == "1" && len(os.Args) > 1 {
+		if os.Args[1] == "run" {
+			fmt.Println(`{"type":"step_start","timestamp":1,"sessionID":"ses_fake","part":{"type":"step-start"}}`)
+			fmt.Println(`{"type":"text","timestamp":2,"sessionID":"ses_fake","part":{"type":"text","text":"fake answer"}}`)
+			fmt.Println(`{"type":"tool_use","timestamp":3,"sessionID":"ses_fake","part":{"type":"tool-use"}}`)
+			fmt.Println(`{"type":"step_finish","timestamp":4,"sessionID":"ses_fake","part":{"type":"step-finish","cost":0.0123,"tokens":{"input":100,"output":20,"reasoning":5,"cache":{"read":7,"write":3}}}}`)
+			os.Exit(0)
+		}
+		if os.Args[1] == "models" {
+			for _, model := range DefaultModels() {
+				fmt.Println(model.ID)
+			}
+			os.Exit(0)
+		}
 	}
 	os.Exit(m.Run())
 }
@@ -162,6 +170,22 @@ func TestWriteSummaries(t *testing.T) {
 	}
 	if !strings.Contains(string(csvData), "SUM-01") {
 		t.Fatalf("CSV missing record: %s", csvData)
+	}
+}
+
+func TestVerifyModels(t *testing.T) {
+	t.Setenv("AIL_FAKE_OPENCODE", "1")
+	models, err := VerifyModels(os.Args[0])
+	if err != nil {
+		t.Fatalf("VerifyModels: %v", err)
+	}
+	if len(models) != 4 {
+		t.Fatalf("models = %d, want 4", len(models))
+	}
+	for _, model := range models {
+		if !model.Available {
+			t.Fatalf("model %s should be available", model.ID)
+		}
 	}
 }
 

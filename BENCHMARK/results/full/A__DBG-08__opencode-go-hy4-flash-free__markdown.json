@@ -1,0 +1,37 @@
+{
+  "id": "A__DBG-08__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:09:16.0839366Z",
+  "finishedAt": "2026-11-26T19:09:59.2603838Z",
+  "durationMs": 43176,
+  "exitCode": 0,
+  "tokens": {
+    "input": 240,
+    "output": 79,
+    "reasoning": 33,
+    "cacheRead": 36352,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Fix applied\n\nThe `add` function in `main.go` was subtracting instead of adding, which made `TestAdd` fail (`add(2, 3)` returned `-1` instead of `5`).\n\n**Change:**\n```go\nfunc add(a, b int) int {\n\treturn a + b\n}\n```\n\n**Verification:** `go test ./...` passes.",
+  "eventCount": 27,
+  "toolCalls": 10,
+  "success": true,
+  "sessionId": "ses_de6bceba1ffeWDxT6hY2yv0jYP",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-08__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  }
+}

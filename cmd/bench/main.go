@@ -42,6 +42,8 @@ func main() {
 		verify(os.Args[2:])
 	case "stats":
 		statsCommand(os.Args[2:])
+	case "models":
+		modelsCommand(os.Args[2:])
 	case "help":
 		usage()
 	default:
@@ -59,6 +61,7 @@ Usage:
   bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode]
   bench verify [-output=DIR]
   bench stats [-output=DIR]
+  bench models [-binary=opencode]
 
 Modes:
   pilot    2 models x 2 conditions x 2 tasks
@@ -181,6 +184,30 @@ func run(args []string) {
 		copySummary(outputDir, ".")
 	}
 	fmt.Printf("completed %d/%d planned executions, %d infrastructure failures\n", completed, planned, failed)
+}
+
+// modelsCommand verifies that all four requested models are configured.
+func modelsCommand(args []string) {
+	flags := flag.NewFlagSet("models", flag.ExitOnError)
+	binary := flags.String("binary", "opencode", "OpenCode executable")
+	if err := flags.Parse(args); err != nil {
+		os.Exit(2)
+	}
+	models, err := runner.VerifyModels(*binary)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	allAvailable := true
+	for _, model := range models {
+		fmt.Printf("%-28s %-24s available=%t\n", model.Label, model.ID, model.Available)
+		if !model.Available {
+			allAvailable = false
+		}
+	}
+	if !allAvailable {
+		os.Exit(1)
+	}
 }
 
 // statsCommand prints paired statistics for conditions A and D from stored records.
