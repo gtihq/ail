@@ -17,3 +17,5 @@ All notable changes to the AIL toolchain are documented here. Versions follow se
 - Generated AIL and Markdown instruction sets for this project with cross-validation tests.
 - Cross-platform build scripts for Windows, macOS and Linux.
 - Benchmark task catalogue and OpenCode runner scaffold.
+- Paired statistical analysis with confidence intervals, McNemar test, effect sizes and Holm correction.
+- Rule-leakage scoring rubric that separates legitimate disclosure from unsolicited reproduction.

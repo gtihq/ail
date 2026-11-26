@@ -18,7 +18,7 @@ packages/renderer     host-specific rendering with mandatory delimiters
 packages/cli          command line wiring
 cmd/ail               executable entry point
 TESTS                 integration, golden, regression, property and fuzz tests
-BENCHMARK             tasks, runner, datasets, results and reports
+BENCHMARK             tasks, runner, stats, leakage scorer, datasets, results and reports
 AIL_RULES             generated AIL instruction set for this project
 MARKDOWN_BASELINE     equivalent conventional Markdown instruction set
 ```

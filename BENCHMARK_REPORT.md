@@ -38,11 +38,16 @@ All 8 executions succeeded and all 8 verification commands (`go test ./...`) pas
 
 Paired differences (D minus A), same task and model:
 
-| Metric | Mean difference | 95% confidence interval | Significant |
-|--------|-----------------|-------------------------|-------------|
-| Input tokens | -850.75 | approximately -3758 to +2056 | no |
-| Output tokens | +55.75 | approximately -271 to +383 | no |
-| Duration | +11686.25 ms | very wide, dominated by one outlier | no |
+| Metric | Mean difference | 95% confidence interval | p (approx) | Cohen d | Significant |
+|--------|-----------------|-------------------------|------------|---------|-------------|
+| Input tokens | -850.75 | -3758.64 to +2057.14 | 0.3519 | -0.465 | no |
+| Output tokens | +55.75 | -271.16 to +382.66 | 0.5874 | 0.271 | no |
+| Reasoning tokens | +95.75 | -319.21 to +510.71 | 0.4628 | 0.367 | no |
+| Cache read | +4208.00 | -16102.14 to +24518.14 | 0.5097 | 0.330 | no |
+| Duration | +11686.25 ms | -152373.26 to +175745.76 | 0.8207 | 0.113 | no |
+| Tool calls | -0.75 | -7.91 to +6.41 | 0.7389 | -0.167 | no |
+
+These values are reproducible with `go run ./cmd/bench stats -output=BENCHMARK/results/pilot`. Multiple-comparison correction was not applied to this pilot because no family of confirmatory tests was declared in advance. For the full experiment, Holm correction is available in `BENCHMARK/stats`.
 
 The input token difference is driven almost entirely by one pair: Hy4 Flash Free on AMB-03 used 4384 input tokens with Markdown and 797 with AIL. Removing or adding a single pair changes the direction of the result. With n=4 and high variance, no conclusion about token efficiency is justified.
 

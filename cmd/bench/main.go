@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/gtihq/ail/BENCHMARK/runner"
+	"github.com/gtihq/ail/BENCHMARK/stats"
 )
 
 type condition struct {
@@ -39,6 +40,8 @@ func main() {
 		run(os.Args[2:])
 	case "verify":
 		verify(os.Args[2:])
+	case "stats":
+		statsCommand(os.Args[2:])
 	case "help":
 		usage()
 	default:
@@ -55,6 +58,7 @@ Usage:
   bench gentasks
   bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode]
   bench verify [-output=DIR]
+  bench stats [-output=DIR]
 
 Modes:
   pilot    2 models x 2 conditions x 2 tasks
@@ -177,6 +181,65 @@ func run(args []string) {
 		copySummary(outputDir, ".")
 	}
 	fmt.Printf("completed %d/%d planned executions, %d infrastructure failures\n", completed, planned, failed)
+}
+
+// statsCommand prints paired statistics for conditions A and D from stored records.
+func statsCommand(args []string) {
+	flags := flag.NewFlagSet("stats", flag.ExitOnError)
+	output := flags.String("output", filepath.Join("BENCHMARK", "results", "pilot"), "results directory")
+	if err := flags.Parse(args); err != nil {
+		os.Exit(2)
+	}
+	data, err := os.ReadFile(filepath.Join(*output, "RESULTS.json"))
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	var records []runner.RunRecord
+	if err := json.Unmarshal(data, &records); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	type key struct{ model, task string }
+	pairs := make(map[key]map[string]runner.RunRecord)
+	for _, record := range records {
+		k := key{model: record.Model, task: record.TaskID}
+		if pairs[k] == nil {
+			pairs[k] = make(map[string]runner.RunRecord)
+		}
+		pairs[k][record.Condition] = record
+	}
+
+	metrics := []struct {
+		name  string
+		value func(runner.RunRecord) float64
+	}{
+		{"input tokens", func(r runner.RunRecord) float64 { return float64(r.Tokens.Input) }},
+		{"output tokens", func(r runner.RunRecord) float64 { return float64(r.Tokens.Output) }},
+		{"reasoning tokens", func(r runner.RunRecord) float64 { return float64(r.Tokens.Reasoning) }},
+		{"cache read", func(r runner.RunRecord) float64 { return float64(r.Tokens.CacheRead) }},
+		{"duration ms", func(r runner.RunRecord) float64 { return float64(r.DurationMS) }},
+		{"tool calls", func(r runner.RunRecord) float64 { return float64(r.ToolCalls) }},
+	}
+	for _, metric := range metrics {
+		samples := make([]stats.PairedSample, 0)
+		for k, byCondition := range pairs {
+			a, hasA := byCondition["A"]
+			d, hasD := byCondition["D"]
+			if !hasA || !hasD {
+				continue
+			}
+			samples = append(samples, stats.PairedSample{
+				ID: k.model + "/" + k.task,
+				A:  metric.value(a),
+				B:  metric.value(d),
+			})
+		}
+		result := stats.Paired(samples)
+		fmt.Printf("%-18s n=%d meanA=%10.2f meanD=%10.2f diff=%10.2f CI=[%10.2f, %10.2f] p=%.4f d=%.3f\n",
+			metric.name, result.N, result.MeanA, result.MeanB, result.MeanDiff,
+			result.CILow, result.CIHigh, result.PApprox, result.CohensD)
+	}
 }
 
 // verify re-runs verification commands for existing records and refreshes summaries.
