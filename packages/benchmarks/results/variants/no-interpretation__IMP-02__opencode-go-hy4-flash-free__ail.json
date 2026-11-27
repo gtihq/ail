@@ -1,0 +1,47 @@
+{
+  "id": "no-interpretation__IMP-02__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-02",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "no-interpretation",
+  "startedAt": "2026-11-27T22:03:05.4030992Z",
+  "finishedAt": "2026-11-27T22:03:31.538235Z",
+  "durationMs": 26135,
+  "exitCode": 0,
+  "tokens": {
+    "input": 37891,
+    "output": 361,
+    "reasoning": 426,
+    "cacheRead": 152576,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the current directory to understand the project structure.The project is a minimal Go module. The task is straightforward: add an `abs` helper while leaving `add` untouched. I'll make a surgical change in `main.go`.Now I'll run the tests.Done. I added an `abs` helper to `main.go` and left the existing `add` function unchanged.\n\n`main.go` now contains:\n\n```go\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc abs(n int) int {\n\tif n \u003c 0 {\n\t\treturn -n\n\t}\n\treturn n\n}\n```\n\n`go test ./...` passes: `ok example.com/bench`.",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de0f76c00ffePPXhy2Mam7Fkyf",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\variants\\no-interpretation__IMP-02__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

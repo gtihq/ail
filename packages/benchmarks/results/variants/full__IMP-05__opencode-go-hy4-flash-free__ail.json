@@ -1,0 +1,47 @@
+{
+  "id": "full__IMP-05__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "full",
+  "startedAt": "2026-11-27T22:02:06.6177131Z",
+  "finishedAt": "2026-11-27T22:02:35.401059Z",
+  "durationMs": 28783,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36380,
+    "output": 654,
+    "reasoning": 305,
+    "cacheRead": 272128,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `reverse` in `main.go`. It reverses the string's bytes in place, so the returned string always has exactly the same length as the input. The existing `add` function is untouched.\n\n`go test ./...` passes.",
+  "eventCount": 24,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de0f851a8ffeKPcOkaOuKm89iR",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\variants\\full__IMP-05__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -110,7 +110,21 @@ All six directions favor AIL, but **none reaches statistical significance after 
 
 Three infrastructure failures were found and fixed during this round: the prompt exceeded the Windows command-line limit, OpenCode resolved `--file` relative to the workspace, and `verify` reapplied stale empty event streams. Raw data from failed attempts was discarded; the reported numbers come from `results/expanded-clean/` only.
 
-## 8. Reproducing this report
+## 8. Prompt format hypotheses (Hy4 only, small probe)
+
+Five AIL payload shapes were tested on the same five implementation tasks with Hy4 Flash Free only. Each cell has five executions, so these are hypotheses, not conclusions. The payload sizes came from the probe: full 11,575 characters, no-interpretation 11,076, no-delimiters 11,385, compact-bare 6,014, tiny-rules 3,190.
+
+| Variant | Mean input | Mean output | Tool calls | Duration |
+|---------|-----------:|------------:|-----------:|---------:|
+| full | 30,843 | 705 | 6.8 | 28.8 s |
+| no-interpretation | 31,887 | 1,035 | 7.8 | 36.7 s |
+| no-delimiters | 31,111 | 942 | 7.8 | 31.3 s |
+| compact-bare | 30,393 | 1,093 | 8.4 | 49.9 s |
+| tiny-rules | 31,165 | 1,310 | 9.8 | 63.4 s |
+
+The result is counterintuitive: shrinking the AIL payload did not reduce the model's work. The smallest payload produced 86% more output tokens, 44% more tool calls and 120% more duration than the full format. The interpretation text and rule structure appear to reduce ambiguity and downstream work. The next step is to carry the two best variants, full and no-delimiters, into a larger 50-task run before deciding anything.
+
+## 9. Reproducing this report
 
 ```powershell
 go run ./packages/benchmarks/cmd/bench verify -output packages/benchmarks/results/full

@@ -1,0 +1,47 @@
+{
+  "id": "no-interpretation__IMP-03__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-03",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "no-interpretation",
+  "startedAt": "2026-11-27T22:03:31.8421855Z",
+  "finishedAt": "2026-11-27T22:04:08.8153687Z",
+  "durationMs": 36973,
+  "exitCode": 0,
+  "tokens": {
+    "input": 37536,
+    "output": 1177,
+    "reasoning": 467,
+    "cacheRead": 313088,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Simple Go task. I'll add a `clamp` helper to `main.go`, keep `add` intact, add a test, then run the tests.Done.\n\nChanges:\n- **`main.go`**: added a `clamp(value, lower, upper int) int` helper that returns `lower` when the value is below the range, `upper` when above, and the value itself otherwise. The existing `add` function is unchanged and still works.\n- **`main_test.go`**: added `TestClamp` covering in-range, below-range, above-range, and exact-boundary cases.\n\n`go test ./...` passes: `ok example.com/bench`.",
+  "eventCount": 28,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de0f704bdffeQWvOSzH3xfxxae",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\variants\\no-interpretation__IMP-03__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

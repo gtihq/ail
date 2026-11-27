@@ -1,0 +1,47 @@
+{
+  "id": "no-delimiters__IMP-01__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-01",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "no-delimiters",
+  "startedAt": "2026-11-27T22:05:41.4054281Z",
+  "finishedAt": "2026-11-27T22:06:13.2507522Z",
+  "durationMs": 31845,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2694,
+    "output": 799,
+    "reasoning": 507,
+    "cacheRead": 267776,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll explore the workspace first to understand the project structure.Simple Go project. I'll add the helper while keeping `add` intact.Now I'll run the tests as requested.Done.\n\n- Added a `max(a, b int) int` helper in `main.go` that returns the larger of two integers, plus a `larger` alias so either name works.\n- Kept the existing `add` function unchanged and working.\n- Ran `go test ./...` (also forced an uncached run): all tests pass.",
+  "eventCount": 26,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de0f50a76ffeXQt6YsoBH9pqY1",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\variants\\no-delimiters__IMP-01__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}
