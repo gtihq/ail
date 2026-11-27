@@ -327,7 +327,7 @@ func verify(args []string) {
 		if !ok {
 			continue
 		}
-		if raw, readErr := os.ReadFile(filepath.Join(*output, record.ID+".events.jsonl")); readErr == nil {
+		if raw, readErr := os.ReadFile(filepath.Join(*output, record.ID+".events.jsonl")); readErr == nil && len(raw) > 0 {
 			runner.ApplyEvents(&record, raw)
 		}
 		if err := runner.VerifyTask(&record, task, 0); err != nil {
