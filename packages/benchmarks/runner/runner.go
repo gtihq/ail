@@ -433,7 +433,7 @@ func RunOne(request Request) (RunRecord, error) {
 
 	timeout := request.Timeout
 	if timeout <= 0 {
-		timeout = 10 * time.Minute
+		timeout = 5 * time.Minute
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
@@ -450,6 +450,9 @@ func RunOne(request Request) (RunRecord, error) {
 	}
 	cmd := exec.CommandContext(ctx, binary, args...)
 	cmd.Dir = workDir
+	// Bound the wait after cancellation so an orphaned child holding the
+	// stdout pipe cannot block an execution forever.
+	cmd.WaitDelay = 10 * time.Second
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
