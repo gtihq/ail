@@ -445,7 +445,7 @@ func RunOne(request Request) (RunRecord, error) {
 		"--auto",
 		"--archived",
 		"--title", "ail-bench-"+id,
-		"--file", promptPath,
+		"--file", "prompt.md",
 		"Execute the task described in the attached file.",
 	}
 	cmd := exec.CommandContext(ctx, binary, args...)
