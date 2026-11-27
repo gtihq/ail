@@ -62,7 +62,7 @@ func usage() {
 Usage:
   bench gentasks [-leakage]
   bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode] [-tasks=FILE]
-  bench verify [-output=DIR]
+  bench verify [-output=DIR] [-tasks=FILE]
   bench stats [-output=DIR]
   bench models [-binary=opencode]
   bench report [-output=DIR] [-destination=FILE]
@@ -288,10 +288,11 @@ func statsCommand(args []string) {
 func verify(args []string) {
 	flags := flag.NewFlagSet("verify", flag.ExitOnError)
 	output := flags.String("output", filepath.Join("BENCHMARK", "results", "pilot"), "results directory")
+	tasksPath := flags.String("tasks", "BENCHMARK_TASKS.json", "task catalogue")
 	if err := flags.Parse(args); err != nil {
 		os.Exit(2)
 	}
-	catalog, err := runner.LoadCatalog("BENCHMARK_TASKS.json")
+	catalog, err := runner.LoadCatalog(*tasksPath)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
@@ -322,6 +323,9 @@ func verify(args []string) {
 		task, ok := tasks[record.TaskID]
 		if !ok {
 			continue
+		}
+		if raw, readErr := os.ReadFile(filepath.Join(*output, record.ID+".events.jsonl")); readErr == nil {
+			runner.ApplyEvents(&record, raw)
 		}
 		if err := runner.VerifyTask(&record, task, 0); err != nil {
 			fmt.Fprintf(os.Stderr, "verify %s: %v\n", record.ID, err)

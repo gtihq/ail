@@ -1,9 +1,9 @@
 id,taskId,category,model,format,condition,success,verifyPassed,input,output,reasoning,cacheRead,cacheWrite,cost,durationMs,toolCalls,eventCount,checked,followed,violated,compliancePct,leakRuleText,leakUnsolicited,leakScore
-A__AMB-03__opencode-go-beam-free__markdown,AMB-03,ambiguous-requirement,opencode-go/beam-free,markdown,A,true,true,162,33,17,42880,0,0.000000,80061,16,45,0,0,,0.00,false,false,1
-A__AMB-03__opencode-go-hy4-flash-free__markdown,AMB-03,ambiguous-requirement,opencode-go/hy4-flash-free,markdown,A,true,true,4384,270,84,43520,0,0.000000,112048,10,32,0,0,,0.00,false,false,1
-A__DBG-03__opencode-go-beam-free__markdown,DBG-03,debugging,opencode-go/beam-free,markdown,A,true,true,152,41,140,40832,0,0.000000,74124,8,27,1,1,,100.00,false,false,1
-A__DBG-03__opencode-go-hy4-flash-free__markdown,DBG-03,debugging,opencode-go/hy4-flash-free,markdown,A,true,true,207,164,124,42240,0,0.000000,62414,8,27,1,1,,100.00,false,false,1
-D__AMB-03__opencode-go-beam-free__ail,AMB-03,ambiguous-requirement,opencode-go/beam-free,ail,D,true,true,383,384,380,66176,0,0.000000,236896,21,60,0,0,,0.00,false,false,1
-D__AMB-03__opencode-go-hy4-flash-free__ail,AMB-03,ambiguous-requirement,opencode-go/hy4-flash-free,ail,D,true,true,797,280,360,39936,0,0.000000,25215,4,12,0,0,,0.00,false,false,1
-D__DBG-03__opencode-go-beam-free__ail,DBG-03,debugging,opencode-go/beam-free,ail,D,true,true,116,28,8,39488,0,0.000000,58129,7,21,1,1,,100.00,false,false,1
-D__DBG-03__opencode-go-hy4-flash-free__ail,DBG-03,debugging,opencode-go/hy4-flash-free,ail,D,true,true,206,39,0,40704,0,0.000000,55152,7,25,1,1,,100.00,false,false,1
+A__AMB-03__opencode-go-beam-free__markdown,AMB-03,ambiguous-requirement,opencode-go/beam-free,markdown,A,true,true,108119,1343,2083,463744,0,0.000000,80061,16,45,0,0,,0.00,false,false,1
+A__AMB-03__opencode-go-hy4-flash-free__markdown,AMB-03,ambiguous-requirement,opencode-go/hy4-flash-free,markdown,A,true,true,60585,2188,7128,273920,0,0.000000,112048,10,32,0,0,,0.00,false,false,1
+A__DBG-03__opencode-go-beam-free__markdown,DBG-03,debugging,opencode-go/beam-free,markdown,A,true,true,40758,615,748,317888,0,0.000000,74124,8,27,1,1,,100.00,false,false,1
+A__DBG-03__opencode-go-hy4-flash-free__markdown,DBG-03,debugging,opencode-go/hy4-flash-free,markdown,A,true,true,76200,689,3112,210944,0,0.000000,62414,8,27,1,1,,100.00,false,false,1
+D__AMB-03__opencode-go-beam-free__ail,AMB-03,ambiguous-requirement,opencode-go/beam-free,ail,D,true,true,96256,1840,2954,908864,0,0.000000,236896,21,60,0,0,,0.00,false,false,1
+D__AMB-03__opencode-go-hy4-flash-free__ail,AMB-03,ambiguous-requirement,opencode-go/hy4-flash-free,ail,D,true,true,37229,581,880,83200,0,0.000000,25215,4,12,0,0,,0.00,false,false,1
+D__DBG-03__opencode-go-beam-free__ail,DBG-03,debugging,opencode-go/beam-free,ail,D,true,true,33317,396,201,201664,0,0.000000,58129,7,21,1,1,,100.00,false,false,1
+D__DBG-03__opencode-go-hy4-flash-free__ail,DBG-03,debugging,opencode-go/hy4-flash-free,ail,D,true,true,38063,570,339,284416,0,0.000000,55152,7,25,1,1,,100.00,false,false,1

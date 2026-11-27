@@ -3,6 +3,7 @@ package runner
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"os"
 	"path/filepath"
 	"strings"
@@ -46,6 +47,25 @@ func TestParseEvents(t *testing.T) {
 	}
 	if cost != 0.5 || session != "ses_1" || tools != 1 || events != 5 {
 		t.Fatalf("cost=%f session=%q tools=%d events=%d", cost, session, tools, events)
+	}
+}
+
+func TestParseEventsSumsAllSteps(t *testing.T) {
+	raw := []byte(strings.Join([]string{
+		`{"type":"text","part":{"type":"text","text":"a"}}`,
+		`{"type":"step_finish","part":{"type":"step-finish","cost":0.1,"tokens":{"input":10,"output":2,"reasoning":1,"cache":{"read":5,"write":1}}}}`,
+		`{"type":"text","part":{"type":"text","text":"b"}}`,
+		`{"type":"step_finish","part":{"type":"step-finish","cost":0.2,"tokens":{"input":20,"output":3,"reasoning":4,"cache":{"read":7,"write":2}}}}`,
+	}, "\n"))
+	text, tokens, cost, _, _, events := parseEvents(raw)
+	if text != "ab" {
+		t.Fatalf("text = %q", text)
+	}
+	if tokens.Input != 30 || tokens.Output != 5 || tokens.Reasoning != 5 || tokens.CacheRead != 12 || tokens.CacheWrite != 3 {
+		t.Fatalf("tokens were not summed: %+v", tokens)
+	}
+	if math.Abs(cost-0.3) > 1e-9 || events != 4 {
+		t.Fatalf("cost=%f events=%d", cost, events)
 	}
 }
 

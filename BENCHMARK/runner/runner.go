@@ -225,6 +225,8 @@ func parseEvents(raw []byte) (text string, tokens Tokens, cost float64, sessionI
 	scanner := bufio.NewScanner(bytes.NewReader(raw))
 	scanner.Buffer(make([]byte, 1024*1024), 16*1024*1024)
 	var builder strings.Builder
+	var accumulated Tokens
+	var accumulatedCost float64
 	for scanner.Scan() {
 		line := bytes.TrimSpace(scanner.Bytes())
 		if len(line) == 0 {
@@ -260,16 +262,29 @@ func parseEvents(raw []byte) (text string, tokens Tokens, cost float64, sessionI
 		if item.Type == "step_finish" {
 			var finish finishPart
 			if json.Unmarshal(item.Part, &finish) == nil {
-				cost = finish.Cost
-				tokens.Input = finish.Tokens.Input
-				tokens.Output = finish.Tokens.Output
-				tokens.Reasoning = finish.Tokens.Reasoning
-				tokens.CacheRead = finish.Tokens.Cache.Read
-				tokens.CacheWrite = finish.Tokens.Cache.Write
+				accumulated.Input += finish.Tokens.Input
+				accumulated.Output += finish.Tokens.Output
+				accumulated.Reasoning += finish.Tokens.Reasoning
+				accumulated.CacheRead += finish.Tokens.Cache.Read
+				accumulated.CacheWrite += finish.Tokens.Cache.Write
+				accumulatedCost += finish.Cost
 			}
 		}
 	}
-	return builder.String(), tokens, cost, sessionID, toolCalls, eventCount
+	return builder.String(), accumulated, accumulatedCost, sessionID, toolCalls, eventCount
+}
+
+// ApplyEvents reparses a raw event stream into a record. Used to recompute
+// token aggregates after parser fixes without re-running model calls.
+func ApplyEvents(record *RunRecord, raw []byte) {
+	text, tokens, cost, sessionID, toolCalls, eventCount := parseEvents(raw)
+	record.Text = text
+	record.Tokens = tokens
+	record.Cost = cost
+	record.SessionID = sessionID
+	record.ToolCalls = toolCalls
+	record.EventCount = eventCount
+	record.Success = text != "" && record.ExitCode == 0
 }
 
 // VerifyTask runs the task verification command inside the isolated workspace.
@@ -458,14 +473,10 @@ func RunOne(request Request) (RunRecord, error) {
 		record.ExitCode = exitError.ExitCode()
 	}
 
-	text, tokens, cost, sessionID, toolCalls, eventCount := parseEvents(stdout.Bytes())
-	record.Text = text
-	record.Tokens = tokens
-	record.Cost = cost
-	record.SessionID = sessionID
-	record.ToolCalls = toolCalls
-	record.EventCount = eventCount
-	record.Success = runErr == nil && text != ""
+	ApplyEvents(&record, stdout.Bytes())
+	if runErr != nil {
+		record.Success = false
+	}
 	if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
 		record.Leakage = leakage.NewScorer(terms).Score(record.Text, request.Task.ExplicitRuleRequest)
 	}

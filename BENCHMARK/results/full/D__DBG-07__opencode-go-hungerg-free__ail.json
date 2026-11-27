@@ -26,7 +26,7 @@
   "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-07__opencode-go-hungerg-free__ail",
   "verifyPassed": false,
   "verifyExitCode": 1,
-  "verifyOutput": "--- FAIL: TestAdd (0.00s)\n    main_test.go:7: add(2, 3) = -1, want 5\nFAIL\nFAIL\texample.com/bench\t0.020s\nFAIL\n",
+  "verifyOutput": "--- FAIL: TestAdd (0.00s)\n    main_test.go:7: add(2, 3) = -1, want 5\nFAIL\nFAIL\texample.com/bench\t0.013s\nFAIL\n",
   "compliance": {
     "applicable": 3,
     "checked": 1,

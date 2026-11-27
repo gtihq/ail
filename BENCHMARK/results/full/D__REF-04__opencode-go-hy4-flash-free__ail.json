@@ -11,10 +11,10 @@
   "durationMs": 36002,
   "exitCode": 0,
   "tokens": {
-    "input": 211,
-    "output": 334,
-    "reasoning": 172,
-    "cacheRead": 77568,
+    "input": 74096,
+    "output": 1325,
+    "reasoning": 1182,
+    "cacheRead": 342528,
     "cacheWrite": 0
   },
   "cost": 0,

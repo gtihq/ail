@@ -12,10 +12,10 @@
     "durationMs": 80061,
     "exitCode": 0,
     "tokens": {
-      "input": 162,
-      "output": 33,
-      "reasoning": 17,
-      "cacheRead": 42880,
+      "input": 108119,
+      "output": 1343,
+      "reasoning": 2083,
+      "cacheRead": 463744,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -57,10 +57,10 @@
     "durationMs": 112048,
     "exitCode": 0,
     "tokens": {
-      "input": 4384,
-      "output": 270,
-      "reasoning": 84,
-      "cacheRead": 43520,
+      "input": 60585,
+      "output": 2188,
+      "reasoning": 7128,
+      "cacheRead": 273920,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -102,10 +102,10 @@
     "durationMs": 74124,
     "exitCode": 0,
     "tokens": {
-      "input": 152,
-      "output": 41,
-      "reasoning": 140,
-      "cacheRead": 40832,
+      "input": 40758,
+      "output": 615,
+      "reasoning": 748,
+      "cacheRead": 317888,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -147,10 +147,10 @@
     "durationMs": 62414,
     "exitCode": 0,
     "tokens": {
-      "input": 207,
-      "output": 164,
-      "reasoning": 124,
-      "cacheRead": 42240,
+      "input": 76200,
+      "output": 689,
+      "reasoning": 3112,
+      "cacheRead": 210944,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -192,10 +192,10 @@
     "durationMs": 236896,
     "exitCode": 0,
     "tokens": {
-      "input": 383,
-      "output": 384,
-      "reasoning": 380,
-      "cacheRead": 66176,
+      "input": 96256,
+      "output": 1840,
+      "reasoning": 2954,
+      "cacheRead": 908864,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -237,10 +237,10 @@
     "durationMs": 25215,
     "exitCode": 0,
     "tokens": {
-      "input": 797,
-      "output": 280,
-      "reasoning": 360,
-      "cacheRead": 39936,
+      "input": 37229,
+      "output": 581,
+      "reasoning": 880,
+      "cacheRead": 83200,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -282,10 +282,10 @@
     "durationMs": 58129,
     "exitCode": 0,
     "tokens": {
-      "input": 116,
-      "output": 28,
-      "reasoning": 8,
-      "cacheRead": 39488,
+      "input": 33317,
+      "output": 396,
+      "reasoning": 201,
+      "cacheRead": 201664,
       "cacheWrite": 0
     },
     "cost": 0,
@@ -327,10 +327,10 @@
     "durationMs": 55152,
     "exitCode": 0,
     "tokens": {
-      "input": 206,
-      "output": 39,
-      "reasoning": 0,
-      "cacheRead": 40704,
+      "input": 38063,
+      "output": 570,
+      "reasoning": 339,
+      "cacheRead": 284416,
       "cacheWrite": 0
     },
     "cost": 0,
