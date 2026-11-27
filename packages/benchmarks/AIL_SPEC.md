@@ -75,4 +75,4 @@ Version 0.3 is the only version accepted by this toolchain. A different version 
 
 ## 7. Reference implementation
 
-The Go implementation in `packages/` is the normative reference. See `AIL_GRAMMAR.md` for the formal grammar and `REPRODUCIBILITY.md` for build and test commands.
+The Go implementation in `packages/` is the normative reference. See `packages/benchmarks/AIL_GRAMMAR.md` for the formal grammar and `REPRODUCIBILITY.md` for build and test commands.

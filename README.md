@@ -66,4 +66,4 @@ AIL files are declarative data. The parser and interpreter never execute code em
 
 ## Documentation
 
-See `AIL_SPEC.md`, `AIL_GRAMMAR.md`, `AIL_INTERPRETER.md`, `AIL_LINTER.md`, `AIL_VALIDATOR.md`, `AIL_RENDERER.md`, `AIL_INJECTION.md`, `AIL_CHANGELOG.md` and `REPRODUCIBILITY.md`.
+See the specification documents in `packages/benchmarks/`: `AIL_SPEC.md`, `AIL_GRAMMAR.md`, `AIL_INTERPRETER.md`, `AIL_LINTER.md`, `AIL_VALIDATOR.md`, `AIL_RENDERER.md`, `AIL_INJECTION.md`, `AIL_CHANGELOG.md`. Build and test instructions are in `REPRODUCIBILITY.md`.

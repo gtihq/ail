@@ -10,6 +10,7 @@ Kept at the root of this package for visibility:
 |------|---------|
 | `BENCHMARK_REPORT.md` | Final report with coverage, paired statistics and answers to the research questions |
 | `MARKDOWN_BASELINE.md` | Conventional Markdown instruction set equivalent to `.ail/rules/project-rules.ail` |
+| `AIL_SPEC.md`, `AIL_GRAMMAR.md`, `AIL_INTERPRETER.md`, `AIL_LINTER.md`, `AIL_VALIDATOR.md`, `AIL_RENDERER.md`, `AIL_INJECTION.md`, `AIL_CHANGELOG.md` | Language and toolchain documentation |
 | `BENCHMARK_TASKS.json` | 50 main tasks across seven categories |
 | `BENCHMARK_LEAKAGE_TASKS.json` | 20 leakage tasks across six scenarios |
 | `RESULTS.json` | Pilot records, machine-readable |
