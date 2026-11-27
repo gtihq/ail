@@ -64,7 +64,7 @@ func usage() {
 Usage:
   bench gentasks [-leakage]
   bench genrules
-  bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode] [-tasks=FILE]
+  bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode] [-tasks=FILE] [-skip-models=SUBSTR,SUBSTR]
   bench verify [-output=DIR] [-tasks=FILE]
   bench stats [-output=DIR]
   bench models [-binary=opencode]
@@ -103,6 +103,7 @@ func run(args []string) {
 	output := flags.String("output", "", "results directory")
 	binary := flags.String("binary", "opencode", "OpenCode executable")
 	tasksPath := flags.String("tasks", "packages/benchmarks/BENCHMARK_TASKS.json", "task catalogue")
+	skipModels := flags.String("skip-models", "", "comma-separated model id substrings to skip")
 	if err := flags.Parse(args); err != nil {
 		os.Exit(2)
 	}
@@ -113,6 +114,24 @@ func run(args []string) {
 		os.Exit(1)
 	}
 	models := runner.DefaultModels()
+	if *skipModels != "" {
+		skipped := strings.Split(*skipModels, ",")
+		kept := make([]runner.ModelSpec, 0, len(models))
+		for _, model := range models {
+			drop := false
+			for _, fragment := range skipped {
+				fragment = strings.TrimSpace(fragment)
+				if fragment != "" && strings.Contains(model.ID, fragment) {
+					drop = true
+				}
+			}
+			if !drop {
+				kept = append(kept, model)
+			}
+		}
+		fmt.Printf("skipping models matching: %s\n", *skipModels)
+		models = kept
+	}
 	tasks := append([]runner.Task{}, catalog.Tasks...)
 
 	random := rand.New(rand.NewSource(20261126))
