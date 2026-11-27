@@ -56,8 +56,8 @@ func TestGeneratedAILUsesSupportedVersion(t *testing.T) {
 	if interpreted.IR.Version != validator.SupportedVersion {
 		t.Fatalf("version = %q, want %q", interpreted.IR.Version, validator.SupportedVersion)
 	}
-	if len(interpreted.IR.Rules) != 10 {
-		t.Fatalf("rules = %d, want 10", len(interpreted.IR.Rules))
+	if len(interpreted.IR.Rules) < 45 {
+		t.Fatalf("rules = %d, want at least 45", len(interpreted.IR.Rules))
 	}
 }
 

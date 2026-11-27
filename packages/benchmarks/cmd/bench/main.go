@@ -37,6 +37,8 @@ func main() {
 	switch os.Args[1] {
 	case "gentasks":
 		generateTasks(os.Args[2:])
+	case "genrules":
+		genrulesCommand(os.Args[2:])
 	case "run":
 		run(os.Args[2:])
 	case "verify":
@@ -61,6 +63,7 @@ func usage() {
 
 Usage:
   bench gentasks [-leakage]
+  bench genrules
   bench run -mode=pilot|full|leakage [-limit=N] [-output=DIR] [-binary=opencode] [-tasks=FILE]
   bench verify [-output=DIR] [-tasks=FILE]
   bench stats [-output=DIR]

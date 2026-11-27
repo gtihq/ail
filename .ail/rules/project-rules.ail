@@ -1,85 +1,452 @@
-META { id: "ail-project-rules" version: "0.3" priority: HIGH }
+META { id: "workspace-rules" version: "0.3" priority: HIGH }
 
 RULE R001 {
-  priority: CRITICAL
-  scope: "**/*.go"
-  when { file.language == GO }
-  do { use_ascii_hyphen preserve_existing_comments }
-  never { emit_typographic_dash rewrite_adjacent_comments }
-  fallback { ask_user_before_inserting_symbol }
+  priority: HIGH
+  scope: "platform/**"
+  when { project.has_admin_panel }
+  do { add_admin_listing add_admin_detail add_admin_create_edit use_accented_labels }
+  never { ship_adminless_data_feature }
+  verify { admin_routes_tested }
+  fallback { ask_for_admin_scope }
 }
 
 RULE R002 {
-  priority: HIGH
-  scope: "**/*.go"
-  when { file.language == GO }
-  do { keep_files_under_700_lines extract_focused_submodules }
-  never { create_god_files }
-  fallback { split_by_domain_concern }
+  priority: CRITICAL
+  scope: "**/*.ts"
+  when { agent.adding_feature }
+  do { register_by_convention use_folder_conventions }
+  never { edit_central_registry_file }
+  verify { feature_discoverable }
+  fallback { search_convention_first }
 }
 
 RULE R003 {
-  priority: HIGH
-  scope: "**/*.go"
-  when { platform.has_golangci_lint }
-  do { run_all_tests_after_edits fix_every_diagnostic_in_touched_files }
-  never { ignore_warnings }
-  verify { tests_pass vet_clean }
-  fallback { report_remaining_diagnostics }
+  priority: CRITICAL
+  scope: "platform/**/*.ts"
+  when { project.runs_in_cluster }
+  do { use_shared_store_for_cross_request_state use_atomic_operations }
+  never { rely_on_local_memory_state }
+  verify { operations_atomic }
+  fallback { choose_cluster_safe_primitive }
 }
 
 RULE R004 {
-  priority: CRITICAL
-  when { agent.about_to_run_command }
-  do { stay_local ask_permission_before_remote_operations }
-  never { touch_production use_production_credentials }
-  fallback { stop_and_ask_user }
+  priority: MEDIUM
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { file.language == TYPESCRIPT }
+  do { use_region_markers }
+  never { use_separator_comment_lines }
+  verify { sections_readable }
+  fallback { keep_existing_structure }
 }
 
 RULE R005 {
-  priority: HIGH
-  when { agent.choosing_approach }
-  do { state_assumptions_explicitly prefer_simplicity make_surgical_changes }
-  never { add_speculative_abstractions improve_unrelated_code }
-  fallback { present_tradeoffs_and_wait }
+  priority: MEDIUM
+  scope: "**/*"
+  when { agent.about_to_commit }
+  do { inspect_repo_history match_dominant_language add_agent_trailer }
+  never { assume_fixed_language }
+  verify { message_matches_history }
+  fallback { ask_user }
 }
 
 RULE R006 {
   priority: HIGH
-  when { agent.defining_success }
-  do { define_verifiable_criteria iterate_until_verified }
-  never { claim_success_without_evidence }
-  fallback { report_exact_coverage }
-}
-
-RULE R007 {
-  priority: MEDIUM
-  when { project.has_shared_concept }
+  scope: "**/*"
+  when { agent.creating_concept }
   do { use_one_directory_per_concept search_before_creating }
-  never { duplicate_implementations }
+  never { duplicate_concept_implementations }
+  verify { single_implementation }
   fallback { extend_existing_implementation }
 }
 
+RULE R007 {
+  priority: HIGH
+  scope: "**/*"
+  when { agent.about_to_code }
+  do { think_before_coding prefer_simplicity make_surgical_changes define_success_criteria }
+  never { overengineer improve_unrelated_code }
+  verify { criteria_verified }
+  fallback { present_tradeoffs }
+}
+
 RULE R008 {
-  priority: MEDIUM
-  when { user.language == PT_BR }
-  do { use_proper_accents avoid_technical_jargon_in_user_copy }
-  never { output_unaccented_portuguese }
-  fallback { ask_user_for_preferred_wording }
+  priority: HIGH
+  scope: "**/*.ts"
+  when { file.language == TYPESCRIPT }
+  do { use_typed_domain_errors use_base_error_class }
+  never { throw_generic_error }
+  verify { errors_typed }
+  fallback { report_missing_error_type }
 }
 
 RULE R009 {
-  priority: MEDIUM
-  when { service.running_in_dev_mode }
-  do { expose_over_tailscale }
-  never { bind_only_to_loopback_without_tailscale }
-  fallback { implement_tailscale_access_before_reporting_done }
+  priority: HIGH
+  scope: "**/routes/**/*.ts"
+  when { project.has_http_routes }
+  do { add_integration_tests add_e2e_tests_for_routes }
+  never { ship_route_without_tests }
+  verify { routes_covered }
+  fallback { document_test_gap }
 }
 
 RULE R010 {
+  priority: MEDIUM
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { agent.noticing_repetition }
+  do { search_existing_helpers extract_at_third_repetition }
+  never { copy_paste_three_times }
+  verify { no_triple_duplication }
+  fallback { name_by_function }
+}
+
+RULE R011 {
+  priority: HIGH
+  scope: "**/*"
+  when { agent.editing_file }
+  do { run_linter fix_every_warning_in_touched_files }
+  never { ignore_warnings }
+  verify { zero_diagnostics }
+  fallback { report_remaining_diagnostics }
+}
+
+RULE R012 {
+  priority: MEDIUM
+  scope: "**/*.{vue,tsx,jsx,svelte}"
+  when { file.language == TYPESCRIPT }
+  do { reuse_components_with_variants search_before_creating_component }
+  never { duplicate_component_markup }
+  verify { shared_component_used }
+  fallback { add_variant_prop }
+}
+
+RULE R013 {
+  priority: MEDIUM
+  scope: "**/*.{ts,java,lua}"
+  when { agent.designing_api }
+  do { design_for_extension add_optional_parameters }
+  never { break_existing_call_sites }
+  verify { api_backward_compatible }
+  fallback { offer_options_object }
+}
+
+RULE R014 {
   priority: LOW
+  scope: "**/*"
+  when { agent.creating_worktree }
+  do { use_project_scoped_worktree }
+  never { share_worktree_across_projects }
+  verify { worktree_isolated }
+  fallback { ask_before_worktree }
+}
+
+RULE R015 {
+  priority: LOW
+  scope: "**/*.{ui,lang}"
+  when { file.language == HYTALE }
+  do { read_ui_docs_before_editing }
+  never { guess_ui_syntax }
+  verify { ui_docs_consulted }
+  fallback { defer_edit }
+}
+
+RULE R016 {
+  priority: MEDIUM
+  scope: "**/*.{ts,lua}"
   when { agent.logging }
-  do { log_decisions_and_io log_full_error_objects }
+  do { log_decisions log_io log_full_error_objects }
   never { log_secrets log_only_error_messages }
+  verify { logs_have_context }
   fallback { use_stable_module_prefix }
 }
+
+RULE R017 {
+  priority: CRITICAL
+  scope: "platform/**/*.ts"
+  when { platform.has_test_runner }
+  do { add_unit_tests_for_new_logic }
+  never { skip_tests }
+  verify { tests_pass }
+  fallback { document_coverage_gap }
+}
+
+RULE R018 {
+  priority: HIGH
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { file.line_count > 700 }
+  do { split_into_focused_modules }
+  never { create_god_files }
+  verify { files_under_limit }
+  fallback { extract_by_domain }
+}
+
+RULE R019 {
+  priority: HIGH
+  scope: "**/dto/**/*.ts"
+  when { agent.designing_api_response }
+  do { use_semantic_nesting avoid_flat_root_fields }
+  never { flatten_aggregate_responses }
+  verify { dto_nested }
+  fallback { group_by_concept }
+}
+
+RULE R020 {
+  priority: MEDIUM
+  scope: "**/*"
+  when { user.reports_action }
+  do { believe_user_report proceed_from_it }
+  never { question_completed_action }
+  verify { no_second_guessing }
+  fallback { ask_only_if_contradictory }
+}
+
+RULE R021 {
+  priority: CRITICAL
+  scope: "**/*"
+  when { agent.considering_remote }
+  do { stay_local ask_permission_for_remote }
+  never { touch_production use_production_credentials }
+  verify { no_production_access }
+  fallback { stop_and_ask }
+}
+
+RULE R022 {
+  priority: LOW
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { agent.formatting_code }
+  do { use_normal_spacing }
+  never { add_alignment_padding }
+  verify { formatting_clean }
+  fallback { follow_formatter }
+}
+
+RULE R023 {
+  priority: HIGH
+  scope: "**/*.ts"
+  when { file.language == TYPESCRIPT }
+  do { use_unknown_catch_variable }
+  never { annotate_catch_as_any }
+  verify { catches_typed }
+  fallback { use_type_guard }
+}
+
+RULE R024 {
+  priority: CRITICAL
+  scope: "**/*"
+  when { agent.writing_text }
+  do { use_ascii_hyphen }
+  never { emit_typographic_dash }
+  verify { ascii_only }
+  fallback { ask_before_symbol }
+}
+
+RULE R025 {
+  priority: HIGH
+  scope: "**/package.json"
+  when { agent.adding_dependency }
+  do { use_workspaces_or_git use_published_package }
+  never { use_file_protocol_outside_repo }
+  verify { dependencies_resolvable }
+  fallback { ask_for_package_source }
+}
+
+RULE R026 {
+  priority: MEDIUM
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { agent.creating_helper }
+  do { use_namespaces_or_classes use_object_literals }
+  never { add_globals }
+  verify { no_global_leaks }
+  fallback { wrap_in_module }
+}
+
+RULE R027 {
+  priority: MEDIUM
+  scope: "**/*.{ts,tsx}"
+  when { file.language == TYPESCRIPT }
+  do { use_import_type_at_top }
+  never { use_inline_type_import }
+  verify { imports_canonical }
+  fallback { move_to_top }
+}
+
+RULE R028 {
+  priority: HIGH
+  scope: "**/package.json"
+  when { agent.adding_dependency }
+  do { use_workspaces_or_published_package }
+  never { use_local_file_dependency }
+  verify { dependencies_portable }
+  fallback { ask_for_constraint }
+}
+
+RULE R029 {
+  priority: MEDIUM
+  scope: "**/*.{vue,tsx,jsx,svelte}"
+  when { file.language == TYPESCRIPT }
+  do { use_project_dialogs }
+  never { use_alert_confirm_prompt }
+  verify { dialogs_consistent }
+  fallback { reuse_existing_dialog }
+}
+
+RULE R030 {
+  priority: HIGH
+  scope: "**/routes/**/*.ts"
+  when { file.in_routes_folder }
+  do { keep_only_route_handlers }
+  never { place_helpers_in_routes }
+  verify { routes_clean }
+  fallback { move_to_shared_folder }
+}
+
+RULE R031 {
+  priority: HIGH
+  scope: "**/*.{ts,tsx,java,lua}"
+  when { agent.refactoring }
+  do { update_all_call_sites }
+  never { create_compatibility_reexport }
+  verify { no_dead_exports }
+  fallback { search_all_references }
+}
+
+RULE R032 {
+  priority: MEDIUM
+  scope: "**/*"
+  when { agent.writing_user_copy }
+  do { use_plain_language }
+  never { use_jargon_in_user_copy }
+  verify { copy_readable }
+  fallback { rewrite_for_user }
+}
+
+RULE R033 {
+  priority: HIGH
+  scope: "platform/**/*.ts"
+  when { platform.has_test_runner }
+  do { keep_tests_in_tests_folder }
+  never { place_fake_or_mock_in_src }
+  verify { src_clean }
+  fallback { move_to_tests }
+}
+
+RULE R034 {
+  priority: HIGH
+  scope: "**/*.{ts,tsx,vue}"
+  when { file.language == TYPESCRIPT }
+  do { use_type_guards use_augmentation }
+  never { use_as_any_cast }
+  verify { assertions_safe }
+  fallback { use_data_helper }
+}
+
+RULE R035 {
+  priority: MEDIUM
+  scope: "**/*.vue"
+  when { file.language == VUE }
+  do { use_data_or_augmentation }
+  never { cast_this_as_any }
+  verify { vue_typed }
+  fallback { declare_component_data }
+}
+
+RULE R036 {
+  priority: LOW
+  scope: "**/*.{ts,tsx,js,jsx,vue}"
+  when { agent.writing_object }
+  do { one_property_per_line }
+  never { pack_multiple_properties_per_line }
+  verify { objects_readable }
+  fallback { follow_formatter }
+}
+
+RULE R037 {
+  priority: HIGH
+  scope: "**/*"
+  when { agent.editing_file }
+  do { keep_existing_comments }
+  never { delete_or_rewrite_comments }
+  verify { comments_preserved }
+  fallback { restore_if_removed }
+}
+
+RULE R038 {
+  priority: MEDIUM
+  scope: "**/*"
+  when { user.language == PT_BR }
+  do { use_proper_accents }
+  never { output_unaccented_portuguese }
+  verify { accents_correct }
+  fallback { ask_for_wording }
+}
+
+RULE R039 {
+  priority: HIGH
+  scope: "**/*"
+  when { agent.entering_subproject }
+  do { read_project_docs_before_editing }
+  never { guess_conventions }
+  verify { docs_consulted }
+  fallback { defer_edit }
+}
+
+RULE R040 {
+  priority: CRITICAL
+  scope: "**/*"
+  when { agent.editing_file }
+  do { preserve_recent_user_edits }
+  never { revert_user_changes }
+  verify { user_edits_intact }
+  fallback { ask_before_overwrite }
+}
+
+RULE R041 {
+  priority: MEDIUM
+  scope: "**/routes/**/*.ts"
+  when { agent.creating_route }
+  do { use_nested_folders avoid_hyphenated_filenames }
+  never { use_hyphens_in_route_filenames }
+  verify { route_files_nested }
+  fallback { rename_to_folder }
+}
+
+RULE R042 {
+  priority: MEDIUM
+  scope: "**/routes/**/*.ts"
+  when { agent.creating_route }
+  do { use_versioning use_plural_names use_kebab_case }
+  never { use_inconsistent_paths }
+  verify { paths_consistent }
+  fallback { follow_sibling_routes }
+}
+
+RULE R043 {
+  priority: LOW
+  scope: "**/database/**/*.ts"
+  when { file.in_database_folder }
+  do { use_table_prefix omit_idx_and_uq }
+  never { use_idx_prefix }
+  verify { index_names_consistent }
+  fallback { follow_existing_indexes }
+}
+
+RULE R044 {
+  priority: CRITICAL
+  scope: "**/database/**/*.ts"
+  when { file.in_database_folder }
+  do { use_sequelize_orm use_transactions }
+  never { write_raw_sql }
+  verify { no_raw_sql }
+  fallback { use_model_query }
+}
+
+RULE R045 {
+  priority: MEDIUM
+  scope: "**/*.{ts,tsx,java}"
+  when { agent.exporting_function }
+  do { add_tsdoc_to_exports }
+  never { export_undocumented_function }
+  verify { exports_documented }
+  fallback { write_doc_comment }
+}
+
