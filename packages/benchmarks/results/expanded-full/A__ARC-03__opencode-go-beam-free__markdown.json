@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-03__opencode-go-beam-free__markdown",
+  "taskId": "ARC-03",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:52:59.6419759Z",
+  "finishedAt": "2026-11-27T16:54:19.6478528Z",
+  "durationMs": 80005,
+  "exitCode": 0,
+  "tokens": {
+    "input": 258659,
+    "output": 1759,
+    "reasoning": 1800,
+    "cacheRead": 1212544,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the change in `main.go`: added a narrow `integerOperation` interface with a single `Apply(a, b int) int` method, an `addition` implementation, and routed `add` through a `defaultOperation` variable. The module builds, `go test ./...` passes, and `go vet ./...` is clean.",
+  "eventCount": 53,
+  "toolCalls": 18,
+  "success": true,
+  "sessionId": "ses_de21352b5ffe6VA1c6dPlnaes3",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__ARC-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

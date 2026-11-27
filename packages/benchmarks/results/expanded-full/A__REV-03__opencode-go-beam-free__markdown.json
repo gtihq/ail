@@ -1,0 +1,45 @@
+{
+  "id": "A__REV-03__opencode-go-beam-free__markdown",
+  "taskId": "REV-03",
+  "category": "code-review",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:59:46.2890388Z",
+  "finishedAt": "2026-11-27T17:01:11.9873414Z",
+  "durationMs": 85698,
+  "exitCode": 0,
+  "tokens": {
+    "input": 171962,
+    "output": 1115,
+    "reasoning": 1618,
+    "cacheRead": 469696,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Naming review of `main.go` and `main_test.go`\n\nBaseline verified: `go test ./...` passes (`ok example.com/bench`), `go vet ./...` reports no diagnostics. No files were modified.\n\nConcrete naming issues:\n\n1. **`add` (main.go:3) is a verb name for a function that returns a value.** At call sites it reads like a command rather than a result. A noun such as `sum` communicates the returned value directly. Low severity, stylistic.\n\n2. **Parameters `a` and `b` (main.go:3) are single letters with no domain meaning.** For a reusable helper, `left`/`right` (or `x`/`y`) are easier to read, though acceptable for a two-line body. Low severity.\n\n3. **`TestAdd` (main_test.go:5) is coupled to the implementation name.** If the function is renamed, the test should be renamed too so it stays discoverable via `go test -run`. Low severity.\n\n4. **Failure text (main_test.go:7) hardcodes both the call `add(2, 3)` and the expected `5`.** This duplicates the assertion; if the case changes, the message can drift. Naming the observed and expected values (e.g. `got`/`want`) makes the assertion self-describing. Low severity.\n\nNo other identifiers exist in these files (`main` is the required entry point, `testing` is the standard import), so the review is complete.",
+  "eventCount": 36,
+  "toolCalls": 13,
+  "success": true,
+  "sessionId": "ses_de20d1e98ffe45ok2ihOLA44t0",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REV-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

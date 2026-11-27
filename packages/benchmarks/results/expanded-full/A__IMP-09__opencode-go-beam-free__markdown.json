@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-09__opencode-go-beam-free__markdown",
+  "taskId": "IMP-09",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:23:26.2720748Z",
+  "finishedAt": "2026-11-27T17:23:55.1544572Z",
+  "durationMs": 28882,
+  "exitCode": 0,
+  "tokens": {
+    "input": 24226,
+    "output": 615,
+    "reasoning": 1339,
+    "cacheRead": 165184,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented palindrome helpers in `main.go` (keeping `add` intact) and verified with `go test ./...` (passing).",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de1f773a0ffexy1sYVPo4bkqb5",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-09__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

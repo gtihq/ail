@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-01__opencode-go-hy4-flash-free__markdown",
+  "taskId": "AMB-01",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:45:34.0203992Z",
+  "finishedAt": "2026-11-27T15:46:43.4902494Z",
+  "durationMs": 69469,
+  "exitCode": 0,
+  "tokens": {
+    "input": 44597,
+    "output": 1187,
+    "reasoning": 3760,
+    "cacheRead": 533248,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand what code needs improvement.Let me check the git context before making changes.The code is a tiny Go fixture. Let me reconsider which rules actually apply before changing anything.\n\nGiven the ruleset, almost every rule is scoped to TypeScript, Vue, `platform/**`, or database folders. This is Go code, so those do not apply. The applicable ones are the universal ones: R007 (simplicity, surgical changes, verifiable success criteria, never overengineer), R037/R040 (preserve comments and user edits), and R024 (ASCII only).\n\nSuccess criteria I will verify:\n1. `add` stays correct across representative inputs (positive, negative, mixed, zero)\n2. `go test ./...` passes\n3. Minimal diff, no overengineering, no typographic dashes\n\nThe production function is already correct and minimal. The weak point is the single-case test. I'll make one surgical improvement there.I introduced a typo in the test signature. Let me verify with the compiler and fix it.Tests pass. Let me check formatting and vet diagnostics on the touched file.Done. Here is what I did and why.\n\n## What changed\n\nOnly `main_test.go`. The production function in `main.go` was already correct and minimal, so I left it untouched rather than inventing work.\n\n`TestAdd` used a single hardcoded case (`2 + 3`). I replaced it with a table-driven test covering positive, negative, mixed, and zero inputs, using named subtests so a failure identifies the case.\n\n## Rule decisions\n\nMost of the 45 rules are out of scope here: they target `**/*.ts`, Vue/JSX, `platform/**`, or `**/database/**`. This is Go, so applying central registries, domain error hierarchies, Sequelize, TSDoc, etc. would be exactly the overengineering R007 warns against.\n\nThe rules I did apply:\n- **R007**: defined success criteria first, kept the diff surgical, preferring simplicity.\n- **R024**: ASCII only, no typographic dashes.\n- **R037 / R040**: preserved existing package/import structure and did not revert anything.\n- **R011**: checked diagnostics on the touched file.\n\nOne self-inflicted typo in the test signature (`*testing.T` written malformed) was caught by the compiler and fixed.\n\n## Verification\n\n- `go test ./...` passes\n- `gofmt -l .` reports no formatting issues\n- `go vet ./...` reports no diagnostics\n\nNote: the workspace files are gitignored by the benchmark repo, so there is no git diff to show. The change is on disk. I did not commit, since no commit was requested.",
+  "eventCount": 51,
+  "toolCalls": 17,
+  "success": true,
+  "sessionId": "ses_de2510e1cffeNtdQrfIV8bMZQM",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-01__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": true,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": true,
+    "failureToAnswer": false,
+    "score": 0
+  }
+}

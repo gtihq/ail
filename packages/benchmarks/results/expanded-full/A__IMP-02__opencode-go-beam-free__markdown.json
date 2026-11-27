@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-02__opencode-go-beam-free__markdown",
+  "taskId": "IMP-02",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:54:37.4342974Z",
+  "finishedAt": "2026-11-27T16:55:49.4404929Z",
+  "durationMs": 72006,
+  "exitCode": 0,
+  "tokens": {
+    "input": 310455,
+    "output": 757,
+    "reasoning": 1565,
+    "cacheRead": 767360,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `abs(n int) int` in `main.go` while keeping `add` unchanged. `go test ./...` passes (`ok example.com/bench`).",
+  "eventCount": 32,
+  "toolCalls": 11,
+  "success": true,
+  "sessionId": "ses_de211d4deffey2R8hKuGGc6wBa",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-02__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

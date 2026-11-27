@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-04__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:31:26.3473814Z",
+  "finishedAt": "2026-11-27T14:32:23.1964286Z",
+  "durationMs": 56849,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39995,
+    "output": 1332,
+    "reasoning": 1768,
+    "cacheRead": 438272,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the codebase structure.Let me check the Go toolchain availability before editing.Now I'll write table-driven tests in `main_test.go`, leaving `main.go` untouched.Let me verify the final state and confirm `main.go` was not changed.Task complete.\n\n**Changes made to `main_test.go`:**\n- Converted the single `TestAdd` case into a table-driven test with six named cases (positive, negative, mixed signs, zeros, additive identity, large values), each run as a subtest via `t.Run`.\n- Added `TestMainEntryPoint`, which invokes `main()` and guards against a panic, so the actual entry point is covered too.\n\n**Untouched:** `main.go` was not modified.\n\n**Verification:** `go test ./...` passed:\n\n```\nok  \texample.com/bench\t0.015s\n```",
+  "eventCount": 40,
+  "toolCalls": 11,
+  "success": true,
+  "sessionId": "ses_de294eb41ffeGPI1CzJfugyWMw",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-04__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

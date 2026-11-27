@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-02__opencode-go-hy4-flash-free__markdown",
+  "taskId": "AMB-02",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:30:27.0124009Z",
+  "finishedAt": "2026-11-27T15:31:11.4425526Z",
+  "durationMs": 44430,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39131,
+    "output": 1456,
+    "reasoning": 2761,
+    "cacheRead": 201216,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the working directory to find the \"small program\" I need to improve.I've examined the workspace. The \"small program\" is a minimal Go module:\n\n- `main.go`: a 7-line program with an `add(a, b int) int` function and an empty `main()`\n- `main_test.go`: a single test checking `add(2, 3) == 5`\n- `go.mod`: module `example.com/bench`, Go 1.25\n\nThe instruction \"Improve the small program\" is open-ended and doesn't specify what kind of improvement is wanted. Since the direction would materially change what I edit, I'd rather confirm your intent than guess.The question tool isn't available in this non-interactive run, so I'll proceed with a reasonable, conservative interpretation and state my assumptions.\n\n**Assumptions:** \"Improve\" means make the program better without changing the public behavior of `add`. I will (1) add a Go doc comment for the exported-adjacent function, (2) replace the single case test with table-driven tests covering positive, negative, mixed-sign and zero inputs, and (3) keep `main()` unchanged and avoid scope creep. I will not apply rules meant for other languages (region markers, TSDoc syntax, Sequelize, Vue, etc.) to this Go code.Now let me verify with formatting, vet, and the test suite.Done. Since the task was ambiguous and the run could not ask for clarification, I made a conservative improvement that keeps `add` behavior unchanged.\n\nChanges:\n- `main.go`: added a Go doc comment for `add`; left `main()` and the function signature untouched.\n- `main_test.go`: replaced the single assertion with table-driven subtests covering positive, negative, mixed-sign, zero and with-zero inputs, with clearer failure messages.\n\nVerification: `gofmt -l .` (clean), `go vet ./...` (clean), `go test ./...` (pass).\n\nI deliberately did not apply rules that target other languages (region markers, TSDoc syntax, Sequelize, Vue, etc.) since this is a Go module, and I avoided adding a CLI or overflow semantics to `add` to keep the change surgical. If you meant something more specific, such as overflow handling, a CLI in `main()`, or benchmarks, tell me and I will adjust.",
+  "eventCount": 25,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de25ee501ffelCQ6XefaX7VeM5",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-02__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

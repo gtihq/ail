@@ -1,0 +1,47 @@
+{
+  "id": "D__REF-04__opencode-go-hy4-flash-free__ail",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:38:26.2207907Z",
+  "finishedAt": "2026-11-27T16:39:20.1295919Z",
+  "durationMs": 53908,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39376,
+    "output": 603,
+    "reasoning": 1495,
+    "cacheRead": 155136,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the current directory and finding `main.go`.The codebase is a minimal Go program. The existing test calls `add(2, 3)`, so I must keep `add`'s signature intact while introducing the pair type internally. That keeps behavior and the test unchanged.Now I'll run the tests.Done. `main.go` now defines a small `intPair` struct and `add` uses it to hold its two operands. The function signature stays `add(a, b int)`, so behavior and the existing test are unchanged.\n\n`go test ./...` passes: `ok example.com/bench`.",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de220a5bcffeEz9z20Lt7FcsiP",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__REF-04__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 1,
+    "violated": [
+      "R002"
+    ],
+    "pct": 50
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

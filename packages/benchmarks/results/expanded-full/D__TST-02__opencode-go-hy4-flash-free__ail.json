@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-02__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:08:37.6845677Z",
+  "finishedAt": "2026-11-27T16:09:14.3941207Z",
+  "durationMs": 36709,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36238,
+    "output": 836,
+    "reasoning": 215,
+    "cacheRead": 271616,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll convert the test to table-driven form and add cases covering zero.Done. `main_test.go` now uses table-driven tests covering `add` with zero in all positions:\n\n- zero as first operand: `add(0, 5) == 5`\n- zero as second operand: `add(5, 0) == 5`\n- both operands zero: `add(0, 0) == 0`\n- plus the original positive case\n\n`main.go` was left unchanged, and `go test ./...` passes.",
+  "eventCount": 25,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de23bf0fbffe3H43sYQiKu8QV8",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__TST-02__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

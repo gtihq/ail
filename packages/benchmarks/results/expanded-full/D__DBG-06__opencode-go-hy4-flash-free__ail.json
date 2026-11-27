@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-06__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-06",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:17:06.9917653Z",
+  "finishedAt": "2026-11-27T16:17:25.2686895Z",
+  "durationMs": 18276,
+  "exitCode": 0,
+  "tokens": {
+    "input": 34927,
+    "output": 252,
+    "reasoning": 56,
+    "cacheRead": 155136,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the working directory to find the relevant files.The bug is clear: the `add` function subtracts instead of adding. I'll make a surgical one-character fix.Fixed the bug in `main.go`: the `add` function was subtracting (`a - b`) instead of adding. Changed it to `a + b`.\n\n`go test ./...` now passes:\n```\nok  \texample.com/bench\t0.011s\n```",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de2342ba0ffeB4VfAApAbZ3p0w",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-06__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "D__IMP-06__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T15:52:22.8384911Z",
+  "finishedAt": "2026-11-27T15:52:46.0470044Z",
+  "durationMs": 23208,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35559,
+    "output": 608,
+    "reasoning": 241,
+    "cacheRead": 156416,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `factorial` in `main.go` with a simple iterative approach. The existing `add` function is unchanged and still works.\n\n- `factorial(0)` returns 1, and it multiplies up through `n`.\n- It is intended for small non-negative integers, as requested.\n\n`go test ./...` passes:\n\n```\nok  \texample.com/bench\t0.013s\n```",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de24ad123ffeZIaRGMCPaf0mKD",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__IMP-06__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

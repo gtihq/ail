@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-04__opencode-go-beam-free__markdown",
+  "taskId": "IMP-04",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:22:16.2002319Z",
+  "finishedAt": "2026-11-27T17:22:56.1025927Z",
+  "durationMs": 39902,
+  "exitCode": 0,
+  "tokens": {
+    "input": 102514,
+    "output": 744,
+    "reasoning": 1237,
+    "cacheRead": 354496,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `countEven` (plus common name variants) in `main.go`, keeping `add` working. `go test ./...` passes.",
+  "eventCount": 26,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de1f884edffeA2M9VwEe4Ev1Nj",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-04__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T15:56:49.5081159Z",
+  "finishedAt": "2026-11-27T15:57:34.592675Z",
+  "durationMs": 45084,
+  "exitCode": 0,
+  "tokens": {
+    "input": 37764,
+    "output": 1232,
+    "reasoning": 1543,
+    "cacheRead": 277760,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the repository to understand the codebase structure and find the relevant files.Now I understand the code. Let me check if Go is available and review the git state before editing.I'll add table-driven tests covering both the `add` helper and the `main` entry point, without touching `main.go`.Tests pass. Let me verify `main.go` is unchanged and confirm the subtests run.Done. `git diff -- main.go` is empty, so `main.go` was not changed.\n\nSummary of changes to `main_test.go`:\n\n- Replaced the single-case `TestAdd` with a table-driven test using a `tests` slice and `t.Run` subtests, covering positive, zero, negative, mixed-sign, and large inputs.\n- Added `TestMainEntryPoint`, also table-driven, which calls the `main` function to cover the entry point.\n\nVerification:\n- `go test ./...` passes (`ok example.com/bench`).\n- Verbose run confirms all five `TestAdd` subtests and the `TestMainEntryPoint` subtest pass.\n- `main.go` remains untouched.",
+  "eventCount": 30,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de246bf25ffeyNWuHEEK482efM",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__TST-04__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

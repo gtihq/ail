@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-10__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-10",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:10:39.5680295Z",
+  "finishedAt": "2026-11-27T16:11:01.2457807Z",
+  "durationMs": 21677,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35373,
+    "output": 535,
+    "reasoning": 62,
+    "cacheRead": 156160,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the code and the failing test.The bug is clear: `add` subtracts instead of adding. I'll make a single surgical fix.Fixed the bug. In `main.go`, the `add` function was returning `a - b` instead of `a + b`. I changed that single line to `return a + b`, leaving everything else untouched.\n\nVerification: `go test ./...` passes with `ok example.com/bench 0.013s`.",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de23a14eeffegKM85dHeeS2x0F",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-10__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

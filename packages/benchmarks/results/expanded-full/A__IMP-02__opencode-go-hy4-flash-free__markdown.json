@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-02__opencode-go-hy4-flash-free__markdown",
+  "taskId": "IMP-02",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:32:23.5481343Z",
+  "finishedAt": "2026-11-27T14:32:59.6815787Z",
+  "durationMs": 36133,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36526,
+    "output": 596,
+    "reasoning": 244,
+    "cacheRead": 196608,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Added an `abs` helper in `main.go` that returns the absolute value of an integer, while leaving `add` unchanged. `go test ./...` passes.",
+  "eventCount": 20,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de2940bd5ffezQeCklDjjArwaJ",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-02__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

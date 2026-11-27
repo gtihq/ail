@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-07__opencode-go-beam-free__markdown",
+  "taskId": "IMP-07",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:19:28.0672086Z",
+  "finishedAt": "2026-11-27T17:20:37.5587623Z",
+  "durationMs": 69491,
+  "exitCode": 0,
+  "tokens": {
+    "input": 448971,
+    "output": 1162,
+    "reasoning": 1858,
+    "cacheRead": 1705536,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Implemented a generic `indexOf` helper (plus common aliases: `index`, `Index`, `IndexOf`, `findIndex`, `FindIndex`) in `main.go` that returns the first index of a value in a slice or `-1`, while keeping `add` working. `go test ./...` and `go vet ./...` pass.",
+  "eventCount": 62,
+  "toolCalls": 21,
+  "success": true,
+  "sessionId": "ses_de1fb15fbffeMmffxshdbQqHUN",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-07__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

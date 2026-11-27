@@ -1,0 +1,46 @@
+{
+  "id": "A__REF-04__opencode-go-beam-free__markdown",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T20:24:01.9339297Z",
+  "finishedAt": "2026-11-27T20:29:11.9261442Z",
+  "durationMs": 309992,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de1521c99ffeYvJQJfQ0BZKdX8",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REF-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.016s\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

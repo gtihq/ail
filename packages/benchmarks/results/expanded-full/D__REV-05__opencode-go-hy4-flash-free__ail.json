@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-05__opencode-go-hy4-flash-free__ail",
+  "taskId": "REV-05",
+  "category": "code-review",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:32:42.0820794Z",
+  "finishedAt": "2026-11-27T16:33:11.5704596Z",
+  "durationMs": 29488,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35242,
+    "output": 947,
+    "reasoning": 1113,
+    "cacheRead": 155904,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll locate and read both files to review test quality.Let me check for surrounding project context (go.mod, other files).Reviewed both files. I made no changes. Here are concrete test-quality issues, ordered by impact.\n\n## main.go\n\n1. **`main()` has no test coverage** (line 7). It is empty today, so this is low value, but the function is still uncovered. If it later gains startup logic, there will be no guard.\n\n## main_test.go\n\n2. **The function under test is invoked twice per test** (lines 6 and 7). `add(2, 3)` runs once in the condition and again inside `t.Fatalf`. The failure message therefore reports a *second* call, not the value that actually failed. With side effects or nondeterminism, the message would be misleading. Capture once: `got := add(2, 3)`.\n\n3. **Only one happy-path case** (line 6). The test covers just positive integers `(2, 3)`. Missing cases:\n   - zero as either operand (`add(0, 0)`, `add(0, 5)`)\n   - negative operands (`add(-2, -3)`, `add(-2, 3)`)\n   - commutativity (`add(a, b) == add(b, a)`)\n   - `int` boundary / overflow behavior (e.g. `MaxInt + 1`), which documents wrap-around semantics\n\n4. **A constant implementation would pass** (consequence of issue 3). If `add` were replaced with `return 5`, the current test stays green. A single input cannot distinguish real addition from a hardcoded stub, so the test's bug-detection power is very low.\n\n5. **Hardcoded values in the failure message** (line 7). The string literally says `add(2, 3)` and `5` instead of using the actual input and observed result. If someone edits the input on line 6 but forgets line 7, the message becomes wrong. The actual observed value from the failing call is not shown.\n\n6. **`t.Fatalf` aborts the whole test on first failure** (line 7). Acceptable for one assertion, but it blocks adding multiple cases. A table-driven test with `t.Run` subtests and `t.Errorf` would let all cases run and report each failure independently.\n\n7. **No named subtests** (line 5). There is a single unnamed `TestAdd`, so failure output is generic and there is no way to run individual cases with `-run`. Named subtests would make failures self-describing.\n\n8. **No benchmark or property-style test**. For a pure arithmetic function, a table-driven test with a few inputs plus a commutativity check gives far more confidence than the current single assertion, at negligible cost.\n\n### Bottom line\n\nThe test verifies exactly one thing that is already obvious from the implementation, calls the function twice, and cannot catch a stubbed or partial implementation. The highest-value fixes are: store the result once, convert to a table-driven test covering zero/negative/boundary inputs, and use the observed values in the failure message.",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de225e551ffeXBCQ6mB7MyTAUA",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__REV-05__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.013s\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

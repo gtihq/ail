@@ -1,0 +1,45 @@
+{
+  "id": "A__REV-03__opencode-go-hy4-flash-free__markdown",
+  "taskId": "REV-03",
+  "category": "code-review",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:34:18.7657346Z",
+  "finishedAt": "2026-11-27T14:34:57.9699509Z",
+  "durationMs": 39204,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36125,
+    "output": 815,
+    "reasoning": 2244,
+    "cacheRead": 157696,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Naming review: `main.go` and `main_test.go`\n\nNo files were modified. Review is limited to naming, as requested.\n\n### `main.go`\n\n1. **`add` is a generic verb (line 3).** It describes the action but not the result or the domain. For a helper that returns the sum of two integers, `sum` or `addInts` communicates the contract more precisely. Severity: Low to Medium, judgment call since Go code often uses short verb names for tiny helpers.\n2. **Parameters `a` and `b` are single-letter and non-descriptive (line 3).** They carry no role information. `left` / `right`, `x` / `y`, or `augend` / `addend` would make the call sites self-documenting. Severity: Medium.\n\n### `main_test.go`\n\n3. **Literal values `2`, `3`, `5` are unnamed (lines 6-7).** The expected value appears only as a bare `5` in both the condition and the message. Naming them (`a, b, want := 2, 3, 5`) makes the assertion's intent explicit and avoids repeating the expression. Severity: Low.\n4. **No descriptive case name for the tested scenario.** The test covers one case (\"positive integers\") but gives it no name. If cases are added, table-driven subtests with names such as `\"positive integers\"` would keep failures readable. Severity: Low, optional.\n\n### Naming that is already correct\n\n- `TestAdd` follows Go's `Test\u003cFunctionName\u003e` convention and matches `add`. No rename needed.\n- The `t *testing.T` receiver and `package main` are idiomatic.\n- Renaming `add` to exported `Add` is not warranted here, since both files are in `package main` and the helper is not part of a library API.\n\n### Summary of concrete actions, if you choose to apply them\n\n| Location | Current | Suggested |\n| --- | --- | --- |\n| `main.go:3` | `add(a, b int)` | `sum(left, right int)` or `addInts(x, y int)` |\n| `main_test.go:6-7` | inline `2`, `3`, `5` | named locals `a`, `b`, `want` |\n\nNote that item 1 and item 2 are coupled: renaming the function requires updating `TestAdd` and the two call sites in the test to keep names consistent.",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de2924a2affeZYkqdr1b0BH1Xl",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REV-03__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.016s\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

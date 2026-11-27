@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-04__opencode-go-beam-free__markdown",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:54:19.9993487Z",
+  "finishedAt": "2026-11-27T16:54:37.1478175Z",
+  "durationMs": 17148,
+  "exitCode": 0,
+  "tokens": {
+    "input": 23498,
+    "output": 485,
+    "reasoning": 721,
+    "cacheRead": 240320,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Tests pass. Added table-driven tests in `main_test.go` covering `add` (multiple cases) and the `main` entry point (panic guard), without modifying `main.go`.",
+  "eventCount": 23,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de212189dffegHTlMoD95CazCG",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

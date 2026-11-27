@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-03__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T15:53:31.9205572Z",
+  "finishedAt": "2026-11-27T15:54:10.0219014Z",
+  "durationMs": 38101,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39269,
+    "output": 1011,
+    "reasoning": 1069,
+    "cacheRead": 155136,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the current state of the code.Simple task. I'll add a table-driven test for large values while keeping the existing test and leaving `main.go` untouched.Now let me run the tests as requested.Done. I added a `TestAddLargeValues` table-driven test to `main_test.go` with cases for large positive values, values near `int` max (without overflow), large negatives, and mixed positive/negative. `main.go` was left unchanged, and `go test ./...` passes.",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de249c32dffeQWsr8Yl3xnnepI",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__TST-03__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-05__opencode-go-beam-free__markdown",
+  "taskId": "ARC-05",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:23:55.5069125Z",
+  "finishedAt": "2026-11-27T17:25:47.5635365Z",
+  "durationMs": 112056,
+  "exitCode": 0,
+  "tokens": {
+    "input": 169834,
+    "output": 2073,
+    "reasoning": 3170,
+    "cacheRead": 999552,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented a minimal testable structure in `main.go`:\n\n- `Adder` interface: the seam callers/tests depend on.\n- `Calculator` struct with `Add` method: production implementation.\n- `sum(adder, a, b)`: injectable function so tests can pass a fake.\n- `add(a, b)`: kept as a thin wrapper, preserving the original API and `TestAdd`.\n\nAdded `Calculator` and injection tests in `main_test.go`. Verified with `gofmt`, `go vet`, `go build`, and `go test ./...` (all exit 0).",
+  "eventCount": 81,
+  "toolCalls": 28,
+  "success": true,
+  "sessionId": "ses_de1f700edffe9j7kwUJCCVkU1m",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__ARC-05__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

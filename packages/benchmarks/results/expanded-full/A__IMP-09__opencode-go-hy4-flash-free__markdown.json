@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-09__opencode-go-hy4-flash-free__markdown",
+  "taskId": "IMP-09",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:38:36.2719386Z",
+  "finishedAt": "2026-11-27T15:39:11.6790568Z",
+  "durationMs": 35407,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35933,
+    "output": 645,
+    "reasoning": 165,
+    "cacheRead": 196352,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Implemented `isPalindrome` in `main.go` using a two-pointer comparison from both ends of the string. The existing `add` function is untouched and still works. `go test ./...` passes.",
+  "eventCount": 20,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de2576dd2ffeEjSLhITwfOj1uc",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-09__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

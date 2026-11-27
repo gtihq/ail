@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-07__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:27:55.9868906Z",
+  "finishedAt": "2026-11-27T14:28:16.5893614Z",
+  "durationMs": 20602,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35630,
+    "output": 557,
+    "reasoning": 117,
+    "cacheRead": 157440,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to find the relevant files.Let me read the Go files.The bug is obvious: `add` uses `-` instead of `+`. I'll make the surgical fix.Now let me verify with `go test ./...`.Fixed. The bug was a single character in `main.go`: the `add` function was returning `a - b` instead of `a + b`.\n\n```go\nfunc add(a, b int) int {\n\treturn a + b\n}\n```\n\nVerification: `go test ./...` reports `ok example.com/bench`. No other code was touched.",
+  "eventCount": 21,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de2982170ffe1wUZTFUjNTh4bg",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-07__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

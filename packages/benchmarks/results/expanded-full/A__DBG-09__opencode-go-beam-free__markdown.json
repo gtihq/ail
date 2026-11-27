@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-09__opencode-go-beam-free__markdown",
+  "taskId": "DBG-09",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:47:21.248327Z",
+  "finishedAt": "2026-11-27T16:47:34.6248969Z",
+  "durationMs": 13376,
+  "exitCode": 0,
+  "tokens": {
+    "input": 61014,
+    "output": 379,
+    "reasoning": 101,
+    "cacheRead": 163200,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug: `add` was subtracting `b` from `a` instead of adding them. Changed `a - b` to `a + b`. `go test ./...` passes.",
+  "eventCount": 18,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de2187caeffe6E15lLtmlHtxm9",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-09__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

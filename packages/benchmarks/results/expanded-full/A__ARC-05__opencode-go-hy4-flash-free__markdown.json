@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-05__opencode-go-hy4-flash-free__markdown",
+  "taskId": "ARC-05",
+  "category": "architecture",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:39:12.0271785Z",
+  "finishedAt": "2026-11-27T15:40:23.2627456Z",
+  "durationMs": 71235,
+  "exitCode": 0,
+  "tokens": {
+    "input": 41599,
+    "output": 1838,
+    "reasoning": 4542,
+    "cacheRead": 248320,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the project structure and find `main.go`.The baseline builds and tests pass. Here's my proposal before implementing:\n\n**Proposal:** Keep everything in `main.go` but introduce a minimal dependency-injection structure:\n- `Adder` - a one-method interface (the narrow contract the app needs)\n- `Calculator` - a struct whose `Add` method owns the real helper\n- `Service` - holds an injected `Adder`, so application logic can be tested with a fake instead of real arithmetic\n\n`add` stays as the single arithmetic implementation so the existing test remains untouched and green. Then I will add a test that injects a fake `Adder` to prove the structure actually improves testability.Now let me verify the module builds and all tests pass, including `go vet` and formatting checks.Done. All checks are green:\n\n- `gofmt -l .` no output (formatting clean)\n- `go vet ./...` clean\n- `go build ./...` passes\n- `go test ./... -v` passes, including the original `TestAdd`\n\n## Architecture change\n\nI kept the change contained in `main.go` and made it minimal:\n\n| Element | Role |\n|---|---|\n| `Adder` interface | One-method contract. Tests can substitute a tiny fake instead of real arithmetic. |\n| `Calculator` struct | Owns the real helper as an `Add` method, so it satisfies `Adder`. |\n| `Service` struct + `NewService` | Application-facing code depends on `Adder`, not on the concrete helper. This is the part that becomes easy to test. |\n| `add` function | Stays as the single source of arithmetic, so the existing test compiles and passes unchanged. |\n\n`main()` is unchanged, so runtime behavior is untouched.\n\n## Why this makes the helper easy to test\n\nBefore, the only way to exercise the helper was a direct call to the package function. Now the app logic sits behind an injected interface, so `service_test.go` can pass a `fakeAdder` that records calls and returns a fixed value. That test asserts both the returned result and the interaction, which would be impossible with a hard-coded direct call.\n\nI also added a table-driven test for `Calculator.Add` covering positive, negative and zero inputs, plus a test confirming `NewService` works with the real `Calculator`.\n\nFiles changed: `main.go` (modified) and `service_test.go` (new). `main_test.go` and `go.mod` were left untouched.",
+  "eventCount": 26,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de256e22effewF7HamqMCrjwvZ",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__ARC-05__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.017s\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

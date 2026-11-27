@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-02__opencode-go-beam-free__markdown",
+  "taskId": "AMB-02",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:15:38.2276242Z",
+  "finishedAt": "2026-11-27T17:16:40.9895247Z",
+  "durationMs": 62761,
+  "exitCode": 0,
+  "tokens": {
+    "input": 72653,
+    "output": 1456,
+    "reasoning": 2004,
+    "cacheRead": 866048,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Improved the small program by adding a Go doc comment to `add` in `main.go` without changing behavior. `go test ./...` and `go vet ./...` pass.",
+  "eventCount": 68,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de1fe97daffeZY4i5T1DJIx0E2",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-02__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

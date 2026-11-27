@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-05__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:45:05.9402484Z",
+  "finishedAt": "2026-11-27T15:45:33.7306383Z",
+  "durationMs": 27790,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36739,
+    "output": 981,
+    "reasoning": 251,
+    "cacheRead": 157184,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the project structure and locate the relevant files.I understand the task. I'll add a table-driven test for `add` covering mixed signs, without touching `main.go`, then run the tests.\n\nSuccess criteria:\n- Table-driven test structure in `main_test.go`\n- Cases with mixed signs (positive + negative, both orders, results positive/negative/zero)\n- `main.go` unchanged\n- `go test ./...` passesNow I'll run the tests:All done. Summary:\n\n- **Added** `TestAddMixedSigns` in `main_test.go` using a table-driven layout with a slice of named cases covering mixed signs: positive + negative, negative + positive, sums to zero, and cases where the larger negative or positive operand dominates. Each case runs as a `t.Run` subtest.\n- **Left** `main.go` unchanged.\n- **Ran** `go test ./...`, which passed (`ok example.com/bench`).\n\nThe existing `TestAdd` was preserved as-is.",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de2517bbaffesaQTa1z4W6AqhF",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-05__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

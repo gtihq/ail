@@ -210,25 +210,104 @@ func Render(ir *core.IR, options core.RenderOptions) core.RenderResult {
 		includeDelimiters = *options.IncludeDelimiters
 	}
 
+	variant := options.Variant
+	if variant == "" {
+		variant = core.VariantFull
+	}
+
 	var out strings.Builder
-	out.WriteString(r.hostHeader(ir))
-	out.WriteString(interpretationInstruction)
-	out.WriteString("\n\n")
-	if includeDelimiters {
+	switch variant {
+	case core.VariantNoInterpretation:
+		if includeDelimiters {
+			out.WriteString(beginMarker)
+			out.WriteString("\n\n")
+		}
+		out.WriteString(r.renderRules(ir))
+		if includeDelimiters {
+			out.WriteString("\n")
+			out.WriteString(endMarker)
+		}
+		out.WriteString("\n")
+	case core.VariantNoDelimiters:
+		out.WriteString(r.hostHeader(ir))
+		out.WriteString(interpretationInstruction)
+		out.WriteString("\n\n")
+		out.WriteString(r.renderRules(ir))
+		out.WriteString("\n")
+	case core.VariantCompactBare:
 		out.WriteString(beginMarker)
 		out.WriteString("\n\n")
-	}
-	if r.options.Mode == core.ModeFile {
-		out.WriteString("<!-- Loaded through the host-native file discovery mechanism. -->\n\n")
-	}
-	out.WriteString(r.renderRules(ir))
-	if includeDelimiters {
+		out.WriteString(r.compactBareRules(ir))
 		out.WriteString("\n")
 		out.WriteString(endMarker)
+		out.WriteString("\n")
+	case core.VariantTinyRules:
+		out.WriteString(beginMarker)
+		out.WriteString("\n\n")
+		out.WriteString(r.tinyRules(ir))
+		out.WriteString("\n")
+		out.WriteString(endMarker)
+		out.WriteString("\n")
+	default:
+		out.WriteString(r.hostHeader(ir))
+		out.WriteString(interpretationInstruction)
+		out.WriteString("\n\n")
+		if includeDelimiters {
+			out.WriteString(beginMarker)
+			out.WriteString("\n\n")
+		}
+		if r.options.Mode == core.ModeFile {
+			out.WriteString("<!-- Loaded through the host-native file discovery mechanism. -->\n\n")
+		}
+		out.WriteString(r.renderRules(ir))
+		if includeDelimiters {
+			out.WriteString("\n")
+			out.WriteString(endMarker)
+		}
+		out.WriteString("\n")
 	}
-	out.WriteString("\n")
 
 	return core.RenderResult{Text: out.String(), Diagnostics: r.diagnostics}
+}
+
+// compactBareRules renders each rule as one terse line with only the operative fields.
+func (r *renderer) compactBareRules(ir *core.IR) string {
+	var out strings.Builder
+	for _, rule := range ir.Rules {
+		out.WriteString(r.sanitize(rule.ID))
+		out.WriteString(": DO ")
+		out.WriteString(r.sanitize(strings.Join(rule.Do, " ")))
+		if len(rule.Never) > 0 {
+			out.WriteString(" NEVER ")
+			out.WriteString(r.sanitize(strings.Join(rule.Never, " ")))
+		}
+		if len(rule.Verify) > 0 {
+			out.WriteString(" VERIFY ")
+			out.WriteString(r.sanitize(strings.Join(rule.Verify, " ")))
+		}
+		if len(rule.Fallback) > 0 {
+			out.WriteString(" FALLBACK ")
+			out.WriteString(r.sanitize(strings.Join(rule.Fallback, " ")))
+		}
+		out.WriteString("\n")
+	}
+	return out.String()
+}
+
+// tinyRules renders only DO and NEVER tokens, one rule per line, with no labels.
+func (r *renderer) tinyRules(ir *core.IR) string {
+	var out strings.Builder
+	for _, rule := range ir.Rules {
+		out.WriteString(r.sanitize(rule.ID))
+		out.WriteString(" ")
+		out.WriteString(r.sanitize(strings.Join(rule.Do, " ")))
+		if len(rule.Never) > 0 {
+			out.WriteString(" ")
+			out.WriteString(r.sanitize(strings.Join(rule.Never, " ")))
+		}
+		out.WriteString("\n")
+	}
+	return out.String()
 }
 
 // BeginMarker returns the exact opening delimiter used by the renderer.

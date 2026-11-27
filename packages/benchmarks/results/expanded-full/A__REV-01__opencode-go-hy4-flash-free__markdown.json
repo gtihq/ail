@@ -1,0 +1,45 @@
+{
+  "id": "A__REV-01__opencode-go-hy4-flash-free__markdown",
+  "taskId": "REV-01",
+  "category": "code-review",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:40:23.8817925Z",
+  "finishedAt": "2026-11-27T15:41:00.0139382Z",
+  "durationMs": 36132,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35822,
+    "output": 1012,
+    "reasoning": 1609,
+    "cacheRead": 157184,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll locate and read the two files to review them for correctness.Let me check the surrounding directory and git history for additional context.I reviewed both files and ran `go test ./...` and `go vet ./...` (both pass, so there is no immediate compile or failing-test error). No files were modified.\n\n## Files reviewed\n\n`main.go`\n```go\npackage main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {}\n```\n\n`main_test.go`\n```go\npackage main\n\nimport \"testing\"\n\nfunc TestAdd(t *testing.T) {\n\tif add(2, 3) != 5 {\n\t\tt.Fatalf(\"add(2, 3) = %d, want 5\", add(2, 3))\n\t}\n}\n```\n\n## Concrete correctness issues\n\n1. **Unchecked integer overflow in `add` (main.go:3-5).** Go `int` addition wraps silently: `add(math.MaxInt, 1)` returns `math.MinInt`, not the mathematical sum. If `add` is meant to be correct addition for all inputs, this is a real bug. It is also platform-dependent (`int` is 32-bit on some targets), so behavior changes with architecture. There is no guard, error return, or wider type.\n\n2. **The test calls `add` twice for one assertion (main_test.go:6-7).** The condition evaluates `add(2, 3)`, and the failure message evaluates `add(2, 3)` again. The reported value can differ from the value that actually failed the check (for a pure function it does not today, but the pattern is wrong and would break if `add` became stateful, expensive, or non-deterministic). The result should be computed once into a variable and reused.\n\n3. **Test coverage is a single happy-path case (main_test.go:5-9).** Only `(2, 3)` is checked. There are no cases for zero, negative operands, commutativity, or large/overflow values. A defect limited to those inputs would go undetected. The overflow issue in point 1 has no test at all, and there is no documented contract stating that wraparound is acceptable.\n\n4. **Missing contract for overflow behavior (both files).** Because the test does not define expected behavior at the boundary, the wraparound in point 1 is ambiguous rather than clearly intentional. A correctness review cannot tell whether `add` is buggy or merely under-specified.\n\n## Summary\n\nThere is no broken code for the covered input: the function compiles, `go vet` is clean, and the test passes. The concrete issues are the unchecked overflow in `add`, the redundant double evaluation in the test's failure path, and insufficient test coverage/specification around edge cases. Nothing was changed on disk.",
+  "eventCount": 20,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de255c8e6ffe2wf2FO00M8Tcoa",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REV-01__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

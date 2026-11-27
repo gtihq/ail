@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-01__opencode-go-beam-free__markdown",
+  "taskId": "IMP-01",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:23:20.7756681Z",
+  "finishedAt": "2026-11-27T17:25:40.7015298Z",
+  "durationMs": 139925,
+  "exitCode": 0,
+  "tokens": {
+    "input": 443142,
+    "output": 2807,
+    "reasoning": 3501,
+    "cacheRead": 2770560,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The workspace already contains a correct `max` helper in `main.go`, and the existing `add` function is intact. I verified formatting, vetting, and tests:\n\n- `gofmt -l .` → no files need formatting\n- `go vet ./...` → clean\n- `go test ./...` → `ok example.com/bench`\n\nNo changes were needed; the implementation already returns the larger of two integers and keeps `add` working. Task complete.",
+  "eventCount": 114,
+  "toolCalls": 39,
+  "success": true,
+  "sessionId": "ses_de1f78944ffe8RAhS0OLD2zBne",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-01__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

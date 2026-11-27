@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-01__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:28:17.0715724Z",
+  "finishedAt": "2026-11-27T14:28:43.2805873Z",
+  "durationMs": 26209,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36645,
+    "output": 540,
+    "reasoning": 30,
+    "cacheRead": 156160,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to find `main.go` and understand the bug.Let me read the source files.The bug is on line 4: `add` subtracts instead of adding. I'll make the surgical fix.Fixed. The bug was in `main.go` line 4: `add` used subtraction (`a - b`) instead of addition. I changed it to `a + b` and left everything else untouched.\n\nVerification passed:\n```\nok  \texample.com/bench\t0.012s\n```",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de297cef5ffeOt2E0eSu3jGIow",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-01__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

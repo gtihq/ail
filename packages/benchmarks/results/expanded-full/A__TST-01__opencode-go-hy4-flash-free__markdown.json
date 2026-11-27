@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-01__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-01",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:29:25.4032762Z",
+  "finishedAt": "2026-11-27T14:30:00.0816922Z",
+  "durationMs": 34678,
+  "exitCode": 0,
+  "tokens": {
+    "input": 37747,
+    "output": 922,
+    "reasoning": 245,
+    "cacheRead": 234496,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll rewrite `main_test.go` as a table-driven test covering negative numbers, leaving `main.go` untouched.Now I'll run the tests.Done. Converted `TestAdd` in `main_test.go` into a table-driven test with named cases covering:\n\n- positive numbers\n- first argument negative\n- second argument negative\n- both arguments negative\n- negative plus zero\n\n`main.go` was not modified. `go test ./...` passes:\n\n```\nok  \texample.com/bench\t0.013s\n```",
+  "eventCount": 25,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de296c42bffeNEPO62FtMO8SYy",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-01__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

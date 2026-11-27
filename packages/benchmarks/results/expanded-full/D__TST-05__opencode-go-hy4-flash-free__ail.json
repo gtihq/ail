@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-05__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T16:34:02.2821678Z",
+  "finishedAt": "2026-11-27T16:34:37.4139527Z",
+  "durationMs": 35131,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36284,
+    "output": 860,
+    "reasoning": 268,
+    "cacheRead": 232704,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by examining the workspace files.Now I'll update `main_test.go` with a table-driven test covering mixed signs.Now I'll run the tests.Done. I converted `main_test.go` into a table-driven test for `add`, covering mixed signs (positive plus negative, negative plus positive, negative plus negative, and zero combinations) along with a baseline case. `main.go` was left untouched.\n\n`go test ./...` passes: `ok example.com/bench 0.013s`.",
+  "eventCount": 24,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de224a9aeffeMQss5aGXwkz2F0",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__TST-05__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

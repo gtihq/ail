@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-02__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:26:26.4500221Z",
+  "finishedAt": "2026-11-27T15:26:59.0840859Z",
+  "durationMs": 32634,
+  "exitCode": 0,
+  "tokens": {
+    "input": 36861,
+    "output": 998,
+    "reasoning": 533,
+    "cacheRead": 236544,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the codebase and the task.Let me read the relevant files.The task is clear. I'll convert the single `TestAdd` into a table-driven test that includes zero operands, leaving `main.go` untouched.Now let me run the tests.Tests pass. Let me verify formatting and the subtests are actually discovered.Done.\n\n**What changed** (`main_test.go` only):\n- Converted the single hard-coded assertion in `TestAdd` into a table-driven test using a `tests` slice of `{name, a, b, want}`.\n- Added subtests via `t.Run` covering four cases: positive numbers, zero first operand, zero second operand, and both zero.\n- `main.go` was not touched.\n\n**Verification:**\n- `gofmt -l .` reports no formatting issues.\n- `go test ./...` passes, and `go test -v ./...` shows all four subtests discovered and passing.",
+  "eventCount": 28,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de26290c5ffec4YnYIfz3cMcBs",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-02__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-07__opencode-go-hy4-flash-free__markdown",
+  "taskId": "REF-07",
+  "category": "refactoring",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:26:02.5926624Z",
+  "finishedAt": "2026-11-27T14:26:31.0487931Z",
+  "durationMs": 28456,
+  "exitCode": 0,
+  "tokens": {
+    "input": 38939,
+    "output": 752,
+    "reasoning": 244,
+    "cacheRead": 154624,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to find `main.go` and understand the codebase.The task is to convert `TestAdd` in `main_test.go` into a table-driven test while keeping behavior identical. I'll make a surgical change to the test only.Now I'll run the tests as requested.Done. Refactored `TestAdd` in `main_test.go` into a table-driven structure:\n\n- Test cases now live in a `tests` slice of structs (`name`, `a`, `b`, `want`) with subtests via `t.Run`.\n- The single original case (`add(2, 3) == 5`) is preserved, so behavior is unchanged and it's easy to add cases.\n- `main.go` was left untouched since the `add` logic itself needed no change.\n\n`go test ./...` passes:\n\n```\nok  \texample.com/bench\t0.013s\n```",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de299dc76ffeGyFK7W82oFc4K5",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REF-07__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

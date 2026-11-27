@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-02__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-02",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:41:00.4166026Z",
+  "finishedAt": "2026-11-27T15:41:24.9424714Z",
+  "durationMs": 24525,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35937,
+    "output": 589,
+    "reasoning": 25,
+    "cacheRead": 195840,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by looking at the workspace files.Found it: `add` uses `-` instead of `+`. Making the surgical fix.Fixed `main.go`: `add` now returns `a + b` instead of `a - b`. `go test ./...` passes.\n\nNote: no code change was needed in the rules baseline file. The task was solely the Go bug fix.",
+  "eventCount": 22,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de2553acaffeGFMGrRr56gv7SF",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-02__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

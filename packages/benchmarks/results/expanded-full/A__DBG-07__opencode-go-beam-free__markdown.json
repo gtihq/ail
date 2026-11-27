@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-07__opencode-go-beam-free__markdown",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:48:20.5033219Z",
+  "finishedAt": "2026-11-27T16:48:33.6391601Z",
+  "durationMs": 13135,
+  "exitCode": 0,
+  "tokens": {
+    "input": 28853,
+    "output": 331,
+    "reasoning": 169,
+    "cacheRead": 195328,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Tests pass. The bug was in `add`: it returned `a - b` instead of `a + b`. Fixed and verified with `go test ./...`.",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de217952fffeaqiWd0h8x1GK2S",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-07__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

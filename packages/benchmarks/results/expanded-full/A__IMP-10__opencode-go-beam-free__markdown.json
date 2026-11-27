@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-10__opencode-go-beam-free__markdown",
+  "taskId": "IMP-10",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:21:12.0978031Z",
+  "finishedAt": "2026-11-27T17:23:20.4700208Z",
+  "durationMs": 128372,
+  "exitCode": 0,
+  "tokens": {
+    "input": 140124,
+    "output": 2022,
+    "reasoning": 4322,
+    "cacheRead": 1633984,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the `sum` helper in `main.go` (sums all integers in a slice via the existing `add` function) and kept `add` intact. `go test ./...` passes.\n\nFinal `main.go`:\n\n```go\npackage main\n\nfunc add(a, b int) int {\n\treturn a + b\n}\n\n// sum returns the total of all integers in nums.\nfunc sum(nums []int) int {\n\ttotal := 0\n\tfor _, n := range nums {\n\t\ttotal = add(total, n)\n\t}\n\treturn total\n}\n\nfunc main() {}\n```",
+  "eventCount": 128,
+  "toolCalls": 45,
+  "success": true,
+  "sessionId": "ses_de1f97fe6ffeZFeJez4L9WvAql",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-10__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

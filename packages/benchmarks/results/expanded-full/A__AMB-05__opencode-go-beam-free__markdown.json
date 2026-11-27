@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-05__opencode-go-beam-free__markdown",
+  "taskId": "AMB-05",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:16:34.4763061Z",
+  "finishedAt": "2026-11-27T17:19:18.1420528Z",
+  "durationMs": 163665,
+  "exitCode": 0,
+  "tokens": {
+    "input": 360511,
+    "output": 3046,
+    "reasoning": 5427,
+    "cacheRead": 2157760,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. I made the Go program a bit nicer without changing its behavior:\n\n- Added a GoDoc comment to `add`.\n- Replaced the single assertion in `TestAdd` with a table-driven set of cases (including edge cases like zero, negatives, and mixed signs).\n- Ran `gofmt`, `go vet`, and `go test ./...`; all pass.\n\nNo em-dash characters were introduced and files stay well under the size limit.",
+  "eventCount": 117,
+  "toolCalls": 40,
+  "success": true,
+  "sessionId": "ses_de1fdbbd1ffeEmSRznon0bWp9k",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-05__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-06__opencode-go-hy4-flash-free__markdown",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:27:18.7051412Z",
+  "finishedAt": "2026-11-27T14:27:55.674021Z",
+  "durationMs": 36968,
+  "exitCode": 0,
+  "tokens": {
+    "input": 38620,
+    "output": 1028,
+    "reasoning": 367,
+    "cacheRead": 234240,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The rules in `prompt.md` are a generic baseline, most scoped to TypeScript/platform code. The actual task is small and Go-specific. I'll make a surgical change: add a simple factorial helper, keep `add` untouched, add a test, then run `go test ./...`.Done.\n\n- `main.go`: added `factorial(n int) int`, an iterative helper returning `n!` for small non-negative integers (`0!` and `1!` return `1`). The existing `add` function is unchanged.\n- `main_test.go`: kept `TestAdd` and added `TestFactorial` covering `0, 1, 2, 5, 10`.\n- `go test ./...` passes: `ok  example.com/bench 0.015s`.",
+  "eventCount": 24,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de298b2f3ffe4bAfADN7VqYP3D",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-06__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

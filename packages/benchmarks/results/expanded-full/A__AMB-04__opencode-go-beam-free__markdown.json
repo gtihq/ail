@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-04__opencode-go-beam-free__markdown",
+  "taskId": "AMB-04",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:10:30.5891987Z",
+  "finishedAt": "2026-11-27T17:11:32.4313796Z",
+  "durationMs": 61842,
+  "exitCode": 0,
+  "tokens": {
+    "input": 68874,
+    "output": 1175,
+    "reasoning": 1743,
+    "cacheRead": 454080,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I verified the Go module's standard housekeeping and found nothing to change:\n\n- `gofmt -l .` → no unformatted files\n- `go vet ./...` → clean\n- `go test ./...` → `ok example.com/bench`\n- `go mod tidy` → no diff to `go.mod`\n\nThe workspace contains only `go.mod`, `main.go`, `main_test.go`, and the attached `prompt.md`. It is already formatted, vetted, tested, and module-tidy, and the supplied rules call for surgical changes rather than speculative edits. I left the source untouched.",
+  "eventCount": 43,
+  "toolCalls": 16,
+  "success": true,
+  "sessionId": "ses_de203492fffeoJzxXd34bJ0EQx",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

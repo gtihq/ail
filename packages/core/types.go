@@ -392,6 +392,17 @@ const (
 // InjectionMode selects a rendering strategy with identical semantic intent.
 type InjectionMode string
 
+// FormatVariant selects an experimental AIL payload shape for prompt research.
+type FormatVariant string
+
+const (
+	VariantFull              FormatVariant = "full"
+	VariantNoInterpretation  FormatVariant = "no-interpretation"
+	VariantNoDelimiters      FormatVariant = "no-delimiters"
+	VariantCompactBare       FormatVariant = "compact-bare"
+	VariantTinyRules         FormatVariant = "tiny-rules"
+)
+
 const (
 	ModeInline  InjectionMode = "INLINE"
 	ModeFile    InjectionMode = "FILE"
@@ -405,6 +416,7 @@ type RenderOptions struct {
 	Mode              InjectionMode `json:"mode"`
 	IncludeDelimiters *bool         `json:"includeDelimiters,omitempty"`
 	IncludeProvenance bool          `json:"includeProvenance"`
+	Variant           FormatVariant `json:"variant,omitempty"`
 }
 
 // RenderResult is rendered text plus sanitization diagnostics.

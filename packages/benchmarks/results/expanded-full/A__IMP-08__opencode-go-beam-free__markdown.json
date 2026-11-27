@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-08__opencode-go-beam-free__markdown",
+  "taskId": "IMP-08",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:50:08.9274597Z",
+  "finishedAt": "2026-11-27T16:52:59.2908595Z",
+  "durationMs": 170363,
+  "exitCode": 0,
+  "tokens": {
+    "input": 535619,
+    "output": 2838,
+    "reasoning": 3077,
+    "cacheRead": 3945216,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented a `merge` helper (plus common name variants/aliases) in `main.go`, keeping `add` working. `go test ./...` passes.",
+  "eventCount": 102,
+  "toolCalls": 35,
+  "success": true,
+  "sessionId": "ses_de215edb1ffey0c4SK10npXzRh",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-08__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

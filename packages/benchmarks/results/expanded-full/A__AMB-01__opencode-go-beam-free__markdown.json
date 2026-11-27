@@ -1,0 +1,46 @@
+{
+  "id": "A__AMB-01__opencode-go-beam-free__markdown",
+  "taskId": "AMB-01",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T20:13:40.8686163Z",
+  "finishedAt": "2026-11-27T20:18:50.860846Z",
+  "durationMs": 309992,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de15b96aeffepGQBv4EEBhkAfC",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-01__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.013s\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

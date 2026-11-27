@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:28:43.6113729Z",
+  "finishedAt": "2026-11-27T14:29:25.0334727Z",
+  "durationMs": 41422,
+  "exitCode": 0,
+  "tokens": {
+    "input": 38984,
+    "output": 1109,
+    "reasoning": 2570,
+    "cacheRead": 239616,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to understand the code and existing tests.Now let me check the Go environment architecture to choose safe \"large value\" test cases.The function is a simple `int` addition. I'll convert `main_test.go` into a table-driven test with large-value cases (kept within int32 range so the test is portable across architectures), without touching `main.go`.Now let me verify `main.go` is untouched and run the tests.`go test ./...` passes.\n\nWhat I did:\n- Rewrote `main_test.go` as a table-driven test with named cases and subtests (`t.Run`).\n- Added large-value cases covering large positive values, a value at the int32 max, large negative values, and large mixed-sign inputs. All sums stay within int32 range so the test is portable across 32-bit and 64-bit architectures.\n- Left `main.go` unchanged.\n\nResult: `go test ./...` reports `ok example.com/bench`.",
+  "eventCount": 27,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de2976773ffect0EtdjT1RX7Cb",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

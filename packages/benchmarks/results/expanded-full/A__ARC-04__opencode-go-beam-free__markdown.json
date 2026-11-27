@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-04__opencode-go-beam-free__markdown",
+  "taskId": "ARC-04",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T17:21:52.128747Z",
+  "finishedAt": "2026-11-27T17:22:15.8701268Z",
+  "durationMs": 23741,
+  "exitCode": 0,
+  "tokens": {
+    "input": 41515,
+    "output": 812,
+    "reasoning": 482,
+    "cacheRead": 414144,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Moved the `add` helper into a focused `helpers.go` file and left `main.go` with only `main()`. Module builds and tests pass (`go build ./...`, `go test ./...`), and `gofmt` reports no formatting issues.",
+  "eventCount": 37,
+  "toolCalls": 12,
+  "success": true,
+  "sessionId": "ses_de1f8e349ffekrKVobvE2DspLX",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__ARC-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

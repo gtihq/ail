@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-02__opencode-go-beam-free__markdown",
+  "taskId": "REF-02",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T16:58:37.3554722Z",
+  "finishedAt": "2026-11-27T16:59:45.8986141Z",
+  "durationMs": 68543,
+  "exitCode": 0,
+  "tokens": {
+    "input": 85039,
+    "output": 1433,
+    "reasoning": 1987,
+    "cacheRead": 652032,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Refactored `main.go` to define named constants (`leftOperand`, `rightOperand`, `expectedResult`) for the previously magic numbers, and updated the test to use them. `go test ./...` passes.",
+  "eventCount": 55,
+  "toolCalls": 18,
+  "success": true,
+  "sessionId": "ses_de20e2bd5ffePrMiA19fKOHNEw",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REF-02__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__REV-05__opencode-go-hy4-flash-free__markdown",
+  "taskId": "REV-05",
+  "category": "code-review",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T15:43:43.2910511Z",
+  "finishedAt": "2026-11-27T15:44:18.8937078Z",
+  "durationMs": 35602,
+  "exitCode": 0,
+  "tokens": {
+    "input": 40810,
+    "output": 865,
+    "reasoning": 2199,
+    "cacheRead": 160512,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll locate and review the files first.Let me load the relevant skill for reviewing test quality before finalizing my assessment.I reviewed both files without modifying anything.\n\n## Verdict\n\n`main_test.go` catches the most basic regression (for example, swapping `+` for `-`), but it is a single happy-path example with structural weaknesses that make diagnostics brittle and leave boundary behavior untested.\n\n## Concrete issues\n\n**1. The function under test is invoked twice (main_test.go:7)**\nThe failure message calls `add(2, 3)` again to build its output. For a pure function this happens to give the same number, but it is the wrong pattern: the reported value comes from a second invocation rather than the one that was asserted. For any function with side effects, state, or nondeterminism the message would lie about what actually failed. Store the result once:\n```go\ngot := add(2, 3)\nif got != want { t.Fatalf(\"add(2, 3) = %d, want %d\", got, want) }\n```\n\n**2. The expected value is duplicated as a magic number (main_test.go:6 and 7)**\n`5` appears in both the condition (`!= 5`) and the format string (`want 5`). If someone updates one during a change, the assertion and the error message silently disagree. Use a single `want := 5` literal referenced in both places.\n\n**3. No edge or boundary cases (main_test.go:5-9)**\nOnly `2 + 3` is exercised. Untested inputs include zero and negative operands, the identity case (`0 + x`, `x + 0`), and integer boundaries such as `math.MaxInt` and `math.MinInt` where Go addition wraps. A pure arithmetic function is exactly where cheap table-driven literal cases belong.\n\n**4. Not table-driven and no subtests**\nThe test is not written with a slice of cases plus `t.Run`. Consequences: a failure does not identify the failing input by name, individual cases cannot be run with `-run`, and adding the cases from issue 3 requires restructuring. Idiomatic Go would name each case (`\"positive\"`, `\"negative\"`, `\"zero\"`, `\"overflow\"`).\n\n**5. No property-based check of arithmetic laws (lower priority)**\nA single example cannot prove `add` is commutative, associative, or has `0` as identity. A small property test (using the standard library `testing/quick` or a local generator) would cover a whole class of wrong implementations that one example misses, for instance a function that special-cases small positives.\n\n## Notes on what is fine\n\n- Testing `add` directly through its package is appropriate here; it is the public surface of this tiny package, so there is no structure-coupling problem.\n- `main()` is an empty no-op, so the absence of a test for it is correct. Adding a test merely to cover it would add noise, not signal.\n- `t.Fatalf` is acceptable with a single assertion; `t.Errorf` would be preferable only if more assertions were added.\n\nNo files were changed.",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de252be20ffeb1D2r55UDREh8d",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REV-05__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.017s\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

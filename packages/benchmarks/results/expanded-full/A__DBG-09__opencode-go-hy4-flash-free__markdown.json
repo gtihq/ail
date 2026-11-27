@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-09__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-09",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T14:26:31.3219348Z",
+  "finishedAt": "2026-11-27T14:26:53.8918791Z",
+  "durationMs": 22569,
+  "exitCode": 0,
+  "tokens": {
+    "input": 37767,
+    "output": 270,
+    "reasoning": 61,
+    "cacheRead": 154112,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to find the relevant files.Let me read the relevant files.The bug is clear: `add` subtracts instead of adding. I'll make the surgical fix.Now I'll run the test suite to verify.Fixed. The bug was in `main.go`: the `add` function used `-` instead of `+`. I made the one-line surgical change, leaving everything else untouched, and `go test ./...` now passes (`ok example.com/bench`).",
+  "eventCount": 22,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de2996c2effeViUE3GzHFAigEl",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-09__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -147,6 +147,7 @@ type Request struct {
 	OutputDir       string
 	Timeout         time.Duration
 	OpenCodeBinary  string
+	Variant         core.FormatVariant
 }
 
 // LoadCatalog reads a task catalogue from disk.
@@ -169,6 +170,24 @@ func WriteCatalog(path string, catalog Catalog) error {
 		return err
 	}
 	return os.WriteFile(path, append(data, '\n'), 0o644)
+}
+
+// InstructionPayloadVariant builds the AIL instruction context for an experimental format variant.
+func InstructionPayloadVariant(variant core.FormatVariant) (string, error) {
+	source, err := os.ReadFile(".ail/rules/project-rules.ail")
+	if err != nil {
+		return "", err
+	}
+	parsed := parser.Parse(string(source), "project-rules.ail")
+	ir := interpreter.Interpret(parsed).IR
+	include := true
+	result := renderer.Render(ir, core.RenderOptions{
+		Host:              core.HostOpenCode,
+		Mode:              core.ModeInline,
+		IncludeDelimiters: &include,
+		Variant:           variant,
+	})
+	return result.Text, nil
 }
 
 // InstructionPayload builds the instruction context for a format and delimiter mode.
