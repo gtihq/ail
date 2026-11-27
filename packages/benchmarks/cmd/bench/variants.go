@@ -19,6 +19,10 @@ var variantHypotheses = []core.FormatVariant{
 	core.VariantNoDelimiters,
 	core.VariantCompactBare,
 	core.VariantTinyRules,
+	core.VariantTreeNotation,
+	core.VariantPriorityBands,
+	core.VariantDomainGroups,
+	core.VariantImperative,
 }
 
 // variantsCommand runs a small paired experiment over AIL format variants using one model.

@@ -248,6 +248,34 @@ func Render(ir *core.IR, options core.RenderOptions) core.RenderResult {
 		out.WriteString("\n")
 		out.WriteString(endMarker)
 		out.WriteString("\n")
+	case core.VariantTreeNotation:
+		out.WriteString(beginMarker)
+		out.WriteString("\n\n")
+		out.WriteString(r.treeNotation(ir))
+		out.WriteString("\n")
+		out.WriteString(endMarker)
+		out.WriteString("\n")
+	case core.VariantPriorityBands:
+		out.WriteString(beginMarker)
+		out.WriteString("\n\n")
+		out.WriteString(r.priorityBands(ir))
+		out.WriteString("\n")
+		out.WriteString(endMarker)
+		out.WriteString("\n")
+	case core.VariantDomainGroups:
+		out.WriteString(beginMarker)
+		out.WriteString("\n\n")
+		out.WriteString(r.domainGroups(ir))
+		out.WriteString("\n")
+		out.WriteString(endMarker)
+		out.WriteString("\n")
+	case core.VariantImperative:
+		out.WriteString(beginMarker)
+		out.WriteString("\n\n")
+		out.WriteString(r.imperativeRules(ir))
+		out.WriteString("\n")
+		out.WriteString(endMarker)
+		out.WriteString("\n")
 	default:
 		out.WriteString(r.hostHeader(ir))
 		out.WriteString(interpretationInstruction)
@@ -306,6 +334,112 @@ func (r *renderer) tinyRules(ir *core.IR) string {
 			out.WriteString(r.sanitize(strings.Join(rule.Never, " ")))
 		}
 		out.WriteString("\n")
+	}
+	return out.String()
+}
+
+// treeNotation writes rules as a nested outline with semantic fields as children.
+func (r *renderer) treeNotation(ir *core.IR) string {
+	var out strings.Builder
+	for _, rule := range ir.Rules {
+		fmt.Fprintf(&out, "- %s [%s] @ %s\n", r.sanitize(rule.ID), rule.Priority, r.sanitize(rule.Scope))
+		if len(rule.When) > 0 {
+			fmt.Fprintf(&out, "  when: %s\n", r.sanitize(strings.Join(rule.When, " AND ")))
+		}
+		for _, term := range rule.Do {
+			fmt.Fprintf(&out, "  do: %s\n", r.sanitize(term))
+		}
+		for _, term := range rule.Never {
+			fmt.Fprintf(&out, "  never: %s\n", r.sanitize(term))
+		}
+		for _, term := range rule.Verify {
+			fmt.Fprintf(&out, "  verify: %s\n", r.sanitize(term))
+		}
+		for _, term := range rule.Fallback {
+			fmt.Fprintf(&out, "  fallback: %s\n", r.sanitize(term))
+		}
+	}
+	return out.String()
+}
+
+// priorityBands groups rules under explicit priority headings.
+func (r *renderer) priorityBands(ir *core.IR) string {
+	order := []core.Priority{core.PriorityCritical, core.PriorityHigh, core.PriorityMedium, core.PriorityLow, core.PriorityInfo}
+	var out strings.Builder
+	for _, priority := range order {
+		rules := make([]core.IRRule, 0)
+		for _, rule := range ir.Rules {
+			if rule.Priority == priority {
+				rules = append(rules, rule)
+			}
+		}
+		if len(rules) == 0 {
+			continue
+		}
+		fmt.Fprintf(&out, "PRIORITY %s\n", priority)
+		for _, rule := range rules {
+			fmt.Fprintf(&out, "  %s: DO %s", r.sanitize(rule.ID), r.sanitize(strings.Join(rule.Do, " ")))
+			if len(rule.Never) > 0 {
+				fmt.Fprintf(&out, "; NEVER %s", r.sanitize(strings.Join(rule.Never, " ")))
+			}
+			if len(rule.Verify) > 0 {
+				fmt.Fprintf(&out, "; VERIFY %s", r.sanitize(strings.Join(rule.Verify, " ")))
+			}
+			if len(rule.Fallback) > 0 {
+				fmt.Fprintf(&out, "; FALLBACK %s", r.sanitize(strings.Join(rule.Fallback, " ")))
+			}
+			out.WriteString("\n")
+		}
+	}
+	return out.String()
+}
+
+// domainGroups groups rules by the top-level concept in their scope.
+func (r *renderer) domainGroups(ir *core.IR) string {
+	groups := make(map[string][]core.IRRule)
+	for _, rule := range ir.Rules {
+		key := "general"
+		parts := strings.Split(rule.Scope, "/")
+		if len(parts) > 0 && parts[0] != "" {
+			key = parts[0]
+		}
+		groups[key] = append(groups[key], rule)
+	}
+	keys := make([]string, 0, len(groups))
+	for key := range groups {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+	var out strings.Builder
+	for _, key := range keys {
+		fmt.Fprintf(&out, "DOMAIN %s\n", r.sanitize(key))
+		for _, rule := range groups[key] {
+			fmt.Fprintf(&out, "  %s: %s", r.sanitize(rule.ID), r.sanitize(strings.Join(rule.Do, " ")))
+			if len(rule.Never) > 0 {
+				fmt.Fprintf(&out, " / not %s", r.sanitize(strings.Join(rule.Never, " ")))
+			}
+			out.WriteString("\n")
+		}
+	}
+	return out.String()
+}
+
+// imperativeRules writes each rule as a short imperative sentence.
+func (r *renderer) imperativeRules(ir *core.IR) string {
+	var out strings.Builder
+	for _, rule := range ir.Rules {
+		fmt.Fprintf(&out, "%s: ", r.sanitize(rule.ID))
+		if len(rule.When) > 0 {
+			fmt.Fprintf(&out, "When %s, ", r.sanitize(strings.Join(rule.When, " and ")))
+		}
+		fmt.Fprintf(&out, "always %s", r.sanitize(strings.Join(rule.Do, ", ")))
+		if len(rule.Never) > 0 {
+			fmt.Fprintf(&out, "; never %s", r.sanitize(strings.Join(rule.Never, ", ")))
+		}
+		if len(rule.Fallback) > 0 {
+			fmt.Fprintf(&out, "; otherwise %s", r.sanitize(strings.Join(rule.Fallback, ", ")))
+		}
+		out.WriteString(".\n")
 	}
 	return out.String()
 }

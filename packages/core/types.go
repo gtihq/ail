@@ -401,6 +401,10 @@ const (
 	VariantNoDelimiters      FormatVariant = "no-delimiters"
 	VariantCompactBare       FormatVariant = "compact-bare"
 	VariantTinyRules         FormatVariant = "tiny-rules"
+	VariantTreeNotation      FormatVariant = "tree-notation"
+	VariantPriorityBands     FormatVariant = "priority-bands"
+	VariantDomainGroups      FormatVariant = "domain-groups"
+	VariantImperative        FormatVariant = "imperative"
 )
 
 const (
