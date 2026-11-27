@@ -1,0 +1,47 @@
+{
+  "id": "D__IMP-05__opencode-go-beam-free__ail",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:24:59.2808632Z",
+  "finishedAt": "2026-11-27T05:25:26.5615815Z",
+  "durationMs": 27280,
+  "exitCode": 0,
+  "tokens": {
+    "input": 57518,
+    "output": 1024,
+    "reasoning": 1320,
+    "cacheRead": 325888,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented string reversal helper(s) in `main.go` while keeping `add` intact. `go test ./...` passes.",
+  "eventCount": 32,
+  "toolCalls": 11,
+  "success": true,
+  "sessionId": "ses_de4893652ffepg4Mm9DeEyd16r",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__IMP-05__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

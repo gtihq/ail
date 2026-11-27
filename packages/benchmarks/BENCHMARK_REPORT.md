@@ -1,6 +1,6 @@
 # Benchmark Report - AIL versus Markdown
 
-Version 0.3, revised. Generated from raw data in `packages/benchmarks/results/full/`. All numbers come from recorded executions.
+Version 0.3, revised. Generated from raw data in `packages/benchmarks/results/full/` (10 rules) and `packages/benchmarks/results/expanded-clean/` (45 rules). All numbers come from recorded executions.
 
 ## Important correction
 
@@ -91,7 +91,26 @@ Paired comparisons with means, medians, standard deviations, t-based 95% confide
 - **Does token reduction translate into lower cost?** By token proxy, yes: -39.3% on output tokens. Real prices are unknown.
 - **Is a dedicated toolchain justified?** The token and tool-call evidence supports it. Success and quality benefits remain unproven.
 
-## 7. Reproducing this report
+## 7. Expanded rule set (45 rules)
+
+A second round used the 45 workspace rules in `.ail/rules/project-rules.ail` and the equivalent `MARKDOWN_BASELINE.md`. Both files are generated from one definition list by `bench genrules`.
+
+Coverage: 80 planned executions, 80 attempted, 60 successful. DeepSeek v4.1 Flash again failed all 20 calls with the provider weekly usage cap. Analysis uses the 30 matched pairs where both formats succeeded (Hy4 Flash Free, Beam Free and HungerG Free, 10 tasks each).
+
+| Metric | Mean A | Mean D | Difference | Relative | 95% CI | p | Cohen d |
+|--------|--------|--------|------------|----------|--------|---|---------|
+| Input tokens | 49596.37 | 39850.47 | -9745.90 | -19.6% | -21692.30 to 2200.50 | 0.0957 | -0.304 |
+| Output tokens | 995.60 | 804.43 | -191.17 | -19.2% | -425.35 to 43.02 | 0.0955 | -0.304 |
+| Reasoning tokens | 930.87 | 947.47 | +16.60 | +1.8% | -209.38 to 242.58 | 0.8808 | 0.027 |
+| Cache read | 400635.73 | 323383.47 | -77252.27 | -19.3% | -199999.76 to 45495.22 | 0.1987 | -0.235 |
+| Duration | 38803.27 ms | 30384.20 ms | -8419.07 ms | -21.7% | -19708.24 to 2870.10 | 0.1278 | -0.278 |
+| Tool calls | 11.13 | 9.87 | -1.27 | -11.4% | -3.93 to 1.40 | 0.3314 | -0.177 |
+
+All six directions favor AIL, but **none reaches statistical significance after Holm-Bonferroni correction** with only 30 pairs. Effect sizes are small. The honest conclusion is that the 45-rule round suggests a consistent efficiency gain of roughly 19 to 22 percent, but the sample is too small to confirm it. This does not contradict the first round; it is a weaker result with a larger, more realistic rule set.
+
+Three infrastructure failures were found and fixed during this round: the prompt exceeded the Windows command-line limit, OpenCode resolved `--file` relative to the workspace, and `verify` reapplied stale empty event streams. Raw data from failed attempts was discarded; the reported numbers come from `results/expanded-clean/` only.
+
+## 8. Reproducing this report
 
 ```powershell
 go run ./packages/benchmarks/cmd/bench verify -output packages/benchmarks/results/full

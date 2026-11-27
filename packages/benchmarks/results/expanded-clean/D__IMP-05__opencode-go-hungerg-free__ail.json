@@ -1,0 +1,47 @@
+{
+  "id": "D__IMP-05__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T13:53:52.8011707Z",
+  "finishedAt": "2026-11-27T13:54:15.9925947Z",
+  "durationMs": 23191,
+  "exitCode": 0,
+  "tokens": {
+    "input": 21606,
+    "output": 1007,
+    "reasoning": 1349,
+    "cacheRead": 297984,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll inspect the Go package, add the string-reversal helper, and run the tests.Implemented `reverseString` in `main.go` with Unicode-safe reversal while preserving string length. Added tests for empty strings, words, and Unicode.\n\n`go test ./...` passes.",
+  "eventCount": 27,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de2b74e15ffe6EwenSexg269IU",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__IMP-05__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

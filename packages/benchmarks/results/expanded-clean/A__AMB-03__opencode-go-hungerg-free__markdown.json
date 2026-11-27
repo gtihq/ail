@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-03__opencode-go-hungerg-free__markdown",
+  "taskId": "AMB-03",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:28:27.186541Z",
+  "finishedAt": "2026-11-27T05:28:53.9885645Z",
+  "durationMs": 26802,
+  "exitCode": 0,
+  "tokens": {
+    "input": 26315,
+    "output": 1779,
+    "reasoning": 1930,
+    "cacheRead": 284672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace, project documentation, and current changes first, then make targeted cleanup changes and verify them with the available checks.The workspace is a small, already formatted Go module with passing tests and no local documentation beyond `prompt.md`. I’ll keep the behavior and entry point unchanged, make the arithmetic code clearer, and expand the test so cleanup does not reduce confidence.Cleaned up the implementation:\n\n- Renamed `add` parameters to `left` and `right`.\n- Added a concise function comment.\n- Replaced the single test with table-driven cases for positive, negative, and zero inputs.\n- Preserved existing behavior and the entry point.\n\nValidation passed:\n\n- `gofmt`\n- `go test ./...`\n- `go vet ./...`",
+  "eventCount": 31,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de48609f5ffeYxwsf717qkZPEV",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__AMB-03__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

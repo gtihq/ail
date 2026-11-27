@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-07__opencode-go-beam-free__markdown",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:23:13.3208757Z",
+  "finishedAt": "2026-11-27T05:23:23.2756942Z",
+  "durationMs": 9954,
+  "exitCode": 0,
+  "tokens": {
+    "input": 15379,
+    "output": 415,
+    "reasoning": 95,
+    "cacheRead": 208960,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Tests pass. Fixed `add` to return `a + b` instead of `a - b`.",
+  "eventCount": 20,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de48ad454ffeBPnOZtb01drSRl",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-07__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

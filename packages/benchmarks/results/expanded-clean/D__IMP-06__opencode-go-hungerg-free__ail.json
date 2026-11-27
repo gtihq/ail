@@ -1,0 +1,47 @@
+{
+  "id": "D__IMP-06__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T13:55:04.7281218Z",
+  "finishedAt": "2026-11-27T13:55:22.7292584Z",
+  "durationMs": 18001,
+  "exitCode": 0,
+  "tokens": {
+    "input": 20120,
+    "output": 1241,
+    "reasoning": 724,
+    "cacheRead": 263168,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll check the Go package and its conventions, add the helper, and run the tests.Implemented `factorial(n int) int` in `main.go`, including `0! = 1` and negative-input validation. The existing `add` function remains unchanged.\n\nAdded factorial tests in `main_test.go`.\n\n`go test ./...` passes.",
+  "eventCount": 25,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de2b6359bffelwDprYpf4sbTP4",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__IMP-06__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 2,
+    "violated": [
+      "R002"
+    ],
+    "pct": 66.66666666666666
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

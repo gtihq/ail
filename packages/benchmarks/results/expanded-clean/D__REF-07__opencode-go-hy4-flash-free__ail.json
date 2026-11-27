@@ -1,0 +1,47 @@
+{
+  "id": "D__REF-07__opencode-go-hy4-flash-free__ail",
+  "taskId": "REF-07",
+  "category": "refactoring",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:14:22.8762866Z",
+  "finishedAt": "2026-11-27T05:14:57.8989116Z",
+  "durationMs": 35022,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39424,
+    "output": 723,
+    "reasoning": 1238,
+    "cacheRead": 155136,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the working directory to find the relevant files.Now I'll refactor the test into a table-driven form, keeping the exact same assertion (`add(2, 3) == 5`).Done. `main_test.go` now uses a table-driven test with a case struct (`name`, `a`, `b`, `want`) and a `t.Run` loop. `main.go` was left untouched, so production behavior is unchanged; the only case still asserts `add(2, 3) == 5`.\n\nVerification: `gofmt -d .` reported no diff, and `go test ./...` passed (`ok example.com/bench`).",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de492ec44ffeA8ZV7ESh5KWjIm",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__REF-07__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 1,
+    "violated": [
+      "R002"
+    ],
+    "pct": 50
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

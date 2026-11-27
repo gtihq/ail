@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-03__opencode-go-hungerg-free__ail",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T13:55:53.3508551Z",
+  "finishedAt": "2026-11-27T13:56:41.2858928Z",
+  "durationMs": 47935,
+  "exitCode": 0,
+  "tokens": {
+    "input": 34857,
+    "output": 1096,
+    "reasoning": 3330,
+    "cacheRead": 498688,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Added `TestAddLargeValues` in `main_test.go` with table-driven cases covering large positive values, large negative values, and integer boundaries. `main.go` was not changed.\n\nValidation passed:\n- `go test ./...`\n- `go vet ./...`",
+  "eventCount": 40,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de2b5776bffe252xI6zij4sBdG",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__TST-03__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

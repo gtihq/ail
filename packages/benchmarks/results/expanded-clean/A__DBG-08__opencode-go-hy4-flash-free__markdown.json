@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-08__opencode-go-hy4-flash-free__markdown",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:08:23.4443438Z",
+  "finishedAt": "2026-11-27T05:08:42.5220771Z",
+  "durationMs": 19077,
+  "exitCode": 0,
+  "tokens": {
+    "input": 38130,
+    "output": 509,
+    "reasoning": 22,
+    "cacheRead": 154880,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll look at the workspace to find `main.go` and understand the addition bug.The bug is straightforward: `add` subtracts instead of adding. I'll make the surgical fix.Fixed the bug in `main.go`: `add` was returning `a - b` instead of `a + b`. Changed the operator to `+`.\n\n`go test ./...` passes: `ok example.com/bench`.\n\nNote: the result shows `(cached)`, meaning Go reused a cached passing result. Since the source changed, that's expected as the cache key includes file contents. If you want a forced fresh run, use `go test -count=1 ./...`.",
+  "eventCount": 18,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de4986867ffeX3JYlHPsuFyFz8",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-08__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

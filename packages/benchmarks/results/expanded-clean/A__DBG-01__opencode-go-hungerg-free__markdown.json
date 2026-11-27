@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-01__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T13:51:59.2348915Z",
+  "finishedAt": "2026-11-27T13:52:12.080363Z",
+  "durationMs": 12845,
+  "exitCode": 0,
+  "tokens": {
+    "input": 47281,
+    "output": 765,
+    "reasoning": 411,
+    "cacheRead": 154624,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect `main.go`, the failing tests, and any project notes, then make a minimal fix and run `go test ./...`.Fixed `add` in `main.go` to return `a + b` instead of `a - b`.\n\nVerification: `go test ./...` passed (`ok example.com/bench`).",
+  "eventCount": 20,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de2b909f5ffemPFR2GmiPUjQsC",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

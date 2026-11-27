@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-05__opencode-go-beam-free__markdown",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:19:50.7134931Z",
+  "finishedAt": "2026-11-27T05:21:27.1143964Z",
+  "durationMs": 96400,
+  "exitCode": 0,
+  "tokens": {
+    "input": 124976,
+    "output": 3933,
+    "reasoning": 1851,
+    "cacheRead": 1876352,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `reverse` in `main.go` while keeping `add` working. Verified with `go test ./...` (pass).",
+  "eventCount": 114,
+  "toolCalls": 37,
+  "success": true,
+  "sessionId": "ses_de48deba3ffeHSRpkHka14PdJC",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-05__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

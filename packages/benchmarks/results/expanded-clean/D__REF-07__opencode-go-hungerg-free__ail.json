@@ -1,0 +1,47 @@
+{
+  "id": "D__REF-07__opencode-go-hungerg-free__ail",
+  "taskId": "REF-07",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T13:54:16.3527675Z",
+  "finishedAt": "2026-11-27T13:54:31.1151201Z",
+  "durationMs": 14762,
+  "exitCode": 0,
+  "tokens": {
+    "input": 22189,
+    "output": 660,
+    "reasoning": 504,
+    "cacheRead": 268288,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Refactored `main_test.go` into a table-driven `TestAdd` with named subtests covering positive, zero, and negative values. `main.go` remains unchanged.\n\nRan `go test ./...`: all tests passed.",
+  "eventCount": 23,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de2b6f298ffe9Gg9jCXypBsz5G",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__REF-07__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 1,
+    "violated": [
+      "R002"
+    ],
+    "pct": 50
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

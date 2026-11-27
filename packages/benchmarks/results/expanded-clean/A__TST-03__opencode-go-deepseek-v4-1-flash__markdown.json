@@ -1,0 +1,46 @@
+{
+  "id": "A__TST-03__opencode-go-deepseek-v4-1-flash__markdown",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T13:51:38.8224371Z",
+  "finishedAt": "2026-11-27T13:51:40.0799729Z",
+  "durationMs": 1257,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de2b959e4ffekCTlWwwcsGxvNL",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-03__opencode-go-deepseek-v4-1-flash__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

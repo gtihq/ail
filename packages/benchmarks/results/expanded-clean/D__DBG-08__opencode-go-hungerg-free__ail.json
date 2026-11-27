@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-08__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T13:54:39.6912622Z",
+  "finishedAt": "2026-11-27T13:55:04.3780423Z",
+  "durationMs": 24686,
+  "exitCode": 0,
+  "tokens": {
+    "input": 16153,
+    "output": 309,
+    "reasoning": 211,
+    "cacheRead": 181248,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll inspect `main.go` and the relevant tests, make the smallest fix, then run `go test ./...`.Fixed `add` in `main.go` to use addition (`a + b`) instead of subtraction.\n\nVerification: `go test ./...` passes.",
+  "eventCount": 19,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de2b6974effeHP16UNkiSDjWWV",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-08__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

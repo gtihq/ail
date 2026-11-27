@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-03__opencode-go-hungerg-free__markdown",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T13:52:12.5235606Z",
+  "finishedAt": "2026-11-27T13:52:35.1543787Z",
+  "durationMs": 22630,
+  "exitCode": 0,
+  "tokens": {
+    "input": 50227,
+    "output": 959,
+    "reasoning": 1098,
+    "cacheRead": 235520,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the existing tests, add coverage for `add` with large values, and run `go test ./...` without changing `main.go`.Updated `main_test.go` with table-driven tests covering small values, large positive and negative values, mixed signs, and platform-specific integer boundaries.\n\n`main.go` remains unchanged.\n\nValidation passed:\n```text\ngo test ./...\nok  \texample.com/bench\t0.014s\n```",
+  "eventCount": 27,
+  "toolCalls": 11,
+  "success": true,
+  "sessionId": "ses_de2b8d5aaffeJVSoh66Bx3Gg5F",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-03__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

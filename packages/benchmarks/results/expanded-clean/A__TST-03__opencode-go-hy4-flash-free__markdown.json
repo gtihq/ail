@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:10:10.1004709Z",
+  "finishedAt": "2026-11-27T05:10:46.4476533Z",
+  "durationMs": 36347,
+  "exitCode": 0,
+  "tokens": {
+    "input": 39505,
+    "output": 1287,
+    "reasoning": 750,
+    "cacheRead": 235776,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll explore the workspace first to understand the current state and the code I need to test.I'll read the relevant files to understand the code under test.The task is straightforward: add a table-driven test for `add` with large values in `main_test.go`, keep `main.go` untouched, preserve the existing test, then run `go test ./...`. I'll append a new table-driven test function.Now I'll verify with `gofmt` (lint/format check on the touched file) and run the required test command.Formatting is clean. Running the required test command.Done.\n\n**Changes** (`main_test.go` only; `main.go` untouched):\n- Added `TestAddLargeValues`, a table-driven test covering large values: two large positives, large positive + large negative, two large negatives, `MaxInt32 + 0`, and `MinInt32 + 1`.\n- Ran each case as a `t.Run` subtest with a descriptive name. Values stay within int32 range so the test is portable across 32/64-bit platforms and avoids implementation-dependent overflow.\n- Preserved the existing `TestAdd` function.\n\n**Verification:**\n- `gofmt -l main_test.go` produced no output (file is formatted).\n- `go test ./...` passed: `ok example.com/bench 0.014s`.",
+  "eventCount": 28,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de496c798ffe8nq4xjGG4oEvPs",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

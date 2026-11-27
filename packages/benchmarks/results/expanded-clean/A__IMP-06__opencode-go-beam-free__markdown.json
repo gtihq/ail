@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-06__opencode-go-beam-free__markdown",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:22:21.6181228Z",
+  "finishedAt": "2026-11-27T05:23:12.8816473Z",
+  "durationMs": 51263,
+  "exitCode": 0,
+  "tokens": {
+    "input": 89086,
+    "output": 1620,
+    "reasoning": 2244,
+    "cacheRead": 1071808,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented `factorial` (plus exported `Factorial`) in `main.go` while keeping `add` unchanged. `gofmt` is clean and `go test ./...` passes.",
+  "eventCount": 41,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de48b9e40ffeuEQ7t9G2G6F3Mh",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-06__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-09__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-09",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:14:58.3885432Z",
+  "finishedAt": "2026-11-27T05:15:23.1473793Z",
+  "durationMs": 24758,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35751,
+    "output": 575,
+    "reasoning": 63,
+    "cacheRead": 194304,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the workspace to find `main.go` and the failing test.The bug is clear: `add` subtracts instead of adding. I'll make the surgical fix.The result shows `(cached)`, so I'll force a fresh run to be sure the fix is verified.Fixed. The `add` helper in `main.go` was subtracting (`a - b`) instead of adding. I changed it to `a + b`, leaving everything else untouched.\n\nVerified with `go test ./...` (and a fresh `-count=1` run): both pass.",
+  "eventCount": 22,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de492619cffeh9Zz87bPvBD0JQ",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-09__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

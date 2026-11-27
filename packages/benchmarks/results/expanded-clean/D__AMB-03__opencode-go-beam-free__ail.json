@@ -1,0 +1,45 @@
+{
+  "id": "D__AMB-03__opencode-go-beam-free__ail",
+  "taskId": "AMB-03",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:24:08.3272089Z",
+  "finishedAt": "2026-11-27T05:24:58.720963Z",
+  "durationMs": 50393,
+  "exitCode": 0,
+  "tokens": {
+    "input": 101057,
+    "output": 1605,
+    "reasoning": 2149,
+    "cacheRead": 905024,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Cleaned up the implementation: renamed `add`'s parameters to `left`/`right` for clarity, added a doc comment, and converted `TestAdd` into a table-driven test covering positive, zero, negative, and mixed-sign cases (calling `add` once per case). Ran `gofmt`, `go vet`, and `go test ./...`, all passing.",
+  "eventCount": 45,
+  "toolCalls": 16,
+  "success": true,
+  "sessionId": "ses_de489fd70ffeQ82axtFFaCRxuo",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__AMB-03__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.013s\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

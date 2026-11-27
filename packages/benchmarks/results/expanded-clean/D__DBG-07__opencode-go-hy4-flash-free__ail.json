@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-07__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:16:19.4342445Z",
+  "finishedAt": "2026-11-27T05:17:19.9048362Z",
+  "durationMs": 60470,
+  "exitCode": 0,
+  "tokens": {
+    "input": 35144,
+    "output": 426,
+    "reasoning": 68,
+    "cacheRead": 231424,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by finding the relevant file and understanding the bug.Now let me verify with the test suite.Fixed. The `add` function in `main.go` was subtracting (`a - b`) instead of adding. I changed it to `a + b` and verified with `go test ./... -count=1`, which passes.",
+  "eventCount": 23,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de4912508ffeUcpPYDeXvVgpp1",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-07__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

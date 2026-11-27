@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-08__opencode-go-beam-free__ail",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:25:56.6337759Z",
+  "finishedAt": "2026-11-27T05:26:08.7854173Z",
+  "durationMs": 12151,
+  "exitCode": 0,
+  "tokens": {
+    "input": 27869,
+    "output": 250,
+    "reasoning": 148,
+    "cacheRead": 232192,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug: changed `a - b` to `a + b` in `main.go`. Tests pass (`go test ./...`).",
+  "eventCount": 21,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de4885652ffeABR95sOk4RGCCe",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-08__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

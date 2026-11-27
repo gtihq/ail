@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-07__opencode-go-beam-free__markdown",
+  "taskId": "REF-07",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:21:27.6486017Z",
+  "finishedAt": "2026-11-27T05:22:00.8250718Z",
+  "durationMs": 33176,
+  "exitCode": 0,
+  "tokens": {
+    "input": 113940,
+    "output": 892,
+    "reasoning": 1224,
+    "cacheRead": 518144,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Converted `main_test.go` to a table-driven test while leaving `main.go` and its behavior unchanged. `go test ./...` passes and `gofmt` reports no formatting issues.",
+  "eventCount": 36,
+  "toolCalls": 13,
+  "success": true,
+  "sessionId": "ses_de48c7116ffetC28fehoqLV6ii",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__REF-07__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

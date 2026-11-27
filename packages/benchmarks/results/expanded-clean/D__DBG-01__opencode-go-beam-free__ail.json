@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-01__opencode-go-beam-free__ail",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T05:27:21.4094249Z",
+  "finishedAt": "2026-11-27T05:27:30.5750874Z",
+  "durationMs": 9165,
+  "exitCode": 0,
+  "tokens": {
+    "input": 14897,
+    "output": 406,
+    "reasoning": 118,
+    "cacheRead": 208448,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug: `add` was returning `a - b` instead of `a + b`. `go test ./...` passes.",
+  "eventCount": 20,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de4870b43ffeQpD5K5XawMYMta",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__DBG-01__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

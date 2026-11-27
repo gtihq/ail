@@ -8,7 +8,9 @@ Version 0.3. Implemented in Go. No third-party dependencies.
 
 ## Why AIL
 
-In a paired experiment of **400 executions** across four models and 50 programming tasks, AIL instructions used substantially fewer resources than conventional Markdown instructions. Every result below is measured from raw OpenCode event streams and survives multiple-comparison correction.
+In a paired experiment of **400 executions** across four models and 50 programming tasks, AIL instructions used substantially fewer resources than conventional Markdown instructions. The table below is from the 10-rule set. Every result is measured from raw OpenCode event streams and survives multiple-comparison correction.
+
+A second round with a realistic **45-rule set** derived from the workspace conventions showed the same direction: input -19.6%, output -19.2%, cache read -19.3%, duration -21.7% and tool calls -11.4%. With only 30 valid pairs, none of those reached significance after correction. Both rounds are documented in `packages/benchmarks/BENCHMARK_REPORT.md`.
 
 | Metric | Markdown | AIL | Reduction | Significance |
 |--------|----------:|----:|----------:|--------------|

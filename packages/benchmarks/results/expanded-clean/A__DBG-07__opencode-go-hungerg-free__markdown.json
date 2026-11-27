@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-07__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T05:31:52.7938291Z",
+  "finishedAt": "2026-11-27T05:33:12.5008944Z",
+  "durationMs": 79707,
+  "exitCode": 0,
+  "tokens": {
+    "input": 9838,
+    "output": 499,
+    "reasoning": 482,
+    "cacheRead": 230656,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed `add` in `main.go` to return `a + b` instead of `a - b`.\n\nVerification: `go test ./...` passes, and an uncached run with `go test -count=1 ./...` also passes.",
+  "eventCount": 24,
+  "toolCalls": 10,
+  "success": true,
+  "sessionId": "ses_de482e6bfffeLk2gNFyCgzV3Xb",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__DBG-07__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}
