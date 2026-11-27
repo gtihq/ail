@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-05__opencode-go-hungerg-free__ail",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:22:26.3621888Z",
+  "finishedAt": "2026-11-27T02:22:41.6420849Z",
+  "durationMs": 15279,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2168,
+    "output": 38,
+    "reasoning": 395,
+    "cacheRead": 50176,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I received only the heading `# AIL Operational Instructions`, with no instructions beneath it.\n\nPlease provide the full instructions or describe the task you want completed in this Go workspace.",
+  "eventCount": 12,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de5305628ffeGVQF5P7KwaUpQL",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-05__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

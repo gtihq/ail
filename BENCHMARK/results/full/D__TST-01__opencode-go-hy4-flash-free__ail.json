@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-01__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-01",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:16:51.8605541Z",
+  "finishedAt": "2026-11-26T20:17:04.6588439Z",
+  "durationMs": 12798,
+  "exitCode": 0,
+  "tokens": {
+    "input": 503,
+    "output": 129,
+    "reasoning": 134,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a heading titled \"AIL Operational Instructions\" but no actual instructions followed. Let me check the workspace for any such instructions file.Your message contains only the heading `# AIL Operational Instructions` with no content after it, and there is no instructions file in the workspace. The workspace currently contains just a small Go project (`main.go`, `main_test.go`, `go.mod`) with a simple `add` function and test.\n\nCould you clarify what you'd like me to do? For example:\n- Paste the actual AIL operational instructions you want me to follow\n- Tell me the task you want performed on this Go project (e.g., add features, fix tests, refactor)\n\nOnce you provide the instructions or task, I'll get started.",
+  "eventCount": 12,
+  "toolCalls": 4,
+  "success": true,
+  "sessionId": "ses_de67f08c4ffeFuy5e8jTXvg0cw",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-01__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

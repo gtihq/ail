@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-04__opencode-go-hungerg-free__markdown",
+  "taskId": "AMB-04",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:15:42.5202015Z",
+  "finishedAt": "2026-11-27T01:17:25.3104371Z",
+  "durationMs": 102790,
+  "exitCode": 0,
+  "tokens": {
+    "input": 118,
+    "output": 81,
+    "reasoning": 56,
+    "cacheRead": 54400,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll treat the title as a request to add a conventional `AGENTS.md` baseline for this Go project. I’ll keep it concise and specific to the existing structure.Added `AGENTS.md` with a conventional Markdown baseline covering:\n\n- Project structure and Go 1.25 requirements\n- Formatting, testing, and build commands\n- Go coding conventions\n- Testing expectations\n- Change workflow and verification\n\nValidation passed:\n\n- `gofmt -w main.go main_test.go`\n- `go test ./...`\n- `go build ./...`",
+  "eventCount": 37,
+  "toolCalls": 15,
+  "success": true,
+  "sessionId": "ses_de56d6e53ffetmlX6cxyX1injV",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__AMB-04__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-01__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-01",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:17:13.4712724Z",
+  "finishedAt": "2026-11-27T02:17:15.9151352Z",
+  "durationMs": 2443,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5314,
+    "output": 17,
+    "reasoning": 0,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'm ready to help. What would you like me to work on?",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de5351cd7ffez14KMsgO6JNfX9",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-01__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

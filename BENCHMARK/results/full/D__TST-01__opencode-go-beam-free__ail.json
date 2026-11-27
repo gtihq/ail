@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-01__opencode-go-beam-free__ail",
+  "taskId": "TST-01",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:19:06.7034372Z",
+  "finishedAt": "2026-11-26T22:20:06.7654565Z",
+  "durationMs": 60062,
+  "exitCode": 0,
+  "tokens": {
+    "input": 26919,
+    "output": 86,
+    "reasoning": 10,
+    "cacheRead": 41664,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. I added table-driven tests to `main_test.go` in the `D__TST-01__opencode-go-beam-free__ail` workspace covering `add` with negative numbers (both-negative and mixed-sign cases), plus zero and positive cases. `main.go` was left unchanged. `go test ./...` passes and `go vet` is clean.",
+  "eventCount": 72,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de60f1c1dffevd1c17qsbnmubO",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-01__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

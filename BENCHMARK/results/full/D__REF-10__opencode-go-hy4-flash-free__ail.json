@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-10__opencode-go-hy4-flash-free__ail",
+  "taskId": "REF-10",
+  "category": "refactoring",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:53:34.4319802Z",
+  "finishedAt": "2026-11-26T20:53:42.461762Z",
+  "durationMs": 8029,
+  "exitCode": 0,
+  "tokens": {
+    "input": 30818,
+    "output": 79,
+    "reasoning": 144,
+    "cacheRead": 2048,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see the heading \"# AIL Operational Instructions\" but no actual task or instructions followed it.\n\nWhat would you like me to do? For example:\n\n- Read an instructions file from the workspace (if so, give me the path)\n- Run a specific command or workflow\n- Make a code change in this workspace\n\nLet me know the concrete goal and I'll get started.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de65d6c5bffeT0TrkkMyTuqk3R",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-10__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

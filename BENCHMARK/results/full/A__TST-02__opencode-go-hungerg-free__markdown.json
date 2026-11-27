@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-02__opencode-go-hungerg-free__markdown",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:19:55.1992117Z",
+  "finishedAt": "2026-11-27T01:25:27.6463827Z",
+  "durationMs": 332447,
+  "exitCode": 0,
+  "tokens": {
+    "input": 597,
+    "output": 108,
+    "reasoning": 222,
+    "cacheRead": 100864,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found the task definition for this workspace: add table-driven tests for `add` with zero, leave `main.go` unchanged, and run the Go test suite. I will keep the change limited to `main_test.go`.The new table-driven test passes, along with `go vet` and formatting checks. I will also run it against a temporary mutated copy of `main.go` using Go's overlay support, so the real source file stays unchanged while I verify the tests detect a broken implementation.Added `TestAddWithZero` in `main_test.go` with table-driven coverage for:\n\n- Both operands zero\n- Zero on the left or right with positive values\n- Zero on the left or right with negative values\n\n`main.go` remains unchanged.\n\nVerification:\n- `go test ./...` passes\n- `go vet ./...` is clean\n- `gofmt -l .` reports no issues\n- A temporary subtraction mutation made the new tests fail as expected, confirming they detect regressions",
+  "eventCount": 93,
+  "toolCalls": 45,
+  "success": true,
+  "sessionId": "ses_de569935affezDHF9isDj5FZz5",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-02__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-03__opencode-go-beam-free__markdown",
+  "taskId": "AMB-03",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T20:58:52.1241591Z",
+  "finishedAt": "2026-11-26T21:00:26.3669551Z",
+  "durationMs": 94242,
+  "exitCode": 0,
+  "tokens": {
+    "input": 376,
+    "output": 206,
+    "reasoning": 87,
+    "cacheRead": 71552,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. I created `AGENTS.md` in the workspace as a conventional Markdown baseline for project agent rules, copying the canonical baseline content.\n\nWhat I did and assumed:\n- Your message was only a heading (`# Project agent rules - conventional Markdown baseline`) with no explicit instruction, and questions could not be asked, so I assumed you wanted the conventional Markdown baseline project agent-rules file created (R005: state assumptions explicitly).\n- Used the canonical baseline content (R001-R010) unchanged, standard Markdown structure.\n- Kept the Go code untouched (R005: no speculative changes, surgical changes only).\n- Verified no em-dash character (R001) with grep: zero matches.\n- Ran `go test ./...` (R003/R006): passed (`ok example.com/bench 0.013s`).\n\nIf you intended a different file name or a different rules format, let me know and I'll adjust.",
+  "eventCount": 82,
+  "toolCalls": 29,
+  "success": true,
+  "sessionId": "ses_de65893e0ffeqPKdydvGasUgqi",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__AMB-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

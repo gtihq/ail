@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-04__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-04",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:48:16.8281851Z",
+  "finishedAt": "2026-11-26T20:48:40.0815444Z",
+  "durationMs": 23253,
+  "exitCode": 0,
+  "tokens": {
+    "input": 217,
+    "output": 109,
+    "reasoning": 182,
+    "cacheRead": 33280,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a heading but no task yet. Let me check whether there is an operational instructions document in this workspace that defines what I should do.There is no operational instructions document in this workspace, and your message contains only the heading \"# AIL Operational Instructions\" with no accompanying task. The workspace itself is a minimal Go project (`main.go`, `main_test.go`, `go.mod`) whose single test already passes.\n\nCould you tell me what you'd like me to do? For example:\n- Implement a change or fix a bug in this Go code\n- Add tests\n- Something else entirely\n\nPlease provide the actual instructions or goal and I will get started.",
+  "eventCount": 19,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de6624562ffemyfb7mHXo6yW59",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-04__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

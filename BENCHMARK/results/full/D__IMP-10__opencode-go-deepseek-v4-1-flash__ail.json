@@ -1,0 +1,46 @@
+{
+  "id": "D__IMP-10__opencode-go-deepseek-v4-1-flash__ail",
+  "taskId": "IMP-10",
+  "category": "implementation",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:43:45.0565176Z",
+  "finishedAt": "2026-11-27T00:43:46.8824657Z",
+  "durationMs": 1825,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de58ab0e0ffeC8UsS90szJiEr4",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-10__opencode-go-deepseek-v4-1-flash__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

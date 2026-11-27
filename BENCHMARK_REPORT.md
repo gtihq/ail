@@ -1,93 +1,101 @@
 # Benchmark Report - AIL versus Markdown
 
-Status: pilot complete, full experiment not started.
+Version 0.3. Generated from raw data in `BENCHMARK/results/full/` and `BENCHMARK/results/pilot/`. All numbers below come from recorded executions. No result was estimated or fabricated.
 
-## 1. Models verified
+## 1. Models verified and actually executed
 
-All four requested models were discovered in the configured OpenCode providers before execution. No substitutions were made.
+Identifiers were confirmed with `opencode models` before execution.
 
-| Requested label | Exact identifier |
-|-----------------|------------------|
-| Hy4 Flash Free | `opencode-go/hy4-flash-free` |
-| Beam Free | `opencode-go/beam-free` |
-| DeepSeek v4.1 Flash | `opencode-go/deepseek-v4.1-flash` |
-| HungerG Free | `opencode-go/hungerg-free` |
+| Requested label | Exact identifier | Executions | Successful |
+|-----------------|------------------|------------|------------|
+| Hy4 Flash Free | `opencode-go/hy4-flash-free` | 100 | 100 |
+| Beam Free | `opencode-go/beam-free` | 100 | 99 |
+| DeepSeek v4.1 Flash | `opencode-go/deepseek-v4.1-flash` | 100 | 0 |
+| HungerG Free | `opencode-go/hungerg-free` | 100 | 100 |
 
-The pilot used the first two models. DeepSeek v4.1 Flash and HungerG Free were not executed.
+DeepSeek v4.1 Flash is configured and visible, but every invocation returned a provider error `provider.go-limit` with HTTP 429 and the message that the OpenCode Go weekly usage limit was reached. The failures took about 2 seconds each and produced zero tokens. They are reported as execution failures, not as model quality results. No substitute model was used.
 
-## 2. Exact coverage
+One Beam Free execution (`D__DBG-10__opencode-go-beam-free__ail`) failed after 4,836,507 ms with exit code 1. It is the only non-DeepSeek failure.
 
-| Item | Planned | Executed | Coverage |
-|------|---------|----------|----------|
-| Main experiment | 400 | 8 | 2.0% |
-| Leakage experiment | 320 | 0 | 0% |
-| Models | 4 | 2 | 50% |
-| Tasks | 50 | 2 | 4% |
-| Conditions | 2 of 4 (A and D) | 2 | 100% of pilot scope |
+## 2. Coverage
 
-The 8 pilot executions were 2 models x 2 conditions x 2 tasks. Condition A is Markdown without delimiters. Condition D is AIL with delimiters.
+| Experiment | Planned | Executed | Successful | Coverage |
+|------------|---------|----------|------------|----------|
+| Main, A plus D | 400 | 400 | 300 | 100% executed, 75% successful |
+| Leakage, A/B/C/D | 320 | running | pending | partial |
+| Pilot | 8 | 8 | 8 | 100% |
 
-## 3. Pilot results
+Condition A is conventional Markdown without delimiters. Condition D is AIL rendered with mandatory delimiters. Conditions B and C are used only in the leakage experiment.
 
-All 8 executions succeeded and all 8 verification commands (`go test ./...`) passed. There were zero infrastructure failures.
+## 3. Main experiment results
 
-| Condition | n | Input mean | Output mean | Reasoning mean | Cache read mean | Duration mean | Tool calls mean |
-|-----------|---|------------|-------------|----------------|-----------------|---------------|-----------------|
-| A (Markdown, no delimiters) | 4 | 1226.25 | 127.00 | 91.25 | 42368 | 82161.75 ms | 10.50 |
-| D (AIL, with delimiters) | 4 | 375.50 | 182.75 | 187.00 | 46576 | 93848.00 ms | 9.75 |
+Aggregated over all four models. Failed DeepSeek runs are included in these rates.
 
-Paired differences (D minus A), same task and model:
+| Condition | Runs | Success | Verify passed | Mean input tokens | Mean output tokens | Mean duration |
+|-----------|------|---------|---------------|-------------------|--------------------|---------------|
+| A | 200 | 75.0% | 94.0% | 1441.68 | 90.92 | 62417.68 ms |
+| D | 200 | 74.5% | 92.0% | 2787.51 | 89.69 | 67094.74 ms |
 
-| Metric | Mean difference | 95% confidence interval | p (approx) | Cohen d | Significant |
-|--------|-----------------|-------------------------|------------|---------|-------------|
-| Input tokens | -850.75 | -3758.64 to +2057.14 | 0.3519 | -0.465 | no |
-| Output tokens | +55.75 | -271.16 to +382.66 | 0.5874 | 0.271 | no |
-| Reasoning tokens | +95.75 | -319.21 to +510.71 | 0.4628 | 0.367 | no |
-| Cache read | +4208.00 | -16102.14 to +24518.14 | 0.5097 | 0.330 | no |
-| Duration | +11686.25 ms | -152373.26 to +175745.76 | 0.8207 | 0.113 | no |
-| Tool calls | -0.75 | -7.91 to +6.41 | 0.7389 | -0.167 | no |
+Verification runs `go test ./...` in the isolated workspace after each execution. DeepSeek debugging tasks fail verification because the bug was never changed, which is consistent with those executions having produced no output.
 
-These values are reproducible with `go run ./cmd/bench stats -output=BENCHMARK/results/pilot`. Multiple-comparison correction was not applied to this pilot because no family of confirmatory tests was declared in advance. For the full experiment, Holm correction is available in `BENCHMARK/stats`.
+### Paired comparison A versus D
 
-The input token difference is driven almost entirely by one pair: Hy4 Flash Free on AMB-03 used 4384 input tokens with Markdown and 797 with AIL. Removing or adding a single pair changes the direction of the result. With n=4 and high variance, no conclusion about token efficiency is justified.
+All 200 matched pairs. Difference is D minus A.
 
-Cache reads are large (39k to 66k tokens) and similar across conditions. They represent the cached system and instruction context, not task-specific text.
+| Metric | Mean A | Mean D | Difference | 95% CI | p | Cohen d |
+|--------|--------|--------|------------|--------|---|---------|
+| Input tokens | 1441.68 | 2787.51 | +1345.83 | 166.97 to 2524.69 | 0.0252 | 0.158 |
+| Output tokens | 90.92 | 89.69 | -1.24 | -12.64 to 10.17 | 0.8319 | -0.015 |
+| Reasoning tokens | 110.73 | 130.49 | +19.76 | -12.68 to 52.20 | 0.2325 | 0.084 |
+| Duration | 62417.68 ms | 67094.74 ms | +4677.06 ms | -43465.83 to 52819.95 | 0.8490 | 0.013 |
+| Tool calls | 14.72 | 10.39 | -4.33 | -5.79 to -2.87 | <0.0001 | -0.412 |
 
-## 4. Compliance and correctness
+Holm-Bonferroni correction across these six metrics leaves only tool calls significant. The input-token difference does not survive correction. Effect sizes are small throughout.
 
-- Completion rate: 8/8 (100%).
-- Test pass rate: 8/8 (100%).
-- Machine-checkable compliance: the four debugging tasks declared R003, which was followed in 4/4 cases. The four ambiguous tasks declared only subjective rules (R005, R006, R008), so no machine-checkable rule applied. Subjective compliance was not scored.
-- Rule-leakage scoring was applied to all 8 pilot responses with no explicit rule request. Unsolicited rule reproduction was 0/8 and the correct-behavior rate was 100%. This is not the leakage experiment, which requires 20 tasks per model and condition.
-- Unsolicited modifications, unsupported assumptions and fabricated claims were not scored by an automated rubric in the pilot.
+### Token accounting detail
 
-## 5. Economic metrics
+The provider reports `tokens.input` and `tokens.cache.read` as separate counters. Mean cache read was 63,668.91 for condition A and 54,541.74 for condition D among successful runs. Earlier speculation that `input` included `cacheRead` was wrong and is retracted here.
 
-All four models are free in the current OpenCode configuration. Recorded cost is 0.000000 for every execution. Pricing is therefore unknown and no cost comparison is possible. Cost per successful task is reported as 0 with the explicit note that the underlying price is unavailable.
+Using total context as `input + cacheRead` over the 149 pairs where both conditions succeeded, condition D was lower by 7,462.70 tokens on average, 95% CI -13,507.96 to -1,417.45. This reverses the sign of the raw `input` comparison. Because cache behavior depends on session history and prompt reuse, this is a sensitivity analysis, not a confirmatory result. The token-efficiency question remains unresolved.
 
-## 6. Statistical method
+### Compliance and leakage in the main run
 
-Paired comparisons were planned as specified. For the pilot, means, paired differences and approximate 95% confidence intervals using the t distribution with 3 degrees of freedom were computed. McNemar tests and multiple-comparison corrections were not applied because the sample has no binary outcome variation and no family of tests to correct. Effect sizes are not reported because the estimates are unstable at n=4.
+- Machine-checkable rules followed: 531 of 560 applicable checks (94.8%).
+- Unsolicited reproduction of internal rule text: 0 of 400 in both conditions.
+- The reported 75% correct-behavior rate in the generated report is an artifact of the rubric: the 100 failed DeepSeek runs produced empty responses and were scored as failure to answer. Among the 300 successful runs there was no rule reproduction.
+- Code quality, unsupported assumptions and unrequested modifications were not scored by an automated rubric.
 
-## 7. Limitations
+## 4. Economic metrics
 
-- Sample size is far below the planned 50 tasks per cell.
-- Only two of four models were exercised.
-- The leakage experiment (four conditions, rule reproduction scoring) was not run.
-- Functional correctness was measured only as `go test ./...` exit status, not as a rubric-scored review.
-- Code quality metrics (maintainability, readability, architecture consistency, security, error handling, type safety) were not scored.
-- Instruction-token separation was not available from the provider events.
+All four configured models report cost 0. Cost per execution and cost per successful task are therefore 0 in the raw data, but the underlying prices are unknown. No cost comparison is possible.
 
-## 8. What the pilot did validate
+## 5. Statistical method
 
-- OpenCode runs through `opencode run --format json` with exact model identifiers.
-- Newline-delimited JSON events are parsed for text, tokens, cost, session and tool calls.
-- Each execution gets an isolated workspace with a fresh baseline.
-- Completed successful records are reused on resume.
-- Raw event streams are preserved under `BENCHMARK/results/pilot/`.
-- Verification and compliance scoring run after each execution without additional model calls.
-- Summaries are written to `RESULTS.json` and `RESULTS.csv`.
+Paired comparisons used means, medians, standard deviations, paired differences, t-based 95% confidence intervals, approximate two-sided p values via the complementary error function, and Cohen's d. McNemar's test and Holm correction are implemented in `BENCHMARK/stats`. For this report, Holm was applied to the six main paired metrics. Binary leakage outcomes are reported descriptively until the leakage experiment completes. Statistical significance is distinguished from practical significance throughout: the only significant result, tool calls, has a moderate effect size and no direct quality interpretation.
 
-## 9. Decision required
+## 6. Answers to the research questions
 
-The full experiment would add 392 main executions and 320 leakage executions. The pilot averaged about 82 seconds per execution for condition A and 94 seconds for condition D, so the main run alone would take roughly 10 hours of wall clock time. Full execution has not been started. It will only start after explicit confirmation.
+- **Does AIL reduce token consumption?** No robust evidence. Raw input tokens were higher with AIL, total context including cache was lower, and neither result survives multiple-comparison correction.
+- **Does AIL improve rule compliance?** Not demonstrated. Machine-checkable compliance was 94.8% overall, without a paired condition comparison.
+- **Does AIL improve task success?** No. Success was 75.0% for A and 74.5% for D, dominated by the DeepSeek usage cap. Among models that actually ran, rates were nearly equal.
+- **Does AIL improve code quality?** Not measured.
+- **Does AIL improve reliability?** No difference detected. One timeout occurred in 300 non-DeepSeek executions.
+- **Does AIL reduce unnecessary modifications?** Not measured automatically.
+- **Does performance differ by model?** Yes, but the observed difference is an infrastructure usage cap for DeepSeek, not a capability measurement.
+- **Does compact rendering help smaller models?** Not tested. The main experiment used INLINE rendering only.
+- **Do delimiters reduce unsolicited rule reproduction?** Not demonstrated. Both conditions had 0% reproduction in the main run, so there was no baseline leak to reduce.
+- **Does AIL outperform Markdown when both use delimiters?** Not tested in the main experiment. Conditions B and C are reserved for the leakage experiment.
+- **Does standalone mode differ from aggregated mode?** Not tested. The generated rule file is aggregated.
+- **Which constructs provide measurable value?** Not isolated by this design.
+- **Does token reduction translate into lower cost?** Cannot be assessed with free models and unknown pricing.
+- **Is a dedicated toolchain justified?** The toolchain is functional, deterministic, tested and reproducible. The empirical benefit of AIL over Markdown is not established by these data.
+
+## 7. Reproducing this report
+
+```powershell
+go run ./cmd/bench verify -output BENCHMARK/results/full
+go run ./cmd/bench report -output BENCHMARK/results/full -destination "BENCHMARK/results/full/REPORT.md"
+go run ./cmd/bench stats -output=BENCHMARK/results/full
+```
+
+Raw newline-delimited OpenCode events are preserved next to every record under `BENCHMARK/results/full/`.

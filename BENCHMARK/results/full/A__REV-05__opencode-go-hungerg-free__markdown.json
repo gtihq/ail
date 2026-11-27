@@ -1,0 +1,45 @@
+{
+  "id": "A__REV-05__opencode-go-hungerg-free__markdown",
+  "taskId": "REV-05",
+  "category": "code-review",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:49:52.816028Z",
+  "finishedAt": "2026-11-27T01:51:02.4851123Z",
+  "durationMs": 69669,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2041,
+    "output": 78,
+    "reasoning": 37,
+    "cacheRead": 60416,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll add a project-level `AGENTS.md` using plain Markdown, tailored to this small Go module.Created `AGENTS.md` with a conventional Markdown baseline covering communication, project structure, Go conventions, testing, commands, Git practices, and repository constraints.\n\nVerification passed:\n\n- `go test ./...`\n- `go vet ./...`\n- `gofmt -l .` returned no files\n- No em-dash characters found in `AGENTS.md`",
+  "eventCount": 41,
+  "toolCalls": 15,
+  "success": true,
+  "sessionId": "ses_de54e2504ffeCd9aLnC6pchM9G",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REV-05__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

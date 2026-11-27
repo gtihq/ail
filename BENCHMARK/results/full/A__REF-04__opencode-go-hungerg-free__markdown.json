@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-04__opencode-go-hungerg-free__markdown",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T02:00:40.5969911Z",
+  "finishedAt": "2026-11-27T02:01:11.5819367Z",
+  "durationMs": 30984,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1938,
+    "output": 55,
+    "reasoning": 81,
+    "cacheRead": 34816,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll add a concise `AGENTS.md` with Go-specific conventions and validation commands for this repository.Created `AGENTS.md` with a conventional Markdown baseline tailored to this Go project.\n\nValidation passed:\n\n- `go test ./...`\n- `go vet ./...`\n- `gofmt -d main.go main_test.go` produced no differences.",
+  "eventCount": 20,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de54442a8ffeGi4Hd4OhlPR7xw",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-04__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

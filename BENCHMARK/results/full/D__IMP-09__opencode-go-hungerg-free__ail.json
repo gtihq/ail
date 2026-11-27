@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-09__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-09",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:17:16.5906955Z",
+  "finishedAt": "2026-11-27T02:17:23.3003855Z",
+  "durationMs": 6709,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1821,
+    "output": 49,
+    "reasoning": 268,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by reading the repository's operational instructions and understanding the workspace.Understood. The workspace contains a minimal Go module with `add(a, b int)` and one passing-scope test in `main_test.go`. No code changes were made.\n\nWhat would you like me to implement or investigate?",
+  "eventCount": 14,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de535103affeunKrmOhMUlZ1Ki",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-09__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

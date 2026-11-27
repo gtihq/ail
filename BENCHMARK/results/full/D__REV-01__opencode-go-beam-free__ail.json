@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-01__opencode-go-beam-free__ail",
+  "taskId": "REV-01",
+  "category": "code-review",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:22:09.9903793Z",
+  "finishedAt": "2026-11-27T00:28:08.9048307Z",
+  "durationMs": 358914,
+  "exitCode": 0,
+  "tokens": {
+    "input": 19424,
+    "output": 48,
+    "reasoning": 438,
+    "cacheRead": 88832,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Code review: correctness (REV-01)\n\nNo files were modified. `go test ./...` passes (`ok example.com/bench`), and `go vet ./...` is clean.\n\n### Concrete issues\n\n**`main.go`**\n\n1. **Silent integer overflow (lines 3-5).** `add` performs `a + b` on `int` with no overflow check. For example, `add(math.MaxInt, 1)` wraps to a negative value with no panic or error, so a caller cannot tell a valid sum from a wrapped one. The function's contract does not document this.\n2. **No documented or validated input domain (lines 3-5).** If operands are expected to be non-negative or bounded, nothing validates or documents that. Invalid or extreme inputs are accepted silently.\n3. **`main()` is empty (line 7).** The binary produces no observable behavior, so end-to-end correctness of the program is not exercised. This is not a defect in `add`, but it leaves the entry point unverified.\n\n**`main_test.go`**\n\n4. **Single happy-path assertion (lines 5-8).** `TestAdd` only checks `add(2, 3) == 5`. There is no coverage for negatives, zero, identity (`add(x, 0) == x`), commutativity, or boundary values, so overflow and wraparound behavior are not exercised.\n5. **Failure message recomputes the result (line 7).** `t.Fatalf` calls `add(2, 3)` again instead of reusing the value already computed in the condition. This obscures which value actually failed and couples the message to a second evaluation.\n6. **No boundary/overflow case.** Given issue 1, there is no test asserting the behavior of `add` at `math.MaxInt` / `math.MinInt`, so any change to overflow handling would not be caught.\n\n### Summary\n\n`add` is arithmetically correct for the in-range case it tests, but its overflow behavior is unspecified and untested, and the test suite only covers one input pair. I recommend documenting the overflow contract (or adding checked arithmetic) and expanding `TestAdd` to cover negatives, zero, identity, commutativity, and boundary values. No source changes were made per the review-only scope.The review is complete. I verified the workspace with `go test ./...` and `go vet ./...` (both pass), made no file changes, and listed the concrete correctness issues above. No further action is needed.",
+  "eventCount": 103,
+  "toolCalls": 32,
+  "success": true,
+  "sessionId": "ses_de59e7334ffeOKEn2awHHLdWvc",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REV-01__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

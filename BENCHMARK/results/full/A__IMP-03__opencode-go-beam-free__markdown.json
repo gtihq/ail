@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-03__opencode-go-beam-free__markdown",
+  "taskId": "IMP-03",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:31:52.7587066Z",
+  "finishedAt": "2026-11-26T21:34:08.2592704Z",
+  "durationMs": 135500,
+  "exitCode": 0,
+  "tokens": {
+    "input": 359,
+    "output": 80,
+    "reasoning": 56,
+    "cacheRead": 66880,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` at the workspace root with a conventional Markdown baseline for agent rules (scope, workflow, commands, Go style, Markdown style, commits). Ran `gofmt`, `go build ./...`, `go test ./...`, and `go vet ./...`; all pass with no diagnostics. No em dash introduced and no source file exceeds the size limit.",
+  "eventCount": 107,
+  "toolCalls": 36,
+  "success": true,
+  "sessionId": "ses_de63a5af6ffeHk3kt5MMlieDOo",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

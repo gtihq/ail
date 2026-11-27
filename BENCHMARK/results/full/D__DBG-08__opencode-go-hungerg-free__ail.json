@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-08__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:04:48.1317002Z",
+  "finishedAt": "2026-11-27T02:05:11.6450109Z",
+  "durationMs": 23513,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2026,
+    "output": 29,
+    "reasoning": 44,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found a failing addition test in `main.go`. I’ll fix the implementation and run the test suite.Fixed `add` in `main.go` to return `a + b`.\n\nValidation: `go test ./...` passes.",
+  "eventCount": 20,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de5407af9ffeQ7h5v5vpHr21yv",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-08__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

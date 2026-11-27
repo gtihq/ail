@@ -1,0 +1,45 @@
+{
+  "id": "D__ARC-04__opencode-go-hy4-flash-free__ail",
+  "taskId": "ARC-04",
+  "category": "architecture",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:48:02.5788043Z",
+  "finishedAt": "2026-11-26T20:48:16.2942262Z",
+  "durationMs": 13715,
+  "exitCode": 0,
+  "tokens": {
+    "input": 375,
+    "output": 164,
+    "reasoning": 60,
+    "cacheRead": 33024,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a heading but no content after it. Let me check the workspace for AIL operational instructions files.Your message contains only the heading `# AIL Operational Instructions` with no content beneath it, so there is nothing for me to act on yet.\n\nThe workspace is a minimal Go project (`main.go` with an `add` function, a passing `main_test.go`, and `go.mod`). I haven't changed anything.\n\nCould you paste the operational instructions you intended to include? For example:\n- Is this a task to implement something in this Go project (e.g., extend `add`, add features, fix bugs)?\n- Or did you mean to load a specific skill/workflow (the repo has many skills, e.g. `security-audit`, `bug-bounty`, `xlsx`, `pdf`, etc.)?\n\nOnce you provide the instructions, I'll get started.",
+  "eventCount": 10,
+  "toolCalls": 2,
+  "success": true,
+  "sessionId": "ses_de6627c80ffeZj5eP72J8XEB85",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__ARC-04__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

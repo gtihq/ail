@@ -1,0 +1,45 @@
+{
+  "id": "D__AMB-04__opencode-go-hy4-flash-free__ail",
+  "taskId": "AMB-04",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:32:48.0543418Z",
+  "finishedAt": "2026-11-26T20:33:00.2325952Z",
+  "durationMs": 12178,
+  "exitCode": 0,
+  "tokens": {
+    "input": 31331,
+    "output": 84,
+    "reasoning": 471,
+    "cacheRead": 1536,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see you've written a header, \"# AIL Operational Instructions,\" but no actual instructions or task followed it.\n\nCould you clarify what you'd like me to do? For example:\n- Paste the operational instructions you want me to follow\n- Point me to a file in the workspace that contains them\n- Describe the task you want me to perform\n\nI'm ready to help once I know the specifics.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de67070aaffeRHLrAOd5HhklxW",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__AMB-04__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

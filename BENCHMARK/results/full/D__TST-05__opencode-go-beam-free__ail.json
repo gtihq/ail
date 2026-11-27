@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-05__opencode-go-beam-free__ail",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:34:40.7961305Z",
+  "finishedAt": "2026-11-27T00:35:49.2917104Z",
+  "durationMs": 68495,
+  "exitCode": 0,
+  "tokens": {
+    "input": 180,
+    "output": 65,
+    "reasoning": 15,
+    "cacheRead": 62464,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Completed TST-05: added table-driven tests in `main_test.go` covering `add` with mixed signs (negative+positive, positive+negative), plus both-positive and both-negative cases. `main.go` left unchanged. `go test ./...` and `go vet ./...` pass.",
+  "eventCount": 65,
+  "toolCalls": 22,
+  "success": true,
+  "sessionId": "ses_de592fe50ffePeDHWBGN4jjbaD",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-05__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

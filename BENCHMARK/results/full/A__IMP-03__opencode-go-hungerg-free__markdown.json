@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-03__opencode-go-hungerg-free__markdown",
+  "taskId": "IMP-03",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:18:54.3410382Z",
+  "finishedAt": "2026-11-27T01:19:54.8658021Z",
+  "durationMs": 60524,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2474,
+    "output": 71,
+    "reasoning": 65,
+    "cacheRead": 117760,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Your message is only a title, so I am assuming you want the canonical project agent rules established as `AGENTS.md` in this workspace. I will leave the Go code unchanged.Created `AGENTS.md` with the canonical conventional Markdown baseline.\n\nVerification:\n- Matches `MARKDOWN_BASELINE/project-rules.md` exactly.\n- Contains no em-dash characters.\n- `go test ./...` passes.\n- `go vet ./...` passes.\n- Go source files remain unchanged.",
+  "eventCount": 39,
+  "toolCalls": 19,
+  "success": true,
+  "sessionId": "ses_de56a80f6ffeZi6RyA0rSMMguY",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-03__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

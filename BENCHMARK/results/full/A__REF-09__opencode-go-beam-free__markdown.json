@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-09__opencode-go-beam-free__markdown",
+  "taskId": "REF-09",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:20:52.9399387Z",
+  "finishedAt": "2026-11-26T21:22:24.4652437Z",
+  "durationMs": 91525,
+  "exitCode": 0,
+  "tokens": {
+    "input": 27715,
+    "output": 71,
+    "reasoning": 21,
+    "cacheRead": 28992,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The workspace is already in a clean, passing state: `go test ./...` passes, `go vet` is clean, no em-dash characters are present, and the file is well under 700 lines. The declarations in `main.go` are already grouped and minimal, so no speculative refactor was needed (behavior unchanged).",
+  "eventCount": 83,
+  "toolCalls": 28,
+  "success": true,
+  "sessionId": "ses_de6446be4ffejBUzsYBB9p7Db2",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-09__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-06__opencode-go-beam-free__markdown",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:11:50.3492773Z",
+  "finishedAt": "2026-11-26T21:12:47.8241782Z",
+  "durationMs": 57474,
+  "exitCode": 0,
+  "tokens": {
+    "input": 292,
+    "output": 149,
+    "reasoning": 45,
+    "cacheRead": 120896,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the factorial helper for task IMP-06.\n\nChanges:\n- `main.go`: added `factorial(n int) int` (iterative, non-negative input), with a doc comment. `add` is unchanged.\n- `main_test.go`: added `TestFactorial` covering 0 through 5, alongside the untouched `TestAdd`.\n\nVerification:\n- `gofmt -l .` reports no files needing formatting.\n- `go test ./...` passes (both `TestAdd` and `TestFactorial`).\n- `go vet ./...` reports no diagnostics.\n- No file contains a typographic dash; all files are well under 700 lines.",
+  "eventCount": 64,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de64cb376ffe0nG97pRbKuM7m1",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-06__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

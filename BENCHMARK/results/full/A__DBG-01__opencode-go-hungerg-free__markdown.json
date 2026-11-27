@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-01__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T00:55:23.9570066Z",
+  "finishedAt": "2026-11-27T00:57:19.3236784Z",
+  "durationMs": 115366,
+  "exitCode": 0,
+  "tokens": {
+    "input": 141,
+    "output": 35,
+    "reasoning": 63,
+    "cacheRead": 53376,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The existing test exposes a simple bug: `add` subtracts its operands. I’ll correct it and rerun the suite.Fixed `add` in `main.go` to return `a + b` instead of `a - b`.\n\nVerification: `go test ./...` passes.",
+  "eventCount": 36,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de580063dffe5A2XJYc5sMo7jN",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

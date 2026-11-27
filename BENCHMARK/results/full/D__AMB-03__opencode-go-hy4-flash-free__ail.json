@@ -1,0 +1,45 @@
+{
+  "id": "D__AMB-03__opencode-go-hy4-flash-free__ail",
+  "taskId": "AMB-03",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:09:09.1491494Z",
+  "finishedAt": "2026-11-26T20:09:31.6621001Z",
+  "durationMs": 22512,
+  "exitCode": 0,
+  "tokens": {
+    "input": 383,
+    "output": 201,
+    "reasoning": 122,
+    "cacheRead": 33536,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I received your message titled \"AIL Operational Instructions\", but it contains no details about what you'd like me to do.\n\nThe current workspace is a minimal Go project with three files:\n\n- `go.mod` (module `example.com/bench`, Go 1.25)\n- `main.go` (an `add(a, b int) int` function and empty `main()`)\n- `main_test.go` (a test for `add`)\n\nBefore I change anything, could you clarify the actual task? For example:\n\n- Do you want me to **write** an operational-instructions document for AIL, and if so, where (a file in this repo, chat only, etc.)?\n- Is the intent to **modify the Go code** here (e.g. implement a feature described by those instructions)?\n- Or were the instructions supposed to be pasted but got left out?\n\nPlease paste the instructions or describe the goal, and I'll proceed.",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de686182dffeKkhGXyFUeWdMx1",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__AMB-03__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

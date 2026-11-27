@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-06__opencode-go-beam-free__markdown",
+  "taskId": "DBG-06",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:50:58.5820698Z",
+  "finishedAt": "2026-11-26T21:51:08.9537123Z",
+  "durationMs": 10371,
+  "exitCode": 0,
+  "tokens": {
+    "input": 3839,
+    "output": 19,
+    "reasoning": 16,
+    "cacheRead": 28992,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the `add` function to use `+` instead of `-`; tests pass.",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de628debcffeKXK7W1T4218Epc",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-06__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

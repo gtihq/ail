@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-08__opencode-go-hungerg-free__markdown",
+  "taskId": "IMP-08",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T00:59:08.4053143Z",
+  "finishedAt": "2026-11-27T00:59:22.5914696Z",
+  "durationMs": 14186,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5152,
+    "output": 40,
+    "reasoning": 231,
+    "cacheRead": 33792,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` with a conventional Markdown baseline covering communication, project layout, Go development commands, code conventions, testing, and repository hygiene. No application code was changed.",
+  "eventCount": 18,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de57c9901ffe7XoL3nPUUmsEmA",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-08__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

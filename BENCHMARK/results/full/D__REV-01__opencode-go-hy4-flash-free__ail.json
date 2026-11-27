@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-01__opencode-go-hy4-flash-free__ail",
+  "taskId": "REV-01",
+  "category": "code-review",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:52:49.4953481Z",
+  "finishedAt": "2026-11-26T20:52:58.9630065Z",
+  "durationMs": 9467,
+  "exitCode": 0,
+  "tokens": {
+    "input": 29282,
+    "output": 85,
+    "reasoning": 204,
+    "cacheRead": 3584,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "It looks like your message only contained the heading \"AIL Operational Instructions\" without any actual instructions.\n\nCould you provide the instructions you'd like me to follow? For example:\n\n- A specific task (e.g., fix a bug, add a feature, review code)\n- A file or path to read\n- Rules or workflow steps I should apply\n\nI'm ready to help once you share the details.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de65e1c5affetunP50GaaG3JVt",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REV-01__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

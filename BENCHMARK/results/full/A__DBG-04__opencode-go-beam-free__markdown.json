@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-04__opencode-go-beam-free__markdown",
+  "taskId": "DBG-04",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:49:10.690681Z",
+  "finishedAt": "2026-11-26T21:49:40.5464756Z",
+  "durationMs": 29855,
+  "exitCode": 0,
+  "tokens": {
+    "input": 278,
+    "output": 54,
+    "reasoning": 24,
+    "cacheRead": 43968,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug in `main.go`: changed `a - b` to `a + b` in `add`. Verification: `go vet ./...` clean and `go test ./...` passes (`ok example.com/bench`). No unrelated code touched.",
+  "eventCount": 44,
+  "toolCalls": 15,
+  "success": true,
+  "sessionId": "ses_de62a847fffeF2ORGYKCFjn64K",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

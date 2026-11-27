@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-02__opencode-go-beam-free__ail",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:38:51.5419049Z",
+  "finishedAt": "2026-11-26T22:39:43.4354982Z",
+  "durationMs": 51893,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1479,
+    "output": 58,
+    "reasoning": 30,
+    "cacheRead": 49664,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Added table-driven tests in `main_test.go` covering `add` with zero (both operands zero, zero on either side) plus a positive case. `main.go` was left unchanged. `go test ./...` and `go vet ./...` both pass.",
+  "eventCount": 80,
+  "toolCalls": 27,
+  "success": true,
+  "sessionId": "ses_de5fd0826ffeIxFIG5Z2yzwl4n",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-02__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

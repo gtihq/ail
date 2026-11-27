@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-04__opencode-go-hy4-flash-free__markdown",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T20:06:12.4342394Z",
+  "finishedAt": "2026-11-26T20:08:40.5939001Z",
+  "durationMs": 148159,
+  "exitCode": 0,
+  "tokens": {
+    "input": 699,
+    "output": 91,
+    "reasoning": 77,
+    "cacheRead": 69376,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll explore the current workspace to understand what's being asked.I found the canonical baseline file. The user's heading matches it exactly, and sibling workspaces contain an `AGENTS.md` with this baseline, while this workspace is missing it. I'll restore the conventional Markdown baseline as `AGENTS.md`.Now I'll verify the workspace still satisfies the machine-checkable rules: tests pass, no typographic dashes, and no oversized files.Done. I created `AGENTS.md` in this workspace with the conventional Markdown baseline, matching the canonical source. The harness now loads it as the project's active instructions.\n\nVerification:\n- `go test ./...` passes.\n- No typographic dashes in any workspace file.\n- All files remain well under the size limit (largest is 104 lines).\n\nI left the existing Go source and test files unchanged.",
+  "eventCount": 83,
+  "toolCalls": 27,
+  "success": true,
+  "sessionId": "ses_de688ca81ffefi0QtZPQyr1MLA",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-04__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

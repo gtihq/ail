@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-01__opencode-go-hungerg-free__markdown",
+  "taskId": "IMP-01",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:45:49.6480899Z",
+  "finishedAt": "2026-11-27T01:46:38.0566581Z",
+  "durationMs": 48408,
+  "exitCode": 0,
+  "tokens": {
+    "input": 600,
+    "output": 71,
+    "reasoning": 5,
+    "cacheRead": 35328,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll add a concise `AGENTS.md` baseline tailored to this small Go project, then verify the test command.Created `AGENTS.md` with a conventional Markdown baseline covering:\n\n- Project structure and Go version\n- Build, test, vet, and formatting commands\n- Code and testing conventions\n- Change discipline and commit policy\n\nValidation passed:\n\n- `go test ./...`\n- `go vet ./...`\n\nNo em-dash characters were introduced.",
+  "eventCount": 24,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de551db53ffej3W8Cagc8ZTIWr",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "D__DBG-10__opencode-go-beam-free__ail",
+  "taskId": "DBG-10",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:41:04.0179533Z",
+  "finishedAt": "2026-11-27T00:01:40.5258108Z",
+  "durationMs": 4836507,
+  "exitCode": 1,
+  "tokens": {
+    "input": 1862,
+    "output": 51,
+    "reasoning": 44,
+    "cacheRead": 46784,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed the bug in `main.go`: changed `return a - b` to `return a + b` (surgical one-line fix). Verified with `go test ./...` (pass) and `go vet ./...` (clean).",
+  "eventCount": 78,
+  "toolCalls": 23,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de5faf058ffeg0LqQr5VYRpL7x",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-10__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

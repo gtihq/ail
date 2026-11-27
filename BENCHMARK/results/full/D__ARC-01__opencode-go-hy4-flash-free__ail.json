@@ -1,0 +1,45 @@
+{
+  "id": "D__ARC-01__opencode-go-hy4-flash-free__ail",
+  "taskId": "ARC-01",
+  "category": "architecture",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:57:36.4479943Z",
+  "finishedAt": "2026-11-26T20:58:05.06548Z",
+  "durationMs": 28617,
+  "exitCode": 0,
+  "tokens": {
+    "input": 212,
+    "output": 149,
+    "reasoning": 0,
+    "cacheRead": 33280,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "It looks like your message may have been cut off. You wrote:\n\n```\n# AIL Operational Instructions\n```\n\nCould you share the rest of the instructions? In the meantime, let me check the workspace to see if there's a relevant file.I see a minimal Go project (`main.go`, `main_test.go`, `go.mod`), but your message only contained the heading `# AIL Operational Instructions` with no body.\n\nCould you paste the full instructions? I want to make sure I follow them exactly rather than guess. For reference, here is what is currently in the workspace:\n\n- `main.go`: an `add(a, b int) int` function and an empty `main()`\n- `main_test.go`: a `TestAdd` test for `add(2, 3) == 5`\n- `go.mod`: module `example.com/bench`, Go 1.25\n\nOnce you share the operational instructions, I'll get straight to work.",
+  "eventCount": 14,
+  "toolCalls": 4,
+  "success": true,
+  "sessionId": "ses_de659bb2fffeFm4xYcVn76cBMg",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__ARC-01__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-08__opencode-go-hungerg-free__ail",
+  "taskId": "REF-08",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:12:18.0424479Z",
+  "finishedAt": "2026-11-27T02:12:24.534496Z",
+  "durationMs": 6492,
+  "exitCode": 0,
+  "tokens": {
+    "input": 4074,
+    "output": 41,
+    "reasoning": 121,
+    "cacheRead": 30016,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Understood. I’ll follow the AIL operational instructions, repository conventions, scope and safety constraints, and continue through obstacles until the task is complete. What would you like me to work on?",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de5399e46ffebLzjNLGMONr9Mw",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-08__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

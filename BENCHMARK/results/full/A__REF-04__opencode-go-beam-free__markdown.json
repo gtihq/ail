@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-04__opencode-go-beam-free__markdown",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T22:08:26.6383502Z",
+  "finishedAt": "2026-11-26T22:09:01.6295225Z",
+  "durationMs": 34991,
+  "exitCode": 0,
+  "tokens": {
+    "input": 175,
+    "output": 47,
+    "reasoning": 61,
+    "cacheRead": 60992,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Refactored `main.go` to introduce a `Pair` type representing a pair of integers, used inside `add` to preserve behavior. `go test ./...` passes and `go vet` is clean.",
+  "eventCount": 39,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de618e0f8ffe0E9Dmkzeq15pxY",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

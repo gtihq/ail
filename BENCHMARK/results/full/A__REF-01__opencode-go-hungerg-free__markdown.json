@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-01__opencode-go-hungerg-free__markdown",
+  "taskId": "REF-01",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:17:25.8934568Z",
+  "finishedAt": "2026-11-27T01:18:53.9594511Z",
+  "durationMs": 88065,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1446,
+    "output": 75,
+    "reasoning": 58,
+    "cacheRead": 78912,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll treat the heading as a request to create the workspace’s `AGENTS.md` using the repository’s canonical conventional Markdown baseline, leaving the Go code unchanged.Created `AGENTS.md` with the canonical conventional Markdown baseline.\n\n- Exact match with `MARKDOWN_BASELINE/project-rules.md`\n- No em-dash characters\n- Go source files unchanged\n- `go test ./...` passed\n- `go vet ./...` passed\n- `gofmt -l .` reported no issues",
+  "eventCount": 36,
+  "toolCalls": 16,
+  "success": true,
+  "sessionId": "ses_de56bd98fffeqmPwS5kOp0PYH7",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

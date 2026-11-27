@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-05__opencode-go-hungerg-free__markdown",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:57:34.5707264Z",
+  "finishedAt": "2026-11-27T01:59:33.8900982Z",
+  "durationMs": 119319,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1531,
+    "output": 81,
+    "reasoning": 56,
+    "cacheRead": 134592,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace and existing agent configuration, then create or update the Markdown baseline in the repository’s conventions.The repository already has a canonical Markdown baseline for these rules. I’ll use it as `AGENTS.md` in this workspace so the conventional Markdown version stays aligned with the AIL source, without changing the Go code.Created `AGENTS.md` using the canonical conventional Markdown baseline.\n\nAssumption: the heading requested a project-level agent rules file. The Go source files were left unchanged.\n\nVerified:\n\n- `AGENTS.md` matches `MARKDOWN_BASELINE/project-rules.md`\n- No em dash characters\n- `go test ./...` passes\n- `go vet ./...` passes",
+  "eventCount": 50,
+  "toolCalls": 19,
+  "success": true,
+  "sessionId": "ses_de54719adffeHFZNOtGLsk1Lld",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-05__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-04__opencode-go-hungerg-free__ail",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:23:18.2112364Z",
+  "finishedAt": "2026-11-27T02:23:31.6266771Z",
+  "durationMs": 13415,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5314,
+    "output": 21,
+    "reasoning": 112,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Ready. Please provide the AIL operational instructions or the task you want me to perform.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de52f8c1fffehhWlVIi3SugaXy",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-04__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

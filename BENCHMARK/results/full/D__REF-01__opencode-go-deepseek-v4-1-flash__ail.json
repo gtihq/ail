@@ -1,0 +1,46 @@
+{
+  "id": "D__REF-01__opencode-go-deepseek-v4-1-flash__ail",
+  "taskId": "REF-01",
+  "category": "refactoring",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:43:18.4229178Z",
+  "finishedAt": "2026-11-27T00:43:20.319589Z",
+  "durationMs": 1896,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de58b18c4ffenD9LWj1vTojhLf",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-01__opencode-go-deepseek-v4-1-flash__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__ARC-03__opencode-go-hungerg-free__ail",
+  "taskId": "ARC-03",
+  "category": "architecture",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:07:46.43675Z",
+  "finishedAt": "2026-11-27T02:09:49.4096658Z",
+  "durationMs": 122972,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1020,
+    "output": 101,
+    "reasoning": 206,
+    "cacheRead": 153408,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found the concrete ARC-03 task associated with this workspace: add a narrow interface for integer operations while preserving `add` and the passing tests. I will keep the change minimal, add a focused contract test, and verify formatting, tests, and vet.Implemented the ARC-03 architecture change:\n\n- Added a narrow `integerOperation` interface with one `Apply` method.\n- Added an `addition` implementation and routed `add` through the interface.\n- Added `TestIntegerOperation` while preserving `TestAdd`.\n\nVerification passed:\n\n- `go test ./...`\n- `go test -shuffle=on -count=10 ./...`\n- `go vet ./...`\n- `gofmt -l .` is clean.",
+  "eventCount": 51,
+  "toolCalls": 25,
+  "success": true,
+  "sessionId": "ses_de53dc3eaffe1DgpgTs5mnGYy1",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__ARC-03__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

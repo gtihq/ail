@@ -1,0 +1,45 @@
+{
+  "id": "D__AMB-05__opencode-go-hungerg-free__ail",
+  "taskId": "AMB-05",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:15:06.0393153Z",
+  "finishedAt": "2026-11-27T02:15:14.432658Z",
+  "durationMs": 8393,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2127,
+    "output": 39,
+    "reasoning": 179,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a minimal Go project with `add(a, b int) int` and one passing test in `main_test.go`.\n\nWhat would you like me to change or investigate?",
+  "eventCount": 12,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de5370eafffeoEG0BcAjRjiR8w",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__AMB-05__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

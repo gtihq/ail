@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-08__opencode-go-beam-free__markdown",
+  "taskId": "REF-08",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:27:10.5581752Z",
+  "finishedAt": "2026-11-26T21:28:21.9434703Z",
+  "durationMs": 71385,
+  "exitCode": 0,
+  "tokens": {
+    "input": 225,
+    "output": 59,
+    "reasoning": 31,
+    "cacheRead": 68864,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` in the workspace with the conventional Markdown baseline, matching the sibling workspaces in the markdown series. Verified it is byte-for-byte identical to `MARKDOWN_BASELINE/project-rules.md`, has no em-dash, and `go test ./...` passes.",
+  "eventCount": 108,
+  "toolCalls": 37,
+  "success": true,
+  "sessionId": "ses_de63ea8d7ffegMic8eD0GpgPl6",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-08__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

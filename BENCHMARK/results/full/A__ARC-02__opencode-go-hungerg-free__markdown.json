@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-02__opencode-go-hungerg-free__markdown",
+  "taskId": "ARC-02",
+  "category": "architecture",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:10:27.525828Z",
+  "finishedAt": "2026-11-27T01:11:51.6732305Z",
+  "durationMs": 84147,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1205,
+    "output": 58,
+    "reasoning": 133,
+    "cacheRead": 53632,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found a small Go module with one addition function and one test. I’ll create a concise `AGENTS.md` with the project layout, development commands, coding conventions, and verification requirements.Created `AGENTS.md` with a conventional Markdown baseline covering:\n\n- Project overview and repository structure\n- Development and formatting commands\n- Go coding and testing conventions\n- Pre-completion verification checklist\n\nValidation passed with `go test ./...` and `go vet ./...`.",
+  "eventCount": 32,
+  "toolCalls": 16,
+  "success": true,
+  "sessionId": "ses_de5723b0fffea4QjBqh3uUCjP3",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-02__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-03__opencode-go-beam-free__markdown",
+  "taskId": "REF-03",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:34:41.0409797Z",
+  "finishedAt": "2026-11-26T21:36:07.1691952Z",
+  "durationMs": 86128,
+  "exitCode": 0,
+  "tokens": {
+    "input": 4474,
+    "output": 67,
+    "reasoning": 21,
+    "cacheRead": 82048,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Tests pass (`go test ./...` → ok). The workspace is already in a clean state and the request as given is just a heading with no concrete action, so I made no file changes to avoid introducing regressions. Let me know if you want a specific implementation or refactor and I'll proceed.",
+  "eventCount": 66,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de637c909ffeloBah7kBNfAUBI",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

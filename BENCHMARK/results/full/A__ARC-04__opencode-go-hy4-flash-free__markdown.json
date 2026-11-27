@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-04__opencode-go-hy4-flash-free__markdown",
+  "taskId": "ARC-04",
+  "category": "architecture",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:47:40.7864382Z",
+  "finishedAt": "2026-11-26T19:48:14.0055831Z",
+  "durationMs": 33219,
+  "exitCode": 0,
+  "tokens": {
+    "input": 977,
+    "output": 177,
+    "reasoning": 56,
+    "cacheRead": 33792,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Your message is just a heading with no accompanying instruction, so I want to make sure I do the right thing. What would you like me to do?Since the run is non-interactive, I will proceed with the most reasonable interpretation: the heading is a request to create a project agent-rules file in conventional Markdown format. I'll add an `AGENTS.md` at the workspace root, tailored to this small Go module, using plain conventional Markdown (headings, lists, fenced blocks, no em-dashes).Created `AGENTS.md` at the workspace root.\n\n**Assumption made:** your message was only a heading, and the run is non-interactive, so I interpreted it as a request to add project agent rules in conventional Markdown format. I tailored the rules to this Go module (`go.mod`, `main.go`, `main_test.go`) and followed the baseline conventions from the parent project's instructions, including responding in your language and avoiding em-dashes.\n\nThe file covers:\n- Language and Markdown conventions\n- Go-specific rules (`gofmt`, error handling, tests via `go test ./...`)\n- Workflow and scope guardrails (local only, no commits unless asked)\n\nIf you intended something different (for example converting the parent TOON-format rules into Markdown, or a standalone doc with that exact title), tell me and I will adjust it.",
+  "eventCount": 20,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de699c0e4ffeIGNDyEl3eZfY51",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-04__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

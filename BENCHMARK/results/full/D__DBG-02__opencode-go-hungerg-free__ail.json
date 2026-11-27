@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-02__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-02",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:17:48.8169977Z",
+  "finishedAt": "2026-11-27T02:18:18.7762637Z",
+  "durationMs": 29959,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1753,
+    "output": 35,
+    "reasoning": 82,
+    "cacheRead": 38912,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Encontrei uma falha direta: `add` está subtraindo os valores, enquanto o teste exige soma. Vou confirmar com a suíte e corrigir a implementação.Corrigido `add` em `main.go` para retornar `a + b`.\n\nValidação: `go test ./...` passou.",
+  "eventCount": 28,
+  "toolCalls": 11,
+  "success": true,
+  "sessionId": "ses_de53492bcffePxTEJVyLZQ8kZX",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-02__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-02__opencode-go-beam-free__markdown",
+  "taskId": "ARC-02",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:24:38.1690719Z",
+  "finishedAt": "2026-11-26T21:26:04.4848311Z",
+  "durationMs": 86315,
+  "exitCode": 0,
+  "tokens": {
+    "input": 476,
+    "output": 107,
+    "reasoning": 36,
+    "cacheRead": 63744,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done.\n\n**Change:** Separated computation from the entry point by moving `add` into a dedicated `arith.go` file (package `main`), leaving `main.go` as a thin entry point. No behavior change; existing tests still exercise `add`.\n\n**Verification**\n- `gofmt -l .` clean\n- `go vet ./...` clean\n- `go test ./...` passes\n- No file exceeds 700 lines; no em-dash introduced\n\nNo commit was made.",
+  "eventCount": 96,
+  "toolCalls": 31,
+  "success": true,
+  "sessionId": "ses_de640fc4bffe0wWo5jXG6z3CQr",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-02__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

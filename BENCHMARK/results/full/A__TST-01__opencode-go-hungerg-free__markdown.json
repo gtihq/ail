@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-01__opencode-go-hungerg-free__markdown",
+  "taskId": "TST-01",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T00:58:28.8726542Z",
+  "finishedAt": "2026-11-27T00:59:07.9963292Z",
+  "durationMs": 39123,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2801,
+    "output": 69,
+    "reasoning": 230,
+    "cacheRead": 110592,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace to see what Markdown baseline needs to be added or updated.I’ll treat the heading as a request to create an `AGENTS.md` baseline in this workspace. I’ll leave the Go code unchanged.Created `AGENTS.md` with the canonical Markdown baseline covering rules R001 through R010.\n\n- Left `main.go` and `main_test.go` unchanged.\n- Confirmed the file matches the canonical baseline and contains no em dash.\n- `go test ./...` passes.\n- `go vet ./...` passes.",
+  "eventCount": 50,
+  "toolCalls": 25,
+  "success": true,
+  "sessionId": "ses_de57d3324ffeLDZYi4tuxEoD9R",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

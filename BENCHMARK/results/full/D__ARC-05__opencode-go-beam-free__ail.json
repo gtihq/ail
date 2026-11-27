@@ -1,0 +1,45 @@
+{
+  "id": "D__ARC-05__opencode-go-beam-free__ail",
+  "taskId": "ARC-05",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:19:54.4931207Z",
+  "finishedAt": "2026-11-27T00:22:09.6443707Z",
+  "durationMs": 135151,
+  "exitCode": 0,
+  "tokens": {
+    "input": 311,
+    "output": 122,
+    "reasoning": 30,
+    "cacheRead": 68992,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented a minimal, behavior-preserving architecture change in `main.go`: introduced an exported `Adder` type with an `Add` method, and made the package-level `add` helper delegate to it. This exposes the arithmetic logic as a directly testable structure while keeping the existing `TestAdd` passing.\n\nVerification:\n- `gofmt -l .` reports nothing (clean formatting)\n- `go test ./...` passes\n- `go vet ./...` reports no diagnostics\n- No file exceeds the size limit and no typographic dash was introduced\n\nNo commit was made.",
+  "eventCount": 89,
+  "toolCalls": 36,
+  "success": true,
+  "sessionId": "ses_de5a08512ffegquGwYWOlr04nm",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__ARC-05__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

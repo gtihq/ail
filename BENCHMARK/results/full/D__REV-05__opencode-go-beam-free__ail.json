@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-05__opencode-go-beam-free__ail",
+  "taskId": "REV-05",
+  "category": "code-review",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:30:50.4012015Z",
+  "finishedAt": "2026-11-27T00:32:46.6299801Z",
+  "durationMs": 116228,
+  "exitCode": 0,
+  "tokens": {
+    "input": 915,
+    "output": 571,
+    "reasoning": 199,
+    "cacheRead": 50752,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Code review: test quality (REV-05)\n\nNo files were modified. `go test ./...` and `go vet ./...` both pass (`ok example.com/bench`).\n\n### Concrete issues\n\n**`main_test.go`**\n\n1. **Single hard-coded case.** `TestAdd` only checks `add(2, 3) == 5`. There is no coverage for zero, negatives, mixed signs, large values, or overflow, so the `int` domain is effectively untested beyond one point.\n\n2. **The function under test is evaluated twice.** Line 6 calls `add(2, 3)` for the assertion and line 7 calls it again to build the failure message. The value reported on failure is not the value that was compared. Capture it once (`got := add(2, 3)`), compare `got`, and print `got`.\n\n3. **Magic numbers duplicated across sites.** The literals `2`, `3`, and `5` appear in the call and are repeated inside the message string, so editing a case means touching two places and the message can drift unnoticed. Named constants or a case list remove that coupling.\n\n4. **Not table-driven.** Adding a second input requires copying the whole `if` block. A slice of `{a, b, want}` entries iterated with `t.Run` makes expansion cheap and gives each case a descriptive failure name.\n\n5. **No invariant checks.** For addition, `add(a, b) == add(b, a)` (commutativity) and `add(a, 0) == a` (identity) are cheap properties that catch whole classes of mistakes a single sample cannot.\n\n6. **Overflow behavior is undocumented.** `int` is fixed width, so `add(math.MaxInt, 1)` wraps. The test is silent on whether that is intended, so a future change to wraparound semantics would raise no objection.\n\n7. **Generic test name.** `TestAdd` is acceptable for one case, but once cases are added, named subtests make failures self-explanatory.\n\n**`main.go`**\n\n8. **`main()` is untested.** It is currently empty, so this is low severity, but nothing guards it from quietly becoming a non-trivial entry point.\n\n### Summary\n\n`add` is arithmetically correct for the one input pair it tests, but the test suite exercises a single point, recomputes the result in its failure message, and documents no overflow contract. I recommend capturing the result once, converting to a table-driven form with `t.Run`, and adding zero, negative, identity, commutativity, and boundary cases. No source changes were made, per the review-only scope.",
+  "eventCount": 73,
+  "toolCalls": 24,
+  "success": true,
+  "sessionId": "ses_de59682e8ffeAP9sUUweSAyLaw",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REV-05__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

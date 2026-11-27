@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-09__opencode-go-hungerg-free__markdown",
+  "taskId": "REF-09",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:06:09.3594759Z",
+  "finishedAt": "2026-11-27T01:06:24.2971094Z",
+  "durationMs": 14937,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2233,
+    "output": 48,
+    "reasoning": 42,
+    "cacheRead": 33792,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` with a conventional Markdown baseline covering:\n\n- Repository workflow\n- Go code conventions\n- Markdown conventions\n- Formatting, testing, and vetting commands\n\nNo application code was changed.",
+  "eventCount": 15,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de5762c59ffe80csGYOb3RRDpU",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-09__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-02__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:36:46.6287258Z",
+  "finishedAt": "2026-11-26T19:37:32.6792271Z",
+  "durationMs": 46050,
+  "exitCode": 0,
+  "tokens": {
+    "input": 584,
+    "output": 307,
+    "reasoning": 50,
+    "cacheRead": 37888,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I'll start by exploring the current workspace to understand what's being asked.The workspace is a minimal Go benchmark project. Given the task title, the deliverable is a conventional Markdown `AGENTS.md` baseline for project agent rules, contrasting with the TOON-formatted rules in the parent directory. I'll create it in clean conventional Markdown.The only match is the rule describing the character itself. I'll reword it to avoid embedding the literal character, keeping the file fully compliant with its own rule.Created `AGENTS.md` in the workspace as a conventional Markdown baseline for project agent rules. It captures the repository conventions from the parent rules, organized into sections:\n\n- **Language and character rules**: respond in the user's language, no em-dashes, English skill files, English commit messages with conventional-commit prefixes.\n- **Code style**: `#region` sections, 700-line file cap, no alignment padding, one property per line, no unsafe type assertions, `import type`, `unknown` for catch variables.\n- **Structure and reuse**: one concept per directory, extract patterns repeated 3+ times, no global pollution, frontend component reuse, extensible APIs.\n- **Routing and DTOs**: nested folder routing, route-only handler files, semantic nesting.\n- **Error handling, logging, data**: typed domain errors, full logging, Sequelize ORM only, index naming.\n- **Testing**: integration/E2E layout, mandatory unit tests, artifacts in `tests/`.\n- **Platform conventions**: admin UIs, auto-discovery, atomic cluster-safe operations.\n- **Project workflow**: read sub-project docs, preserve comments, update all call sites, respect line endings.\n- **Safety and scope**: local only, no dependency on external `file:` packages, no native browser dialogs, proper accents in PT-BR.\n\nVerified the file contains no em-dash characters (the rule now references Unicode U+2014 instead of embedding the character), so it satisfies its own convention.",
+  "eventCount": 29,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de6a3bbe3ffenqRbOERfIUzIw4",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-02__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

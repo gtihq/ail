@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-01__opencode-go-beam-free__markdown",
+  "taskId": "REF-01",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:29:48.3215708Z",
+  "finishedAt": "2026-11-26T21:31:52.3975873Z",
+  "durationMs": 124076,
+  "exitCode": 0,
+  "tokens": {
+    "input": 468,
+    "output": 147,
+    "reasoning": 12,
+    "cacheRead": 71552,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done.\n\nChanges made:\n- Created `AGENTS.md` at the workspace root: a conventional Markdown project rules baseline (scope, general workflow, Go code style, testing, documentation, safety, git, reporting).\n- Refactored `main.go`: extracted the addition into a named helper `sumInts` with a clear comment, while keeping `add` behavior unchanged.\n\nChecks run:\n- `gofmt` applied to Go sources.\n- `go vet ./...`: clean.\n- `go test ./...`: passed (`ok example.com/bench`).\n- Scanned all files for typographic dashes: none found.\n- Checked file sizes: no file exceeds 700 lines.",
+  "eventCount": 122,
+  "toolCalls": 41,
+  "success": true,
+  "sessionId": "ses_de63c40bbffeKcxRtp53KuiKmL",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-01__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

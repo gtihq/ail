@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "taskId": "TST-03",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:15:15.6307974Z",
+  "finishedAt": "2026-11-26T19:16:43.931202Z",
+  "durationMs": 88300,
+  "exitCode": 0,
+  "tokens": {
+    "input": 157,
+    "output": 136,
+    "reasoning": 0,
+    "cacheRead": 54528,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found the benchmark context. The actual task is TST-03: add table-driven tests for `add` with large values, without touching `main.go`, and verify with `go test ./...`. I will apply the project rules (no em-dash, keep files small, keep existing test intact, run tests and vet).Done. Summary:\n\n- Added `TestAddLargeValues` in `main_test.go` as a table-driven test covering `add` with large positive values, large powers of two, large negative values, and large opposite signs. The original `TestAdd` is preserved unchanged.\n- `main.go` was not modified.\n- Verification: `go test ./...` passes (`ok example.com/bench`) and `go vet ./...` reports no diagnostics.\n\nAssumptions made: the environment is 64-bit, so `int` holds the large test values; all cases were chosen so their sums stay within `int` range and do not overflow.",
+  "eventCount": 63,
+  "toolCalls": 21,
+  "success": true,
+  "sessionId": "ses_de6b76ec9ffefw0BUvS6NynQSd",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-03__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-09__opencode-go-beam-free__markdown",
+  "taskId": "IMP-09",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:55:11.4551798Z",
+  "finishedAt": "2026-11-26T21:56:41.2455641Z",
+  "durationMs": 89790,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1138,
+    "output": 50,
+    "reasoning": 45,
+    "cacheRead": 230784,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. I created `AGENTS.md` in the workspace as a conventional Markdown baseline for the project agent rules, copying the canonical baseline content unchanged. The Go sources were left untouched, and `go test ./...` still passes.",
+  "eventCount": 77,
+  "toolCalls": 26,
+  "success": true,
+  "sessionId": "ses_de6250337ffejcmmQeCHFOmRqy",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-09__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

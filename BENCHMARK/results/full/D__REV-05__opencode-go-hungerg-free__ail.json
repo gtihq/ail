@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-05__opencode-go-hungerg-free__ail",
+  "taskId": "REV-05",
+  "category": "code-review",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:18:49.7771569Z",
+  "finishedAt": "2026-11-27T02:19:34.3936211Z",
+  "durationMs": 44616,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2407,
+    "output": 114,
+    "reasoning": 109,
+    "cacheRead": 63488,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace for its operational guidance and project documentation first.I found and loaded `AIL_RULES/project-rules.ail`. I’ll follow its local-only, surgical-change, comment-preservation, testing, and formatting requirements. No files have been changed.Assuming you want the workspace validated against those operational requirements, I’ll run the Go tests and vet checks and inspect the working-tree state without modifying files.The isolated workspace and AIL rule file both pass their initial checks. I’ll also run the full AIL repository tests and vet checks to verify the project-level requirements.Assumption: you wanted the AIL operational instructions loaded and validated.\n\nResults:\n- Loaded 10 rules from `AIL_RULES/project-rules.ail`.\n- AIL check passed with zero parse, lint, validation, or interpreter diagnostics.\n- Workspace `go test ./...` passed.\n- Workspace `go vet ./...` passed.\n- Full repository `go test ./...` passed.\n- Full repository `go vet ./...` passed.\n\nNo files were modified. Existing untracked benchmark results were left untouched.",
+  "eventCount": 49,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de533a4bdffeRjtMgw0dqf89rX",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REV-05__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

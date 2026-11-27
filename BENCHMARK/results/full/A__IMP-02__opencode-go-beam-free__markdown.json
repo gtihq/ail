@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-02__opencode-go-beam-free__markdown",
+  "taskId": "IMP-02",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:19:18.4398972Z",
+  "finishedAt": "2026-11-26T21:20:52.5515529Z",
+  "durationMs": 94111,
+  "exitCode": 0,
+  "tokens": {
+    "input": 579,
+    "output": 76,
+    "reasoning": 16,
+    "cacheRead": 67840,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Implemented `abs` in `main.go` while keeping `add` intact.\n\nVerification:\n- `go test ./...` passes (`ok example.com/bench`).\n- `go vet ./...` reports no diagnostics.\n- `gofmt -l .` reports no files needing formatting.\n- No typographic dash introduced; existing comments preserved.",
+  "eventCount": 111,
+  "toolCalls": 38,
+  "success": true,
+  "sessionId": "ses_de645dd82ffe77rJK0s5fb9cMe",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-02__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

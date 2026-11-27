@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-05__opencode-go-beam-free__markdown",
+  "taskId": "REF-05",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:26:04.8022046Z",
+  "finishedAt": "2026-11-26T21:27:10.2024477Z",
+  "durationMs": 65400,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1120,
+    "output": 54,
+    "reasoning": 26,
+    "cacheRead": 183104,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` in the workspace with the conventional Markdown baseline, mirroring `MARKDOWN_BASELINE/project-rules.md`. Verified `go test ./...` passes and no em-dash characters are present. The Go sources were left untouched.",
+  "eventCount": 59,
+  "toolCalls": 20,
+  "success": true,
+  "sessionId": "ses_de63fa9cbffeweIZaqKAnqNmzd",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-05__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

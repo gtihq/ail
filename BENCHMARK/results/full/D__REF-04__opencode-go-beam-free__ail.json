@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-04__opencode-go-beam-free__ail",
+  "taskId": "REF-04",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:38:12.9734985Z",
+  "finishedAt": "2026-11-27T00:39:33.0137741Z",
+  "durationMs": 80040,
+  "exitCode": 0,
+  "tokens": {
+    "input": 523,
+    "output": 113,
+    "reasoning": 69,
+    "cacheRead": 57920,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Refactored `main.go` to introduce `IntPair`, a small type representing a pair of integers, while preserving `add`'s signature and behavior. Tests pass.\n\n```go\n// IntPair represents a pair of integers.\ntype IntPair struct {\n\tA int\n\tB int\n}\n\nfunc add(a, b int) int {\n\tpair := IntPair{A: a, B: b}\n\treturn pair.A + pair.B\n}\n```\n\nVerified with `go vet ./...` and `go test ./...` (both pass).",
+  "eventCount": 72,
+  "toolCalls": 25,
+  "success": true,
+  "sessionId": "ses_de58fc1ecffeLGlbEWo8Pfv9gt",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-04__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

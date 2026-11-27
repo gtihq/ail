@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-06__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-06",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:42:09.6614259Z",
+  "finishedAt": "2026-11-27T01:42:28.7642244Z",
+  "durationMs": 19102,
+  "exitCode": 0,
+  "tokens": {
+    "input": 2190,
+    "output": 31,
+    "reasoning": 329,
+    "cacheRead": 51200,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found a failing test: `add(2, 3)` returns `-1` because `main.go` subtracts instead of adding. I’ll correct the operator and rerun the tests.Fixed `add` in `main.go` to use `+` instead of `-`.\n\n`go test ./...` now passes.",
+  "eventCount": 24,
+  "toolCalls": 10,
+  "success": true,
+  "sessionId": "ses_de555367cffecP0pfRK0m1E0Kb",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-06__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

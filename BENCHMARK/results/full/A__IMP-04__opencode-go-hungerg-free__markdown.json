@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-04__opencode-go-hungerg-free__markdown",
+  "taskId": "IMP-04",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:43:20.1421734Z",
+  "finishedAt": "2026-11-27T01:45:49.3351752Z",
+  "durationMs": 149193,
+  "exitCode": 0,
+  "tokens": {
+    "input": 150,
+    "output": 113,
+    "reasoning": 61,
+    "cacheRead": 125696,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The message contains only a heading, so I’m using the workspace’s IMP-04 task context: add a helper that counts even integers in a slice, keep `add` working, and run the tests.Implemented the IMP-04 helper based on the workspace context:\n\n- Added `countEven(nums []int) int` in `main.go`.\n- Preserved the existing `add` function.\n- Added table-driven tests in `main_test.go` for mixed, negative, odd-only, empty, and nil slices.\n- Verified:\n  - `go test ./...` passes.\n  - `go vet ./...` is clean.\n  - `gofmt -l .` reports no formatting issues.\n  - No em-dash characters were introduced.",
+  "eventCount": 64,
+  "toolCalls": 21,
+  "success": true,
+  "sessionId": "ses_de554221fffeEfV3HER5oOCTPh",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-04__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

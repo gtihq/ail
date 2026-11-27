@@ -1,0 +1,45 @@
+{
+  "id": "A__AMB-03__opencode-go-hungerg-free__markdown",
+  "taskId": "AMB-03",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T00:45:27.260508Z",
+  "finishedAt": "2026-11-27T00:46:43.8863927Z",
+  "durationMs": 76625,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1953,
+    "output": 90,
+    "reasoning": 175,
+    "cacheRead": 96448,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace to see what project rules and existing Markdown files are already present.The request is only a title, and the repository has a canonical Markdown baseline with that exact heading. I’ll use it to create `AGENTS.md`, leave the Go code unchanged, and verify the workspace.Created `AGENTS.md` at the workspace root using the canonical conventional Markdown baseline.\n\n- Matches `MARKDOWN_BASELINE/project-rules.md` byte-for-byte.\n- Contains no em-dash characters.\n- Leaves all Go source files unchanged.\n- `go test ./...` passes.\n- `go vet ./...` reports no diagnostics.\n- `gofmt -l .` reports no formatting issues.",
+  "eventCount": 41,
+  "toolCalls": 18,
+  "success": true,
+  "sessionId": "ses_de58920ebffeXFNFa0o94mKPHe",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__AMB-03__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

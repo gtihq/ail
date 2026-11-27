@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-03__opencode-go-hy4-flash-free__markdown",
+  "taskId": "IMP-03",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:36:08.5377684Z",
+  "finishedAt": "2026-11-26T19:36:46.3017154Z",
+  "durationMs": 37763,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1229,
+    "output": 227,
+    "reasoning": 114,
+    "cacheRead": 36352,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a single Markdown heading as the request, without an explicit action. Before I change anything, I want to confirm what you want.Since this is a non-interactive run, I'll make a reasonable assumption: the heading is a request to add a project-local agent rules file. I will create `AGENTS.md` at the workspace root, written as conventional baseline Markdown.Created `AGENTS.md` at the workspace root with a conventional Markdown baseline for agent rules:\n\n- **Scope and workflow**: read before editing, keep changes small, respect user changes, run checks before finishing.\n- **Commands**: `gofmt`, `go build`, `go test`, `go vet`.\n- **Go style**: formatting, doc comments on exported symbols, table-driven tests, careful dependency changes.\n- **Markdown style**: ATX headings, fenced blocks with language tags, consistent lists, blank lines, relative links, ASCII punctuation, no em dashes.\n- **Commits**: conventional prefixes, English messages.\n\nI also corrected two Markdown glitches in the first draft (a repeated `##` in the heading example and an inline fence sample).\n\nVerification: `gofmt -l .`, `go build ./...`, `go test ./...`, and `go vet ./...` all pass with no diagnostics.\n\nAssumption made because this run is non-interactive: your heading was a request to add a project-local agent rules document rather than a question to answer in chat.",
+  "eventCount": 26,
+  "toolCalls": 9,
+  "success": true,
+  "sessionId": "ses_de6a450ddffeHPcKDP9Gt2Lz0v",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-03__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

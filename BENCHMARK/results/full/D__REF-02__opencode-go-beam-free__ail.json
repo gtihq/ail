@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-02__opencode-go-beam-free__ail",
+  "taskId": "REF-02",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:28:53.535009Z",
+  "finishedAt": "2026-11-26T22:29:42.0997195Z",
+  "durationMs": 48564,
+  "exitCode": 0,
+  "tokens": {
+    "input": 84,
+    "output": 83,
+    "reasoning": 96,
+    "cacheRead": 72576,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Refactored `main_test.go` to replace the magic numbers (`2`, `3`, `5`) with named constants (`addendA`, `addendB`, `expectedSum`) and updated the assertion and failure message accordingly. `main.go` is unchanged, behavior is preserved.\n\nVerification:\n- `go test ./...` → ok\n- `go vet ./...` → clean",
+  "eventCount": 66,
+  "toolCalls": 21,
+  "success": true,
+  "sessionId": "ses_de6062882ffejwtWvmT16L1WMK",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-02__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

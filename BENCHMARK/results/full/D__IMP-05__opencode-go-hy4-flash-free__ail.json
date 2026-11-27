@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-05__opencode-go-hy4-flash-free__ail",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:09:32.0905298Z",
+  "finishedAt": "2026-11-26T20:09:48.366848Z",
+  "durationMs": 16276,
+  "exitCode": 0,
+  "tokens": {
+    "input": 375,
+    "output": 113,
+    "reasoning": 62,
+    "cacheRead": 33024,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Your message came through as just the header `# AIL Operational Instructions` with no body, so there are no actual instructions for me to act on yet.\n\nThe current workspace is a minimal Go project (`main.go` with an `add` function, `main_test.go`, and `go.mod`).\n\nCould you share what you'd like me to do? For example:\n- Add or change functionality in this Go project\n- Write/adjust tests\n- Something else entirely\n\nOnce you provide the operational instructions or the task, I'll get started.",
+  "eventCount": 12,
+  "toolCalls": 3,
+  "success": true,
+  "sessionId": "ses_de685bea1ffeqcQpvLeFpG9HsO",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-05__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

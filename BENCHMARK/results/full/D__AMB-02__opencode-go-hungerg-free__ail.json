@@ -1,0 +1,45 @@
+{
+  "id": "D__AMB-02__opencode-go-hungerg-free__ail",
+  "taskId": "AMB-02",
+  "category": "ambiguous-requirement",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:14:48.3175035Z",
+  "finishedAt": "2026-11-27T02:15:05.5372145Z",
+  "durationMs": 17219,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5314,
+    "output": 29,
+    "reasoning": 264,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I received only the heading. Please provide the **AIL Operational Instructions** or tell me the specific task you want me to perform.",
+  "eventCount": 6,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de53753edffeEOd7ASG0uXwZr7",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__AMB-02__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

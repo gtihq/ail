@@ -1,0 +1,46 @@
+{
+  "id": "A__ARC-01__opencode-go-deepseek-v4-1-flash__markdown",
+  "taskId": "ARC-01",
+  "category": "architecture",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T00:41:59.9886549Z",
+  "finishedAt": "2026-11-27T00:42:02.2674177Z",
+  "durationMs": 2278,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de58c4abaffe3rAOJAd4mvRXQA",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-01__opencode-go-deepseek-v4-1-flash__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

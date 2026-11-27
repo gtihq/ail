@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-04__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-04",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:16:09.5724872Z",
+  "finishedAt": "2026-11-27T02:16:20.3280094Z",
+  "durationMs": 10755,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1951,
+    "output": 36,
+    "reasoning": 42,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Vou conferir as instruções e o estado do workspace para seguir o fluxo corretamente.Encontrei uma inconsistência em `main.go`: `add` subtrai os valores, mas o teste espera uma soma. Vou confirmar a falha e corrigir.Corrigi `add` em `main.go` para retornar `a + b`.\n\nValidação: `go test ./...` passou.",
+  "eventCount": 22,
+  "toolCalls": 7,
+  "success": true,
+  "sessionId": "ses_de536169effefARfFpds9oIm6l",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-04__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-06__opencode-go-beam-free__markdown",
+  "taskId": "REF-06",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:46:47.9458588Z",
+  "finishedAt": "2026-11-26T21:48:09.2761584Z",
+  "durationMs": 81330,
+  "exitCode": 0,
+  "tokens": {
+    "input": 250,
+    "output": 46,
+    "reasoning": 60,
+    "cacheRead": 74880,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Refactored the test to compute the result once with named constants and added a doc comment to `add`. `gofmt`, `go vet`, and `go test ./...` all pass.",
+  "eventCount": 78,
+  "toolCalls": 27,
+  "success": true,
+  "sessionId": "ses_de62cb276ffeHd6l2oQH31CGEP",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-06__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

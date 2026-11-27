@@ -1,0 +1,48 @@
+{
+  "id": "D__DBG-09__opencode-go-deepseek-v4-1-flash__ail",
+  "taskId": "DBG-09",
+  "category": "debugging",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:42:17.8242872Z",
+  "finishedAt": "2026-11-27T00:42:19.8552048Z",
+  "durationMs": 2030,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 2,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1",
+  "sessionId": "ses_de58c057cffesTWz0zZDxF4Y42",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-09__opencode-go-deepseek-v4-1-flash__ail",
+  "verifyPassed": false,
+  "verifyExitCode": 1,
+  "verifyOutput": "--- FAIL: TestAdd (0.00s)\n    main_test.go:7: add(2, 3) = -1, want 5\nFAIL\nFAIL\texample.com/bench\t0.015s\nFAIL\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 0,
+    "violated": [
+      "R003"
+    ],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

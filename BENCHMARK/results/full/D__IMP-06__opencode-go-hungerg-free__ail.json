@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-06__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-06",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:05:12.3125644Z",
+  "finishedAt": "2026-11-27T02:05:24.8609696Z",
+  "durationMs": 12548,
+  "exitCode": 0,
+  "tokens": {
+    "input": 4074,
+    "output": 39,
+    "reasoning": 187,
+    "cacheRead": 30016,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Understood. Once you assign the goal, I will keep working across all available approaches until it is complete or you explicitly stop it. Obstacles will be recorded without treating them as blockers.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de5401ca0ffe1c41pz93tuiHi0",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-06__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

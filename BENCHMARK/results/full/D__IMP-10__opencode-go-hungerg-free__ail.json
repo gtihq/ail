@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-10__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-10",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:16:20.6388686Z",
+  "finishedAt": "2026-11-27T02:16:23.8033828Z",
+  "durationMs": 3164,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5314,
+    "output": 20,
+    "reasoning": 110,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Ready. What task would you like me to perform under the AIL operational instructions?",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de535eb2effeqANoXPOvdKXwcM",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-10__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

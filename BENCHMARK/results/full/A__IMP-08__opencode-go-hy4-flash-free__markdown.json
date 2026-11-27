@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-08__opencode-go-hy4-flash-free__markdown",
+  "taskId": "IMP-08",
+  "category": "implementation",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T19:18:45.439317Z",
+  "finishedAt": "2026-11-26T19:19:36.0757642Z",
+  "durationMs": 50636,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1161,
+    "output": 137,
+    "reasoning": 838,
+    "cacheRead": 46848,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "That's a document heading rather than an actionable request, so I haven't changed anything yet. I want to confirm the actual task before touching files.\n\nWhat I see in the workspace is a minimal Go module: `go.mod`, `main.go` with a small `add` helper, and a single passing test in `main_test.go`.\n\nTell me what you'd like, for example:\n\n- implement a specific helper in `main.go` (describe the behavior and I'll add it with a test),\n- add test coverage for existing code,\n- create a standalone Markdown file with a particular title and content you specify.\n\nWhich one should I do?",
+  "eventCount": 31,
+  "toolCalls": 12,
+  "success": true,
+  "sessionId": "ses_de6b43b30ffeO3bjkJG2x9kRat",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-08__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

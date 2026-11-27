@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-01__opencode-go-beam-free__ail",
+  "taskId": "REF-01",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:36:11.0368553Z",
+  "finishedAt": "2026-11-26T22:37:15.0571292Z",
+  "durationMs": 64020,
+  "exitCode": 0,
+  "tokens": {
+    "input": 448,
+    "output": 90,
+    "reasoning": 19,
+    "cacheRead": 122624,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Refactored `main.go` to extract the addition into a named helper (`sum`) with clear comments, while keeping `add` as the public entry point. Behavior is unchanged and `go test ./...` passes.\n\n- `main.go`: `add` now delegates to `sum`, which performs the actual `a + b`; both functions are documented.\n- `go vet ./...` and `go test ./...` succeed.",
+  "eventCount": 75,
+  "toolCalls": 24,
+  "success": true,
+  "sessionId": "ses_de5ff7ab7ffeBOJs55P35k10wS",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-01__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

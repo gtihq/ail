@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-05__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-05",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:51:02.9802566Z",
+  "finishedAt": "2026-11-27T01:52:46.3976001Z",
+  "durationMs": 103417,
+  "exitCode": 0,
+  "tokens": {
+    "input": 244,
+    "output": 27,
+    "reasoning": 398,
+    "cacheRead": 54400,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace and its existing guidance, then apply the project rules in the repository’s established Markdown structure.The workspace is a small Go package with an existing test for `add`. I’m running the baseline test now to identify the concrete failure before making a minimal change.The failing test shows `add(2, 3)` returning `-1`. The implementation subtracts instead of adding, so I’m correcting that single operation.Fixed `add` in `main.go` to use addition instead of subtraction.\n\nValidation: `go test ./...` passes.",
+  "eventCount": 31,
+  "toolCalls": 12,
+  "success": true,
+  "sessionId": "ses_de54d1257ffeGS5cZPK630c9c2",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-05__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

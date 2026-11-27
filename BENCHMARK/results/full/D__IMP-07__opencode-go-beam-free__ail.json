@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-07__opencode-go-beam-free__ail",
+  "taskId": "IMP-07",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:07:23.5194455Z",
+  "finishedAt": "2026-11-27T00:09:11.1827379Z",
+  "durationMs": 107663,
+  "exitCode": 0,
+  "tokens": {
+    "input": 126,
+    "output": 86,
+    "reasoning": 51,
+    "cacheRead": 96128,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the helper and verified it.\n\n- Added `indexOf[T comparable](slice []T, value T) int` to `main.go`, returning the first matching index or `-1`.\n- Kept `add` and `main` unchanged.\n- Added table-driven tests for ints and strings.\n- Ran `gofmt`, `go vet ./...`, and `go test ./...` (all pass).",
+  "eventCount": 88,
+  "toolCalls": 33,
+  "success": true,
+  "sessionId": "ses_de5abfaaaffeVlrrVM8f5F9ZP3",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-07__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-07__opencode-go-beam-free__markdown",
+  "taskId": "IMP-07",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:48:09.7056449Z",
+  "finishedAt": "2026-11-26T21:49:10.3834892Z",
+  "durationMs": 60677,
+  "exitCode": 0,
+  "tokens": {
+    "input": 102,
+    "output": 65,
+    "reasoning": 24,
+    "cacheRead": 120192,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Created `AGENTS.md` at the workspace root with the conventional Markdown baseline of project agent rules (R001–R010), copied from the canonical baseline. Verified no em-dash characters anywhere in the workspace and `go test ./...` passes (`ok example.com/bench`).",
+  "eventCount": 62,
+  "toolCalls": 21,
+  "success": true,
+  "sessionId": "ses_de62b7210ffe4PU1gJHo7sPny8",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__IMP-07__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

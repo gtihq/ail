@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-09__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-09",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:02:12.2179518Z",
+  "finishedAt": "2026-11-27T02:04:47.4093583Z",
+  "durationMs": 155191,
+  "exitCode": 0,
+  "tokens": {
+    "input": 118,
+    "output": 39,
+    "reasoning": 40,
+    "cacheRead": 65536,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The `add` helper in `main.go` subtracts instead of adding, causing `TestAdd` to fail. I’ll make that one-line fix and run the tests.Fixed `main.go:4` so `add(a, b)` returns `a + b` instead of `a - b`.\n\nVerification: `go test ./...` passes.",
+  "eventCount": 52,
+  "toolCalls": 20,
+  "success": true,
+  "sessionId": "ses_de542d395ffen6XiBuNE6qUJnZ",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-09__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

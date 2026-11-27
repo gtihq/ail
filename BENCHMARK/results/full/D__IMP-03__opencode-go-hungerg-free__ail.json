@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-03__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-03",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:13:27.9759891Z",
+  "finishedAt": "2026-11-27T02:13:32.1030324Z",
+  "durationMs": 4127,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5314,
+    "output": 35,
+    "reasoning": 212,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Recebi apenas o título “AIL Operational Instructions”, mas o conteúdo das instruções não foi enviado.\n\nQual tarefa ou objetivo você quer que eu execute?",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de5388daaffeKcfH5z3Fb4Mu64",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-03__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

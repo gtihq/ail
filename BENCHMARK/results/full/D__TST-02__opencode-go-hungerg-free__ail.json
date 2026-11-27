@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-02__opencode-go-hungerg-free__ail",
+  "taskId": "TST-02",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:13:32.6529573Z",
+  "finishedAt": "2026-11-27T02:13:36.7794705Z",
+  "durationMs": 4126,
+  "exitCode": 0,
+  "tokens": {
+    "input": 5315,
+    "output": 15,
+    "reasoning": 252,
+    "cacheRead": 28672,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Understood. What task would you like me to complete?",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de5387b70ffetz8Zgj7M2tRD1N",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-02__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-10__opencode-go-hungerg-free__ail",
+  "taskId": "REF-10",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:18:19.0804229Z",
+  "finishedAt": "2026-11-27T02:18:49.2647932Z",
+  "durationMs": 30184,
+  "exitCode": 0,
+  "tokens": {
+    "input": 611,
+    "output": 72,
+    "reasoning": 527,
+    "cacheRead": 34432,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll locate the AIL operational instructions and review the repository context before proceeding.I’ve reviewed the applicable repository instructions and current workspace. It contains a minimal Go module with:\n\n- `main.go`: an `add` function\n- `main_test.go`: one test for `add`\n- `go.mod`: module `example.com/bench`\n\nNo separate AIL instructions file is present. What specific task should I perform?",
+  "eventCount": 13,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de5341cabffelJqUSvOPM3328p",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-10__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

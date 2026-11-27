@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-01__opencode-go-hungerg-free__markdown",
+  "taskId": "ARC-01",
+  "category": "architecture",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T02:00:22.1070124Z",
+  "finishedAt": "2026-11-27T02:00:40.1920257Z",
+  "durationMs": 18085,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1859,
+    "output": 43,
+    "reasoning": 41,
+    "cacheRead": 52224,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll add a conventional `AGENTS.md` baseline for this Go project, covering workflow, code style, testing, and validation.Created `AGENTS.md` with a conventional Markdown baseline covering workflow, Go conventions, validation, and completion expectations.\n\nValidation: `go test ./...` passed. No em dashes found.",
+  "eventCount": 22,
+  "toolCalls": 8,
+  "success": true,
+  "sessionId": "ses_de5448b16ffemL71nqXTZq6oTu",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-01__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

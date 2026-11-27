@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-01__opencode-go-hungerg-free__ail",
+  "taskId": "REF-01",
+  "category": "refactoring",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:12:32.4172521Z",
+  "finishedAt": "2026-11-27T02:13:27.3994778Z",
+  "durationMs": 54982,
+  "exitCode": 0,
+  "tokens": {
+    "input": 603,
+    "output": 41,
+    "reasoning": 68,
+    "cacheRead": 34368,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I found a minimal Go project with `add(a, b int) int` and one passing test.\n\nWhat would you like me to implement, inspect, or change under the AIL operational instructions?",
+  "eventCount": 11,
+  "toolCalls": 4,
+  "success": true,
+  "sessionId": "ses_de539666dffeaz2yjMU3QYIJZj",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-01__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-08__opencode-go-hungerg-free__ail",
+  "taskId": "IMP-08",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:07:37.8303829Z",
+  "finishedAt": "2026-11-27T02:07:45.9157895Z",
+  "durationMs": 8085,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1954,
+    "output": 29,
+    "reasoning": 85,
+    "cacheRead": 32768,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see only the heading “AIL Operational Instructions.” Please provide the actual instructions or the specific task you want me to perform.",
+  "eventCount": 14,
+  "toolCalls": 5,
+  "success": true,
+  "sessionId": "ses_de53de552ffeU7tleg4974lguL",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__IMP-08__opencode-go-hungerg-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

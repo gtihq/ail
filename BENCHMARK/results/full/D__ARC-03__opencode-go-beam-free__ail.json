@@ -1,0 +1,45 @@
+{
+  "id": "D__ARC-03__opencode-go-beam-free__ail",
+  "taskId": "ARC-03",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:24:50.8283933Z",
+  "finishedAt": "2026-11-26T22:25:59.2653114Z",
+  "durationMs": 68436,
+  "exitCode": 0,
+  "tokens": {
+    "input": 187,
+    "output": 147,
+    "reasoning": 71,
+    "cacheRead": 116864,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the ARC-03 architecture change in the workspace:\n\n- `main.go`: added a narrow `integerOperation` interface with a single `Apply(a, b int) int` method, an `addition` implementation, and a `defaultOperation` variable; `add` now delegates through the interface. Existing behavior and `main()` are unchanged.\n- `main_test.go`: kept `TestAdd` and added `TestIntegerOperation` exercising the interface directly.\n\nVerification: `gofmt -l .` reports no files needing formatting, `go test ./...` passes, `go vet ./...` is clean, no typographic dashes, and all files are well under the size limit.",
+  "eventCount": 83,
+  "toolCalls": 30,
+  "success": true,
+  "sessionId": "ses_de609dc38ffemm9t82HORctOGW",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__ARC-03__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

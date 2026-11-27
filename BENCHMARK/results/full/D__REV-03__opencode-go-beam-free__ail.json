@@ -1,0 +1,45 @@
+{
+  "id": "D__REV-03__opencode-go-beam-free__ail",
+  "taskId": "REV-03",
+  "category": "code-review",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:29:42.4943502Z",
+  "finishedAt": "2026-11-26T22:30:20.5404257Z",
+  "durationMs": 38046,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1031,
+    "output": 330,
+    "reasoning": 101,
+    "cacheRead": 63296,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "## Naming review (main.go, main_test.go)\n\nBoth files are tiny and mostly idiomatic; no blocking problems. Concrete naming issues, all low severity:\n\n1. `add` (main.go:3) is a verb for a function whose primary job is to return a value. At call sites it reads like a command rather than a result. A noun such as `sum` communicates the returned value directly. Stylistic.\n2. Parameters `a` and `b` (main.go:3) carry no domain meaning. Acceptable for a two-line body, but `left`/`right` or `x`/`y` would be easier to read if the helper grows.\n3. `TestAdd` (main_test.go:5) is coupled to the implementation name. If the function is renamed, the test should be renamed too so it stays discoverable via `go test -run`.\n4. Failure message (main_test.go:7) hardcodes both the call `add(2, 3)` and the expected `5`, duplicating the assertion; if the case changes the message can drift. Naming the observed and expected values (for example `got`/`want`) makes the assertion self-describing.\n5. No other identifiers exist in these files (`main` is the required entry point, `testing` is the standard import), so the review is complete.\n\n## Verification\n\n- `go test ./...`: `ok example.com/bench` (passed)\n- `go vet ./...`: no diagnostics\n- No files were modified.",
+  "eventCount": 42,
+  "toolCalls": 15,
+  "success": true,
+  "sessionId": "ses_de60568f8ffe40scTW1Iv4atFY",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REV-03__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

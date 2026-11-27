@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-02__opencode-go-hungerg-free__markdown",
+  "taskId": "DBG-02",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:48:40.6207566Z",
+  "finishedAt": "2026-11-27T01:49:26.2992346Z",
+  "durationMs": 45678,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1857,
+    "output": 61,
+    "reasoning": 342,
+    "cacheRead": 122880,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the workspace to identify the expected Markdown conventions and any files that need updating.The workspace has a failing test: `add` currently subtracts. I’ll confirm the failure, make the minimal correction, and also provide the requested conventional Markdown baseline without changing unrelated structure.Fixed `main.go`: `add` now returns `a + b` instead of `a - b`. No unrelated files changed.\n\nVerification passed:\n- `go test ./...`\n- `go vet ./...`\n- `gofmt -l main.go main_test.go`",
+  "eventCount": 48,
+  "toolCalls": 26,
+  "success": true,
+  "sessionId": "ses_de54f3f40ffeYME0LvEwXLgvrK",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-02__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

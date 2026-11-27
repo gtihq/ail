@@ -1,0 +1,47 @@
+{
+  "id": "D__DBG-07__opencode-go-hungerg-free__ail",
+  "taskId": "DBG-07",
+  "category": "debugging",
+  "model": "opencode-go/hungerg-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T02:05:25.8211767Z",
+  "finishedAt": "2026-11-27T02:05:40.4384676Z",
+  "durationMs": 14617,
+  "exitCode": 0,
+  "tokens": {
+    "input": 4075,
+    "output": 16,
+    "reasoning": 155,
+    "cacheRead": 30016,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Please provide the AIL operational instructions you’d like me to follow.",
+  "eventCount": 3,
+  "toolCalls": 0,
+  "success": true,
+  "sessionId": "ses_de53fe826ffehQMxoDrlZIe6Db",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-07__opencode-go-hungerg-free__ail",
+  "verifyPassed": false,
+  "verifyExitCode": 1,
+  "verifyOutput": "--- FAIL: TestAdd (0.00s)\n    main_test.go:7: add(2, 3) = -1, want 5\nFAIL\nFAIL\texample.com/bench\t0.020s\nFAIL\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 0,
+    "violated": [
+      "R003"
+    ],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

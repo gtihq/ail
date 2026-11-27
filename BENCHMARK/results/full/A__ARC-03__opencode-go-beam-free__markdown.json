@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-03__opencode-go-beam-free__markdown",
+  "taskId": "ARC-03",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:17:01.3736471Z",
+  "finishedAt": "2026-11-26T21:18:23.218682Z",
+  "durationMs": 81845,
+  "exitCode": 0,
+  "tokens": {
+    "input": 439,
+    "output": 142,
+    "reasoning": 52,
+    "cacheRead": 72256,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Implemented the ARC-03 architecture change in the workspace `A__ARC-03__opencode-go-beam-free__markdown`:\n\n- `main.go`: added a narrow `integerOperation` interface with a single `Apply(a, b int) int` method, an `addition` implementation, and a `defaultOperation` variable; `add` now delegates through the interface. Existing behavior is unchanged.\n- `main_test.go`: kept `TestAdd` and added `TestIntegerOperation` exercising the interface directly.\n\nVerification: `go test ./...` passes, `go vet ./...` clean, no typographic dashes, files well under the size limit.",
+  "eventCount": 98,
+  "toolCalls": 35,
+  "success": true,
+  "sessionId": "ses_de647f475ffeI02Hb0U4s1fana",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-03__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

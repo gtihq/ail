@@ -1,0 +1,45 @@
+{
+  "id": "A__DBG-01__opencode-go-beam-free__markdown",
+  "taskId": "DBG-01",
+  "category": "debugging",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:12:58.4204126Z",
+  "finishedAt": "2026-11-26T21:13:07.8682549Z",
+  "durationMs": 9447,
+  "exitCode": 0,
+  "tokens": {
+    "input": 788,
+    "output": 39,
+    "reasoning": 8,
+    "cacheRead": 32064,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Fixed `add` in [main.go](main.go): changed `a - b` to `a + b`. `go test ./...` passes.",
+  "eventCount": 17,
+  "toolCalls": 6,
+  "success": true,
+  "sessionId": "ses_de64baa04ffeBz9u98vHpQ6yew",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__DBG-01__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-04__opencode-go-beam-free__markdown",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:18:23.5324439Z",
+  "finishedAt": "2026-11-26T21:19:18.1465099Z",
+  "durationMs": 54614,
+  "exitCode": 0,
+  "tokens": {
+    "input": 494,
+    "output": 61,
+    "reasoning": 16,
+    "cacheRead": 70080,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Added a table-driven test covering the `main` entry point in `main_test.go` (invoking `main()` and asserting it does not panic), kept `main.go` unchanged, and verified with `go test ./...` and `go vet ./...` (both pass).",
+  "eventCount": 67,
+  "toolCalls": 24,
+  "success": true,
+  "sessionId": "ses_de646b3fdffeAxBGXxgTI2cxJV",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

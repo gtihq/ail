@@ -1,0 +1,45 @@
+{
+  "id": "A__TST-04__opencode-go-hungerg-free__markdown",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T01:00:57.837936Z",
+  "finishedAt": "2026-11-27T01:05:01.6900194Z",
+  "durationMs": 243852,
+  "exitCode": 0,
+  "tokens": {
+    "input": 713,
+    "output": 96,
+    "reasoning": 115,
+    "cacheRead": 83904,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I’ll inspect the repository’s current agent instructions and layout, then make the smallest consistent update for a conventional Markdown baseline.The workspace is task `TST-04`: the heading is contextual, and the concrete change is to add table-driven coverage for `main()` without modifying `main.go`. I’ll keep the tests focused on the entry point’s observable contract: it returns without panicking across repeated invocations and after another helper call.The new tests pass. I’m also checking that they fail when the entry point is deliberately broken, using a temporary Go build overlay so `main.go` itself remains untouched.Added `TestMainEntryPoint` in `main_test.go` with table-driven cases for:\n\n- A single `main()` invocation\n- Three consecutive `main()` invocations\n\n`main.go` remains unchanged.\n\nVerification:\n\n- `go test ./...` passes\n- `go vet ./...` is clean\n- `gofmt -l .` reports no files\n- A temporary mutation making `main()` panic caused the new test to fail as expected",
+  "eventCount": 75,
+  "toolCalls": 38,
+  "success": true,
+  "sessionId": "ses_de57aee27ffeuCnBGcmMxuIzBw",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__TST-04__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

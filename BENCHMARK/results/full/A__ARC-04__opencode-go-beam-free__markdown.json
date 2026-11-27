@@ -1,0 +1,45 @@
+{
+  "id": "A__ARC-04__opencode-go-beam-free__markdown",
+  "taskId": "ARC-04",
+  "category": "architecture",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T21:51:09.2617129Z",
+  "finishedAt": "2026-11-26T21:52:02.5089497Z",
+  "durationMs": 53247,
+  "exitCode": 0,
+  "tokens": {
+    "input": 703,
+    "output": 55,
+    "reasoning": 29,
+    "cacheRead": 59520,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Moved the `add` helper into a focused `arith.go` file and kept `main.go` limited to the entry point. `go test ./...` and `go vet ./...` both pass, and all files remain well under the size limit.",
+  "eventCount": 66,
+  "toolCalls": 23,
+  "success": true,
+  "sessionId": "ses_de628b566ffekGolD432sorp2w",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__ARC-04__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

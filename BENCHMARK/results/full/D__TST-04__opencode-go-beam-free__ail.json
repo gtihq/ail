@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-04__opencode-go-beam-free__ail",
+  "taskId": "TST-04",
+  "category": "testing",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T22:25:59.7280301Z",
+  "finishedAt": "2026-11-26T22:27:06.7877653Z",
+  "durationMs": 67059,
+  "exitCode": 0,
+  "tokens": {
+    "input": 1367,
+    "output": 94,
+    "reasoning": 46,
+    "cacheRead": 56640,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done.\n\nAdded a table-driven `TestMainEntryPoint` to `main_test.go` that invokes `main()` across multiple cases (cold start, repeated invocation, and after calling `add`) and asserts it never panics. `main.go` is unchanged. Verification: `go test ./...` passes, `go vet ./...` is clean, and `gofmt -l .` reports no files needing formatting.",
+  "eventCount": 74,
+  "toolCalls": 25,
+  "success": true,
+  "sessionId": "ses_de608cf4affexgii9SyID8E3Ws",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-04__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

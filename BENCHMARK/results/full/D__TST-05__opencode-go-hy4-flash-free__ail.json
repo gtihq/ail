@@ -1,0 +1,45 @@
+{
+  "id": "D__TST-05__opencode-go-hy4-flash-free__ail",
+  "taskId": "TST-05",
+  "category": "testing",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:56:15.2975332Z",
+  "finishedAt": "2026-11-26T20:56:28.3109382Z",
+  "durationMs": 13013,
+  "exitCode": 0,
+  "tokens": {
+    "input": 598,
+    "output": 156,
+    "reasoning": 171,
+    "cacheRead": 33024,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "You've posted the heading `# AIL Operational Instructions`, but the actual instructions didn't come through. There's no task body to act on.\n\nI can see the workspace contains a minimal Go project:\n\n- `main.go` with `add(a, b int) int` and an empty `main()`\n- `main_test.go` with `TestAdd`\n- `go.mod` (`example.com/bench`, Go 1.25)\n\nWhat would you like me to do? For example:\n\n- Paste the full operational instructions/task you want me to follow\n- Ask me to implement a change or add tests in this Go project\n- Ask me to run the existing tests\n\nOnce you provide the actual instruction, I'll get straight to work.",
+  "eventCount": 11,
+  "toolCalls": 4,
+  "success": true,
+  "sessionId": "ses_de65af890ffeHuv40Jgk971wzB",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__TST-05__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 2,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

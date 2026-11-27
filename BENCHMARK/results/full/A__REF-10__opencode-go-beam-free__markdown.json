@@ -1,0 +1,45 @@
+{
+  "id": "A__REF-10__opencode-go-beam-free__markdown",
+  "taskId": "REF-10",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-26T22:00:08.5416422Z",
+  "finishedAt": "2026-11-26T22:02:37.5199282Z",
+  "durationMs": 148978,
+  "exitCode": 0,
+  "tokens": {
+    "input": 322,
+    "output": 162,
+    "reasoning": 50,
+    "cacheRead": 56448,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Done. Here is what changed and why.\n\n**What I did**\n- Added a small reusable `check(got, want int) bool` helper in `main.go` that compares two integers, with a short doc comment.\n- Updated `TestAdd` to use that helper instead of the inline comparison, so the extracted function has a real caller.\n- `add` still returns `a + b`, so program behavior is unchanged.\n\n**Verification**\n- `go test ./...` passes.\n- `go vet ./...` reports no diagnostics.\n- No file exceeds the size limit, and all punctuation is plain ASCII.\n\nI did not commit anything. If you wanted a different helper shape, a change limited to a single file, or a different deliverable, tell me and I will adjust.",
+  "eventCount": 142,
+  "toolCalls": 47,
+  "success": true,
+  "sessionId": "ses_de62079c7ffeD1cHGhWfuANYcg",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\A__REF-10__opencode-go-beam-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__DBG-08__opencode-go-hy4-flash-free__ail",
+  "taskId": "DBG-08",
+  "category": "debugging",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-26T20:11:30.4201051Z",
+  "finishedAt": "2026-11-26T20:12:42.9041464Z",
+  "durationMs": 72484,
+  "exitCode": 0,
+  "tokens": {
+    "input": 185,
+    "output": 98,
+    "reasoning": 109,
+    "cacheRead": 90368,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "The workspace is a minimal Go project whose `add` function subtracts instead of adding, so `TestAdd` fails. Your message only carried the AIL instructions heading with no body, but the task is unambiguous from the code and test. Let me confirm the failure, fix it, and verify.Fixed the bug in `main.go`: `add` was returning `a - b` instead of `a + b`.\n\n`go test ./...` now passes (`ok example.com/bench`). No unrelated code was changed.\n\nNote: your message contained only the heading `# AIL Operational Instructions` with no body, so I inferred the task from the failing test in the workspace. If you meant something else by that heading, let me know and I will act on it.",
+  "eventCount": 46,
+  "toolCalls": 14,
+  "success": true,
+  "sessionId": "ses_de683f054ffeJErYobChBOkdHc",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__DBG-08__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 3,
+    "checked": 1,
+    "followed": 1,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "D__REF-10__opencode-go-beam-free__ail",
+  "taskId": "REF-10",
+  "category": "refactoring",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T00:29:05.0477875Z",
+  "finishedAt": "2026-11-27T00:30:50.0680394Z",
+  "durationMs": 105020,
+  "exitCode": 0,
+  "tokens": {
+    "input": 57482,
+    "output": 35,
+    "reasoning": 240,
+    "cacheRead": 65216,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Refactored `main.go` to add a reusable `check` helper and kept `add` working. Ran `go test ./...` successfully.",
+  "eventCount": 90,
+  "toolCalls": 31,
+  "success": true,
+  "sessionId": "ses_de5981e55ffeAwWyL3V33jwUgC",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\full\\D__REF-10__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t(cached)\n",
+  "compliance": {
+    "applicable": 4,
+    "checked": 2,
+    "followed": 2,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}
