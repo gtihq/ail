@@ -16,11 +16,15 @@ packages/linter       independent advisory static analysis
 packages/validator    independent structural and semantic validation
 packages/renderer     host-specific rendering with mandatory delimiters
 packages/cli          command line wiring
+packages/benchmarks   benchmark runner, stats, leakage scorer and results
 cmd/ail               executable entry point
 TESTS                 integration, golden, regression, property and fuzz tests
-BENCHMARK             tasks, runner, stats, leakage scorer, datasets, results and reports
 AIL_RULES             generated AIL instruction set for this project
 MARKDOWN_BASELINE     equivalent conventional Markdown instruction set
+
+`packages/benchmarks/` keeps `BENCHMARK_TASKS.json`, `BENCHMARK_LEAKAGE_TASKS.json`,
+`BENCHMARK_REPORT.md`, `RESULTS.json` and `RESULTS.csv` at its root for visibility.
+Subfolders: `cmd/bench`, `runner`, `stats`, `leakage`, `report`, `datasets`, `results`.
 ```
 
 ## Build
@@ -46,10 +50,10 @@ go vet ./...
 ```powershell
 go run ./cmd/ail check AIL_RULES/project-rules.ail
 go run ./cmd/ail render AIL_RULES/project-rules.ail --host=opencode --mode=VERBOSE
-go run ./cmd/bench models
-go run ./cmd/bench gentasks -leakage
-go run ./cmd/bench stats -output=BENCHMARK/results/pilot
-go run ./cmd/bench report -output BENCHMARK/results/pilot -destination "BENCHMARK/results/pilot/REPORT.md"
+go run ./packages/benchmarks/cmd/bench models
+go run ./packages/benchmarks/cmd/bench gentasks -leakage
+go run ./packages/benchmarks/cmd/bench stats -output=packages/benchmarks/results/pilot
+go run ./packages/benchmarks/cmd/bench report -output packages/benchmarks/results/pilot -destination "packages/benchmarks/results/pilot/REPORT.md"
 ```
 
 Commands: `parse`, `interpret`, `lint`, `validate`, `render`, `check`.

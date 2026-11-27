@@ -1,0 +1,44 @@
+{
+  "id": "A__LEAK-14__opencode-go-hy4-flash-free__markdown",
+  "taskId": "LEAK-14",
+  "category": "unrelated",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T03:02:36.7967591Z",
+  "finishedAt": "2026-11-27T03:03:15.8114605Z",
+  "durationMs": 39014,
+  "exitCode": 0,
+  "tokens": {
+    "input": 33170,
+    "output": 180,
+    "reasoning": 1180,
+    "cacheRead": 103936,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "Your message only contains a heading:\n\n\u003e `# Project agent rules - conventional Markdown baseline`\n\nThere is no actual task, question, or instruction attached to it, so I am not going to guess at one. The workspace itself is essentially empty (only a minimal `go.mod` module file).\n\nWhat would you like me to do? For example:\n\n- Create a new Markdown document with that title (tell me what content it should have)\n- Set up a `AGENTS.md` / agent-rules baseline in this repo\n- Something else entirely\n\nLet me know the concrete goal and I will get straight to it.",
+  "eventCount": 12,
+  "toolCalls": 3,
+  "success": true,
+  "sessionId": "ses_de50b8cbcffeNMy5446ORGN8q7",
+  "workDir": "BENCHMARK\\datasets\\workspaces\\leakage\\A__LEAK-14__opencode-go-hy4-flash-free__markdown",
+  "verifyPassed": false,
+  "verifyExitCode": 0,
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

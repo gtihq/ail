@@ -2,4 +2,4 @@
 dist/
 
 # Isolated benchmark workspaces are regenerated per execution
-BENCHMARK/datasets/workspaces/
+packages/benchmarks/datasets/workspaces/

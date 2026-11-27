@@ -50,4 +50,4 @@ $text = & go run ./cmd/ail render TESTS/fixtures/valid-standalone.ail --host=mar
 
 ## Benchmark reproducibility
 
-See `BENCHMARK/README.md` and `BENCHMARK_REPORT.md`. Raw results are stored unmodified under `BENCHMARK/results/`. The runner supports resume so interrupted experiments can continue without re-running completed executions.
+See `packages/benchmarks/README.md` and `packages/benchmarks/BENCHMARK_REPORT.md`. Raw results are stored unmodified under `packages/benchmarks/results/`. The runner supports resume so interrupted experiments can continue without re-running completed executions.
