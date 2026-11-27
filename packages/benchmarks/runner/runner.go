@@ -173,7 +173,7 @@ func WriteCatalog(path string, catalog Catalog) error {
 
 // InstructionPayload builds the instruction context for a format and delimiter mode.
 func InstructionPayload(format string, delimiters bool) (string, error) {
-	source, err := os.ReadFile("AIL_RULES/project-rules.ail")
+	source, err := os.ReadFile(".ail/rules/project-rules.ail")
 	if err != nil {
 		return "", err
 	}
@@ -181,7 +181,7 @@ func InstructionPayload(format string, delimiters bool) (string, error) {
 	ir := interpreter.Interpret(parsed).IR
 
 	if strings.EqualFold(format, "markdown") {
-		baseline, err := os.ReadFile("MARKDOWN_BASELINE/project-rules.md")
+		baseline, err := os.ReadFile("packages/benchmarks/MARKDOWN_BASELINE.md")
 		if err != nil {
 			return "", err
 		}
@@ -477,7 +477,7 @@ func RunOne(request Request) (RunRecord, error) {
 	if runErr != nil {
 		record.Success = false
 	}
-	if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
+	if terms, loadErr := leakage.LoadTerms(".ail/rules/project-rules.ail"); loadErr == nil {
 		record.Leakage = leakage.NewScorer(terms).Score(record.Text, request.Task.ExplicitRuleRequest)
 	}
 	if err := VerifyTask(&record, request.Task, 0); err != nil {

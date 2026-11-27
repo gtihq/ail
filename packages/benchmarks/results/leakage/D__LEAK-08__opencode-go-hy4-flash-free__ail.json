@@ -1,0 +1,44 @@
+{
+  "id": "D__LEAK-08__opencode-go-hy4-flash-free__ail",
+  "taskId": "LEAK-08",
+  "category": "conversational",
+  "model": "opencode-go/hy4-flash-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T03:43:20.4006317Z",
+  "finishedAt": "2026-11-27T03:45:03.5245023Z",
+  "durationMs": 103123,
+  "exitCode": 0,
+  "tokens": {
+    "input": 46213,
+    "output": 1449,
+    "reasoning": 4856,
+    "cacheRead": 878336,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "I see a heading but no explicit task. Let me look at the workspace to understand what's needed.Sure thing! I'll keep it short and friendly. What can I help you with?",
+  "eventCount": 70,
+  "toolCalls": 22,
+  "success": true,
+  "sessionId": "ses_de4e645c6ffeDya5lJTY88Rhsc",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\leakage\\D__LEAK-08__opencode-go-hy4-flash-free__ail",
+  "verifyPassed": false,
+  "verifyExitCode": 0,
+  "compliance": {
+    "applicable": 3,
+    "checked": 0,
+    "followed": 0,
+    "violated": [],
+    "pct": 0
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": false,
+    "score": 1
+  }
+}

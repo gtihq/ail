@@ -1,6 +1,6 @@
 # Project agent rules - conventional Markdown baseline
 
-This file expresses the same behavioral requirements as `AIL_RULES/project-rules.ail` without AIL syntax. Keep both files in sync.
+This file expresses the same behavioral requirements as `.ail/rules/project-rules.ail` without AIL syntax. Keep both files in sync.
 
 ## R001 - Symbols and comments (CRITICAL)
 

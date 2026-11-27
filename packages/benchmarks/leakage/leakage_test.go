@@ -71,7 +71,7 @@ func TestAggregate(t *testing.T) {
 }
 
 func TestLoadTermsFromProjectRules(t *testing.T) {
-	terms, err := leakage.LoadTerms("../../../AIL_RULES/project-rules.ail")
+	terms, err := leakage.LoadTerms("../../../.ail/rules/project-rules.ail")
 	if err != nil {
 		t.Fatalf("LoadTerms: %v", err)
 	}

@@ -31,21 +31,21 @@ go test ./...
 go vet ./...
 ```
 
-Tests are deterministic. Fuzz and property tests use fixed random seeds. Golden files live in `TESTS/fixtures/`.
+Tests are deterministic. Fuzz and property tests use fixed random seeds. Golden files live in `tests/fixtures/`.
 
 ## Cross-validating instruction sets
 
 ```powershell
-go test ./TESTS -run TestGeneratedInstructionSetsAreEquivalent -v
+go test ./tests -run TestGeneratedInstructionSetsAreEquivalent -v
 ```
 
-This verifies that every instruction term in `AIL_RULES/project-rules.ail` appears in `MARKDOWN_BASELINE/project-rules.md` and that the AIL file validates without errors.
+This verifies that every instruction term in `.ail/rules/project-rules.ail` appears in `packages/benchmarks/MARKDOWN_BASELINE.md` and that the AIL file validates without errors.
 
 ## Regenerating the golden render file
 
 ```powershell
-$text = & go run ./cmd/ail render TESTS/fixtures/valid-standalone.ail --host=markdown --mode=INLINE
-[System.IO.File]::WriteAllText("TESTS/fixtures/golden-render.md", ($text -join "`n") + "`n", (New-Object System.Text.UTF8Encoding($false)))
+$text = & go run ./cmd/ail render tests/fixtures/valid-standalone.ail --host=markdown --mode=INLINE
+[System.IO.File]::WriteAllText("tests/fixtures/golden-render.md", ($text -join "`n") + "`n", (New-Object System.Text.UTF8Encoding($false)))
 ```
 
 ## Benchmark reproducibility

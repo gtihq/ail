@@ -23,3 +23,4 @@ All notable changes to the AIL toolchain are documented here. Versions follow se
 - Leakage task catalogue with six scenarios and explicit-rule-request flags.
 - Data-driven report generator with coverage, paired statistics, leakage rates and compliance.
 - Benchmark subsystem reorganized under `packages/benchmarks`, with reports, task catalogues and result summaries at the package root and code split into runner, stats, leakage, report and CLI subfolders.
+- AIL rules moved to `.ail/rules/`, the Markdown baseline placed in `packages/benchmarks/MARKDOWN_BASELINE.md`, and integration tests renamed from `TESTS/` to `tests/`.

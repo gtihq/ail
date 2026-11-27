@@ -18,12 +18,12 @@ packages/renderer     host-specific rendering with mandatory delimiters
 packages/cli          command line wiring
 packages/benchmarks   benchmark runner, stats, leakage scorer and results
 cmd/ail               executable entry point
-TESTS                 integration, golden, regression, property and fuzz tests
-AIL_RULES             generated AIL instruction set for this project
-MARKDOWN_BASELINE     equivalent conventional Markdown instruction set
+tests                 integration, golden, regression, property and fuzz tests
+.ail/rules            generated AIL instruction set for this project
 
 `packages/benchmarks/` keeps `BENCHMARK_TASKS.json`, `BENCHMARK_LEAKAGE_TASKS.json`,
-`BENCHMARK_REPORT.md`, `RESULTS.json` and `RESULTS.csv` at its root for visibility.
+`BENCHMARK_REPORT.md`, `MARKDOWN_BASELINE.md`, `RESULTS.json` and `RESULTS.csv`
+at its root for visibility.
 Subfolders: `cmd/bench`, `runner`, `stats`, `leakage`, `report`, `datasets`, `results`.
 ```
 
@@ -48,8 +48,8 @@ go vet ./...
 ## CLI
 
 ```powershell
-go run ./cmd/ail check AIL_RULES/project-rules.ail
-go run ./cmd/ail render AIL_RULES/project-rules.ail --host=opencode --mode=VERBOSE
+go run ./cmd/ail check .ail/rules/project-rules.ail
+go run ./cmd/ail render .ail/rules/project-rules.ail --host=opencode --mode=VERBOSE
 go run ./packages/benchmarks/cmd/bench models
 go run ./packages/benchmarks/cmd/bench gentasks -leakage
 go run ./packages/benchmarks/cmd/bench stats -output=packages/benchmarks/results/pilot

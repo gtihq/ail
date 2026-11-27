@@ -9,6 +9,7 @@ Kept at the root of this package for visibility:
 | File | Purpose |
 |------|---------|
 | `BENCHMARK_REPORT.md` | Final report with coverage, paired statistics and answers to the research questions |
+| `MARKDOWN_BASELINE.md` | Conventional Markdown instruction set equivalent to `.ail/rules/project-rules.ail` |
 | `BENCHMARK_TASKS.json` | 50 main tasks across seven categories |
 | `BENCHMARK_LEAKAGE_TASKS.json` | 20 leakage tasks across six scenarios |
 | `RESULTS.json` | Pilot records, machine-readable |

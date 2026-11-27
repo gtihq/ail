@@ -11,11 +11,11 @@ import (
 )
 
 func TestGeneratedInstructionSetsAreEquivalent(t *testing.T) {
-	source, err := os.ReadFile("../AIL_RULES/project-rules.ail")
+	source, err := os.ReadFile("../.ail/rules/project-rules.ail")
 	if err != nil {
 		t.Fatalf("AIL rules: %v", err)
 	}
-	baseline, err := os.ReadFile("../MARKDOWN_BASELINE/project-rules.md")
+	baseline, err := os.ReadFile("../packages/benchmarks/MARKDOWN_BASELINE.md")
 	if err != nil {
 		t.Fatalf("Markdown baseline: %v", err)
 	}
@@ -47,7 +47,7 @@ func TestGeneratedInstructionSetsAreEquivalent(t *testing.T) {
 }
 
 func TestGeneratedAILUsesSupportedVersion(t *testing.T) {
-	source, err := os.ReadFile("../AIL_RULES/project-rules.ail")
+	source, err := os.ReadFile("../.ail/rules/project-rules.ail")
 	if err != nil {
 		t.Fatalf("AIL rules: %v", err)
 	}
@@ -63,8 +63,8 @@ func TestGeneratedAILUsesSupportedVersion(t *testing.T) {
 
 func TestNoTypographicDashInGeneratedFiles(t *testing.T) {
 	paths := []string{
-		"../AIL_RULES/project-rules.ail",
-		"../MARKDOWN_BASELINE/project-rules.md",
+		"../.ail/rules/project-rules.ail",
+		"../packages/benchmarks/MARKDOWN_BASELINE.md",
 		"../README.md",
 	}
 	forbidden := string([]rune{0x2014})

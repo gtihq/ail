@@ -332,7 +332,7 @@ func verify(args []string) {
 			continue
 		}
 		runner.ScoreCompliance(&record, task)
-		if terms, loadErr := leakage.LoadTerms("AIL_RULES/project-rules.ail"); loadErr == nil {
+		if terms, loadErr := leakage.LoadTerms(".ail/rules/project-rules.ail"); loadErr == nil {
 			record.Leakage = leakage.NewScorer(terms).Score(record.Text, task.ExplicitRuleRequest)
 		}
 		encoded, err := json.MarshalIndent(record, "", "  ")
