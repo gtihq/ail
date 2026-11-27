@@ -1,0 +1,45 @@
+{
+  "id": "A__IMP-05__opencode-go-hungerg-free__markdown",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/hungerg-free",
+  "format": "markdown",
+  "delimiters": false,
+  "condition": "A",
+  "startedAt": "2026-11-27T04:08:38.1877184Z",
+  "finishedAt": "2026-11-27T04:08:38.2424696Z",
+  "durationMs": 54,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 0,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1: Linha de comando muito longa.\r\n",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\A__IMP-05__opencode-go-hungerg-free__markdown",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.023s\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

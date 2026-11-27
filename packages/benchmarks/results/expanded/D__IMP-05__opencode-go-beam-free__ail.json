@@ -1,0 +1,45 @@
+{
+  "id": "D__IMP-05__opencode-go-beam-free__ail",
+  "taskId": "IMP-05",
+  "category": "implementation",
+  "model": "opencode-go/beam-free",
+  "format": "ail",
+  "delimiters": true,
+  "condition": "D",
+  "startedAt": "2026-11-27T04:08:04.0748541Z",
+  "finishedAt": "2026-11-27T04:08:04.1123729Z",
+  "durationMs": 37,
+  "exitCode": 1,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": 0,
+  "text": "",
+  "eventCount": 0,
+  "toolCalls": 0,
+  "success": false,
+  "error": "exit status 1: Linha de comando muito longa.\r\n",
+  "workDir": "packages\\benchmarks\\datasets\\workspaces\\full\\D__IMP-05__opencode-go-beam-free__ail",
+  "verifyPassed": true,
+  "verifyExitCode": 0,
+  "verifyOutput": "ok  \texample.com/bench\t0.018s\n",
+  "compliance": {
+    "applicable": 5,
+    "checked": 3,
+    "followed": 3,
+    "violated": [],
+    "pct": 100
+  },
+  "leakage": {
+    "containsRuleText": false,
+    "containsDelimiter": false,
+    "legitimateDisclosure": false,
+    "unsolicitedReproduction": false,
+    "failureToAnswer": true,
+    "score": 0
+  }
+}

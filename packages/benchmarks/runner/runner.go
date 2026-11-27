@@ -426,6 +426,10 @@ func RunOne(request Request) (RunRecord, error) {
 		binary = "opencode"
 	}
 	prompt := request.Instruction + "\n\n--- TASK ---\n\n" + request.Task.Prompt
+	promptPath := filepath.Join(workDir, "prompt.md")
+	if err := os.WriteFile(promptPath, []byte(prompt), 0o644); err != nil {
+		return RunRecord{}, err
+	}
 
 	timeout := request.Timeout
 	if timeout <= 0 {
@@ -441,7 +445,8 @@ func RunOne(request Request) (RunRecord, error) {
 		"--auto",
 		"--archived",
 		"--title", "ail-bench-"+id,
-		prompt,
+		"--file", promptPath,
+		"Execute the task described in the attached file.",
 	}
 	cmd := exec.CommandContext(ctx, binary, args...)
 	cmd.Dir = workDir
